@@ -591,7 +591,6 @@
             } catch (error) {
                 console.error("Error:", error);
                 
-                // Added explicitly to catch the local file error
                 let errorTitle = "Archive Unavailable";
                 let errorDesc = "Failed to load 'plants.json'. Please ensure it exists.";
                 if (window.location.protocol === 'file:') {
@@ -697,6 +696,7 @@
                     });
                 });
 
+                // --- MODIFIED QR CODE DOWNLOAD LOGIC ---
                 btnQR.addEventListener('click', () => {
                     setTimeout(() => {
                         const qrCanvas = document.querySelector('#qr-container canvas');
@@ -708,21 +708,40 @@
                             const width = sourceElement.width || 500;
                             const height = sourceElement.height || 500;
                             
-                            const padding = 40;
+                            const padding = 40; // White border around the QR Code
+                            const textSpace = 70; // Space at the bottom for the plant name
+                            
                             const paddedCanvas = document.createElement('canvas');
                             paddedCanvas.width = width + (padding * 2);
-                            paddedCanvas.height = height + (padding * 2);
+                            paddedCanvas.height = height + padding + textSpace; 
+                            
                             const ctx = paddedCanvas.getContext('2d');
                             
+                            // Fill background with pure white
                             ctx.fillStyle = '#ffffff';
                             ctx.fillRect(0, 0, paddedCanvas.width, paddedCanvas.height);
                             
+                            // Draw the QR Code image
                             if(isImage) {
                                 ctx.drawImage(sourceElement, padding, padding, width, height);
                             } else {
                                 ctx.drawImage(sourceElement, padding, padding);
                             }
                             
+                            // Add the Plant Name below the QR code
+                            ctx.fillStyle = '#000000'; // Pure black for professional printing
+                            ctx.font = 'bold 36px "Playfair Display", serif';
+                            ctx.textAlign = 'center';
+                            ctx.textBaseline = 'middle';
+                            
+                            const textX = paddedCanvas.width / 2;
+                            const textY = height + padding + (textSpace / 2) + 5; // Center text vertically in the bottom space
+                            
+                            // Limit text width to prevent going off the canvas edges
+                            const maxTextWidth = paddedCanvas.width - (padding * 2);
+                            ctx.fillText(plant.name, textX, textY, maxTextWidth);
+                            
+                            // Download the final image
                             const link = document.createElement('a');
                             link.download = `HKNF-${plant.id}-QR.png`;
                             link.href = paddedCanvas.toDataURL('image/png');
