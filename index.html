@@ -289,25 +289,32 @@
 
             // Fetch JSON Data
             async function fetchPlants() {
-                try {
-                    // Simulating slight network delay to show loading animation
-                    await new Promise(resolve => setTimeout(resolve, 800)); 
-                    
-                    const response = await fetch('plants.json');
-                    if (!response.ok) throw new Error('Network response was not ok');
-                    
-                    const data = await response.json();
-                    allPlants = data.plants;
-                    
-                    // Hide loader and show initial grid
-                    loader.style.display = 'none';
-                    renderCards(allPlants);
-                    
-                } catch (error) {
-                    console.error("Error loading plant data:", error);
-                    loader.innerHTML = `<p style="color: #d32f2f;">Failed to load plant data. Please make sure 'plants.json' exists in the same directory.</p>`;
-                }
-            }
+    try {
+        const response = await fetch("plants.json");
+
+        console.log("Status:", response.status);
+
+        const text = await response.text();
+        console.log("JSON Text:", text);
+
+        const data = JSON.parse(text);
+
+        console.log("Parsed JSON:", data);
+
+        allPlants = data.plants;
+
+        loader.style.display = "none";
+        renderCards(allPlants);
+
+    } catch (error) {
+        console.error(error);
+        loader.innerHTML = `
+            <pre style="color:red;white-space:pre-wrap;">
+${error}
+            </pre>
+        `;
+    }
+}
 
             // Render Cards to the DOM
             function renderCards(plants) {
