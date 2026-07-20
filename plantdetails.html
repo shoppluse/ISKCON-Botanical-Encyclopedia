@@ -8,7 +8,7 @@
     <!-- Professional Typography -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Lora:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,500;0,700;1,500&display=swap" rel="stylesheet">
 
     <!-- CDNs for Export Functionality -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
@@ -16,15 +16,18 @@
 
     <style>
         :root {
-            --primary-green: #2e7d32;
-            --light-green: #f1f8e9;
-            --accent-green: #4caf50;
-            --dark-green: #1b5e20;
-            --text-main: #333333;
-            --text-muted: #555555;
+            /* Premium Nature Palette */
+            --bg-color: #f2f7f4;
+            --primary-dark: #1a3626;
+            --primary-green: #2c5e3f;
+            --accent-green: #4e8c63;
+            --light-sage: #e3ede6;
+            --text-main: #2d3b32;
+            --text-muted: #647569;
             --white: #ffffff;
-            --board-border: #c8e6c9;
-            --shadow: 0 10px 40px rgba(46, 125, 50, 0.1);
+            --glass-border: rgba(255, 255, 255, 0.6);
+            --shadow-soft: 0 20px 40px -10px rgba(26, 54, 38, 0.08);
+            --shadow-hover: 0 30px 60px -15px rgba(26, 54, 38, 0.15);
         }
 
         * {
@@ -35,87 +38,138 @@
 
         body {
             font-family: 'Poppins', sans-serif;
-            background-color: #e8f5e9;
-            background-image: radial-gradient(circle at top right, #ffffff 0%, #e8f5e9 100%);
+            background-color: var(--bg-color);
             color: var(--text-main);
             min-height: 100vh;
             display: flex;
             flex-direction: column;
             align-items: center;
-            padding: 2rem 1rem;
+            padding: 2rem 1rem 4rem;
+            position: relative;
+            overflow-x: hidden;
         }
 
-        /* Top Navigation */
+        /* Ambient Background Elements */
+        body::before, body::after {
+            content: '';
+            position: fixed;
+            border-radius: 50%;
+            filter: blur(100px);
+            z-index: -1;
+            opacity: 0.5;
+        }
+        body::before {
+            width: 400px;
+            height: 400px;
+            background: #d4e8db;
+            top: -100px;
+            left: -100px;
+        }
+        body::after {
+            width: 500px;
+            height: 500px;
+            background: #e9f2eb;
+            bottom: -150px;
+            right: -150px;
+        }
+
+        /* Navigation */
         .nav {
             width: 100%;
-            max-width: 1000px;
+            max-width: 1100px;
             margin-bottom: 2rem;
             display: flex;
             justify-content: space-between;
             align-items: center;
+            z-index: 10;
         }
 
         .back-btn {
             text-decoration: none;
             color: var(--primary-green);
             font-weight: 500;
-            display: flex;
+            display: inline-flex;
             align-items: center;
-            gap: 0.5rem;
-            transition: transform 0.3s ease;
+            gap: 0.6rem;
+            padding: 0.6rem 1.2rem;
+            background: var(--white);
+            border-radius: 50px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.03);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
         .back-btn:hover {
-            transform: translateX(-5px);
+            transform: translateX(-5px) translateY(-2px);
+            box-shadow: 0 8px 20px rgba(44, 94, 63, 0.1);
+            color: var(--primary-dark);
         }
 
-        /* Main Whiteboard Container */
+        /* Main Container */
         .whiteboard-wrapper {
-            background: var(--white);
-            max-width: 1000px;
             width: 100%;
-            border-radius: 24px;
-            box-shadow: var(--shadow);
-            border: 8px solid var(--white);
-            outline: 2px solid var(--board-border);
-            position: relative;
-            animation: slideUp 0.8s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
-            opacity: 0;
-            transform: translateY(30px);
+            max-width: 1100px;
+            border-radius: 32px;
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid var(--glass-border);
+            box-shadow: var(--shadow-soft);
             overflow: hidden;
+            display: none;
+            animation: fadeInScale 0.8s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
         }
 
-        @keyframes slideUp {
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
+        @keyframes fadeInScale {
+            0% { opacity: 0; transform: translateY(40px) scale(0.98); }
+            100% { opacity: 1; transform: translateY(0) scale(1); }
         }
 
-        /* The actual content that gets captured for download */
+        /* Printable Area */
         .whiteboard-content {
-            padding: 4rem;
+            padding: 4.5rem;
             background: var(--white);
-            /* Subtle dot pattern to look like a whiteboard/grid */
-            background-image: radial-gradient(var(--light-green) 2px, transparent 2px);
-            background-size: 30px 30px;
+            /* Soft grid to resemble an elegant notebook/board */
+            background-image: linear-gradient(var(--light-sage) 1px, transparent 1px), 
+                              linear-gradient(90deg, var(--light-sage) 1px, transparent 1px);
+            background-size: 40px 40px;
+            background-position: center;
         }
 
-        /* Header Section of Whiteboard */
+        /* Header Section */
         .board-header {
             display: flex;
-            gap: 3rem;
-            margin-bottom: 3rem;
+            gap: 4rem;
+            margin-bottom: 4rem;
             align-items: center;
         }
 
+        .plant-image-container {
+            flex-shrink: 0;
+            position: relative;
+        }
+
+        .plant-image-container::before {
+            content: '';
+            position: absolute;
+            inset: -15px;
+            border: 2px dashed var(--accent-green);
+            border-radius: 50% 30% 50% 30% / 30% 50% 30% 50%;
+            opacity: 0.3;
+            animation: rotate 20s linear infinite;
+        }
+
+        @keyframes rotate {
+            100% { transform: rotate(360deg); }
+        }
+
         .plant-image {
-            width: 300px;
-            height: 300px;
-            border-radius: 20px;
+            width: 320px;
+            height: 380px;
+            border-radius: 24px 80px 24px 24px;
             object-fit: cover;
-            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
-            border: 4px solid var(--white);
+            box-shadow: 0 25px 50px rgba(0,0,0,0.1);
+            position: relative;
+            z-index: 2;
         }
 
         .plant-titles {
@@ -123,101 +177,133 @@
         }
 
         .plant-title {
-            font-family: 'Lora', serif;
-            font-size: 3.5rem;
-            color: var(--dark-green);
+            font-family: 'Playfair Display', serif;
+            font-size: 4.5rem;
+            color: var(--primary-dark);
             line-height: 1.1;
-            margin-bottom: 1.5rem;
-            letter-spacing: -1px;
+            margin-bottom: 1rem;
+            letter-spacing: -1.5px;
+        }
+
+        .divider {
+            height: 4px;
+            width: 80px;
+            background: linear-gradient(90deg, var(--accent-green), transparent);
+            border-radius: 2px;
+            margin-bottom: 2.5rem;
         }
 
         .quick-facts {
             display: grid;
-            grid-template-columns: auto 1fr;
-            gap: 1rem 2rem;
-            background: var(--light-green);
-            padding: 1.5rem;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem;
+        }
+
+        .fact-card {
+            background: var(--white);
+            padding: 1.2rem 1.5rem;
             border-radius: 16px;
-            border-left: 5px solid var(--accent-green);
+            border: 1px solid var(--light-sage);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.02);
+            transition: transform 0.3s ease;
+        }
+
+        .fact-card:hover {
+            transform: translateY(-3px);
+            border-color: var(--accent-green);
         }
 
         .fact-label {
-            font-weight: 600;
-            color: var(--primary-green);
-            font-size: 0.95rem;
+            font-size: 0.85rem;
             text-transform: uppercase;
-            letter-spacing: 1px;
+            letter-spacing: 1.5px;
+            color: var(--accent-green);
+            font-weight: 600;
+            margin-bottom: 0.4rem;
         }
 
         .fact-value {
-            color: var(--text-muted);
-            font-size: 1.05rem;
+            color: var(--primary-dark);
+            font-size: 1.15rem;
             font-weight: 500;
         }
 
-        /* Detailed Sections */
+        .fact-value.botanical {
+            font-family: 'Playfair Display', serif;
+            font-style: italic;
+            font-size: 1.3rem;
+        }
+
+        /* Detailed Sections Grid */
         .board-body {
             display: grid;
-            grid-template-columns: 1fr;
-            gap: 2rem;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2.5rem;
         }
 
         .section-panel {
-            background: rgba(255, 255, 255, 0.9);
-            padding: 2rem;
-            border-radius: 16px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.03);
-            border: 1px solid var(--board-border);
+            background: var(--white);
+            padding: 2.5rem;
+            border-radius: 24px;
+            border: 1px solid var(--light-sage);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.03);
             position: relative;
+            z-index: 1;
+            overflow: hidden;
+            transition: all 0.4s ease;
         }
 
-        .section-panel::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 2rem;
-            width: 40px;
-            height: 4px;
-            background: var(--accent-green);
-            border-radius: 0 0 4px 4px;
+        .section-panel:hover {
+            box-shadow: var(--shadow-hover);
+            transform: translateY(-5px);
+        }
+
+        .section-icon-wrap {
+            width: 50px;
+            height: 50px;
+            background: var(--light-sage);
+            border-radius: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.5rem;
+            color: var(--primary-green);
+        }
+
+        .section-icon-wrap svg {
+            width: 24px;
+            height: 24px;
+            stroke-width: 2;
         }
 
         .section-title {
-            font-family: 'Lora', serif;
-            font-size: 1.5rem;
-            color: var(--dark-green);
+            font-family: 'Playfair Display', serif;
+            font-size: 1.6rem;
+            color: var(--primary-dark);
             margin-bottom: 1rem;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-
-        .section-title svg {
-            width: 24px;
-            height: 24px;
-            fill: var(--primary-green);
         }
 
         .section-content {
             color: var(--text-muted);
-            line-height: 1.8;
-            font-size: 1.1rem;
+            line-height: 1.7;
+            font-size: 1.05rem;
+            font-weight: 300;
         }
 
-        /* Action Buttons Area */
+        /* Action Buttons */
         .action-area {
-            padding: 2rem 4rem;
-            background: var(--white);
+            padding: 2.5rem 4rem;
+            background: rgba(255, 255, 255, 0.6);
             display: flex;
-            justify-content: center;
+            justify-content: flex-end;
             gap: 1.5rem;
-            border-top: 1px dashed var(--board-border);
+            border-top: 1px solid rgba(0,0,0,0.05);
         }
 
         .btn {
-            padding: 1rem 2rem;
-            font-size: 1.1rem;
-            font-weight: 600;
+            padding: 1.2rem 2.5rem;
+            font-size: 1.05rem;
+            font-weight: 500;
             border-radius: 50px;
             border: none;
             cursor: pointer;
@@ -226,83 +312,69 @@
             gap: 0.8rem;
             transition: all 0.3s ease;
             text-decoration: none;
+            letter-spacing: 0.5px;
         }
 
         .btn-primary {
-            background: var(--primary-green);
+            background: linear-gradient(135deg, var(--primary-green), var(--primary-dark));
             color: var(--white);
-            box-shadow: 0 8px 20px rgba(46, 125, 50, 0.3);
+            box-shadow: 0 10px 25px rgba(44, 94, 63, 0.3);
         }
 
         .btn-primary:hover {
-            background: var(--dark-green);
             transform: translateY(-3px);
-            box-shadow: 0 12px 25px rgba(46, 125, 50, 0.4);
+            box-shadow: 0 15px 35px rgba(44, 94, 63, 0.4);
         }
 
         .btn-secondary {
-            background: var(--light-green);
-            color: var(--primary-green);
-            border: 2px solid var(--board-border);
+            background: var(--white);
+            color: var(--primary-dark);
+            border: 1px solid var(--light-sage);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.02);
         }
 
         .btn-secondary:hover {
-            background: var(--white);
-            border-color: var(--primary-green);
+            border-color: var(--accent-green);
             transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.05);
         }
 
-        /* States & Utilities */
-        #error-state, #loading-state {
-            display: none;
+        /* States */
+        .status-state {
             text-align: center;
-            padding: 5rem 2rem;
+            padding: 6rem 2rem;
             background: var(--white);
-            border-radius: 24px;
-            box-shadow: var(--shadow);
+            border-radius: 32px;
+            box-shadow: var(--shadow-soft);
             max-width: 600px;
             width: 100%;
-            margin-top: 2rem;
+            margin-top: 4rem;
         }
 
-        .error-title {
-            color: #d32f2f;
-            font-size: 2rem;
-            margin-bottom: 1rem;
-        }
-
-        /* Hidden container for QR code generation */
-        #qr-container {
+        #error-state, #loading-state {
             display: none;
         }
 
-        /* Responsive Design */
-        @media (max-width: 768px) {
+        /* Hidden QR Container */
+        #qr-container { display: none; }
+
+        /* Responsive */
+        @media (max-width: 900px) {
             .board-header {
                 flex-direction: column;
                 text-align: center;
-                gap: 1.5rem;
+                gap: 2rem;
             }
-            .plant-image {
-                width: 100%;
-                height: 250px;
-            }
-            .quick-facts {
-                grid-template-columns: 1fr;
-                text-align: left;
-                gap: 0.5rem;
-            }
-            .whiteboard-content {
-                padding: 2rem;
-            }
-            .action-area {
-                flex-direction: column;
-                padding: 2rem;
-            }
-            .btn {
-                width: 100%;
-                justify-content: center;
-            }
+            .plant-title { font-size: 3rem; }
+            .divider { margin: 0 auto 2rem; }
+            .plant-image { width: 100%; max-width: 400px; height: auto; border-radius: 24px; }
+            .plant-image-container::before { display: none; }
+            .action-area { flex-direction: column; padding: 2rem; }
+            .btn { width: 100%; justify-content: center; }
+            .whiteboard-content { padding: 2.5rem 1.5rem; }
+        }
+        @media (max-width: 600px) {
+            .quick-facts { grid-template-columns: 1fr; }
         }
     </style>
 </head>
@@ -310,72 +382,82 @@
 
     <div class="nav">
         <a href="index.html" class="back-btn">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
-            Back to Encyclopedia
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+            Encyclopedia
         </a>
     </div>
 
     <!-- Loading State -->
-    <div id="loading-state">
-        <h2 style="color: var(--primary-green);">Opening Whiteboard...</h2>
-        <p style="color: var(--text-muted); margin-top: 1rem;">Gathering botanical knowledge.</p>
+    <div id="loading-state" class="status-state">
+        <div style="width: 40px; height: 40px; border: 3px solid var(--light-sage); border-top-color: var(--primary-green); border-radius: 50%; animation: rotate 1s linear infinite; margin: 0 auto 1.5rem;"></div>
+        <h2 style="font-family: 'Playfair Display', serif; color: var(--primary-dark); font-size: 2rem;">Curating Details...</h2>
+        <p style="color: var(--text-muted); margin-top: 0.5rem;">Unearthing botanical wisdom.</p>
     </div>
 
     <!-- Error State -->
-    <div id="error-state">
-        <svg width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="#d32f2f" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="margin-bottom: 1rem;"><circle cx="12" cy="12" r="10"></circle><line x1="15" y1="9" x2="9" y2="15"></line><line x1="9" y1="9" x2="15" y2="15"></line></svg>
-        <h2 class="error-title">Plant Not Found</h2>
-        <p style="color: var(--text-muted); margin-bottom: 2rem;">The botanical record you are looking for does not exist in our encyclopedia.</p>
-        <a href="index.html" class="btn btn-primary" style="display: inline-flex; width: auto;">Return to Main Directory</a>
+    <div id="error-state" class="status-state">
+        <svg width="60" height="60" viewBox="0 0 24 24" fill="none" stroke="#d32f2f" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="margin-bottom: 1.5rem;"><circle cx="12" cy="12" r="10"></circle><line x1="15" y1="9" x2="9" y2="15"></line><line x1="9" y1="9" x2="15" y2="15"></line></svg>
+        <h2 style="font-family: 'Playfair Display', serif; color: #d32f2f; font-size: 2.5rem; margin-bottom: 1rem;">Plant Not Found</h2>
+        <p style="color: var(--text-muted); margin-bottom: 2rem;">The requested botanical record is missing from our current archives.</p>
+        <a href="index.html" class="btn btn-secondary" style="display: inline-flex; width: auto; margin: 0 auto;">Return to Directory</a>
     </div>
 
     <!-- Main Content -->
-    <div class="whiteboard-wrapper" id="main-board" style="display: none;">
+    <div class="whiteboard-wrapper" id="main-board">
         
-        <!-- Area to capture as PNG -->
+        <!-- Capture Area for Export -->
         <div class="whiteboard-content" id="capture-area">
             <div class="board-header">
-                <img id="plant-img" src="" alt="Plant" class="plant-image">
+                <div class="plant-image-container">
+                    <img id="plant-img" src="" alt="Plant" class="plant-image">
+                </div>
                 <div class="plant-titles">
                     <h1 id="plant-name" class="plant-title">Loading...</h1>
+                    <div class="divider"></div>
+                    
                     <div class="quick-facts">
-                        <div class="fact-label">Vernacular</div>
-                        <div class="fact-value" id="plant-vernacular">...</div>
-                        
-                        <div class="fact-label">Botanical</div>
-                        <div class="fact-value" style="font-style: italic;" id="plant-botanical">...</div>
-                        
-                        <div class="fact-label">Family</div>
-                        <div class="fact-value" id="plant-family">...</div>
-                        
-                        <div class="fact-label">Origin</div>
-                        <div class="fact-value" id="plant-origin">...</div>
+                        <div class="fact-card">
+                            <div class="fact-label">Vernacular Name</div>
+                            <div class="fact-value" id="plant-vernacular">...</div>
+                        </div>
+                        <div class="fact-card">
+                            <div class="fact-label">Botanical Name</div>
+                            <div class="fact-value botanical" id="plant-botanical">...</div>
+                        </div>
+                        <div class="fact-card">
+                            <div class="fact-label">Family</div>
+                            <div class="fact-value" id="plant-family">...</div>
+                        </div>
+                        <div class="fact-card">
+                            <div class="fact-label">Origin</div>
+                            <div class="fact-value" id="plant-origin">...</div>
+                        </div>
                     </div>
                 </div>
             </div>
 
             <div class="board-body">
                 <div class="section-panel">
-                    <h3 class="section-title">
-                        <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/></svg>
-                        Economic Uses
-                    </h3>
+                    <div class="section-icon-wrap">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+                    </div>
+                    <h3 class="section-title">Economic Uses</h3>
                     <div class="section-content" id="plant-economic">...</div>
                 </div>
 
                 <div class="section-panel">
-                    <h3 class="section-title">
-                        <svg viewBox="0 0 24 24"><path d="M12 2L2 22h20L12 2zm0 4.5l6.5 13.5h-13L12 6.5zM11 10v5h2v-5h-2zm0 6v2h2v-2h-2z"/></svg>
-                        Vedic & Spiritual Significance
-                    </h3>
+                    <div class="section-icon-wrap">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                    </div>
+                    <h3 class="section-title">Vedic Significance</h3>
                     <div class="section-content" id="plant-vedic">...</div>
                 </div>
 
                 <div class="section-panel">
-                    <h3 class="section-title">
-                        <svg viewBox="0 0 24 24"><path d="M21 5c-1.11-.35-2.33-.5-3.5-.5-1.95 0-4.05.4-5.5 1.5-1.45-1.1-3.55-1.5-5.5-1.5S2.45 4.9 1 6v14.65c0 .25.25.5.5.5.1 0 .15-.05.25-.05C3.1 20.45 5.05 20 6.5 20c1.95 0 4.05.4 5.5 1.5 1.35-.85 3.8-1.5 5.5-1.5 1.65 0 3.35.3 4.75 1.05.1.05.15.05.25.05.25 0 .5-.25.5-.5V6c-.6-.45-1.25-.75-2-.1zM11 18.5c-1.45-1.1-3.55-1.5-5.5-1.5-1.2 0-2.35.2-3.5.5V7.15C3.35 6.9 4.45 6.7 5.5 6.7c1.95 0 4.05.4 5.5 1.5v10.3z"/></svg>
-                        Ayurvedic & Medical Significance
-                    </h3>
+                    <div class="section-icon-wrap">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+                    </div>
+                    <h3 class="section-title">Ayurvedic Benefits</h3>
                     <div class="section-content" id="plant-medical">...</div>
                 </div>
             </div>
@@ -383,18 +465,18 @@
 
         <!-- Action Buttons -->
         <div class="action-area">
-            <button id="btn-download-board" class="btn btn-primary">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
-                Download Whiteboard
-            </button>
             <button id="btn-download-qr" class="btn btn-secondary">
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><line x1="3" y1="9" x2="21" y2="9"></line><line x1="9" y1="21" x2="9" y2="9"></line></svg>
-                Download QR Code
+                Save QR Code
+            </button>
+            <button id="btn-download-board" class="btn btn-primary">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+                Download PNG
             </button>
         </div>
     </div>
 
-    <!-- Hidden div to hold generated QR Code -->
+    <!-- Hidden div for QR Generation -->
     <div id="qr-container"></div>
 
     <script>
@@ -414,7 +496,9 @@
             }
 
             try {
-                // Fetch Data
+                // Simulating tiny delay for premium feel
+                await new Promise(r => setTimeout(r, 600)); 
+
                 const response = await fetch('plants.json');
                 if (!response.ok) throw new Error('Could not fetch plants.json');
                 
@@ -425,13 +509,12 @@
                     populateWhiteboard(plant);
                     setupDownloads(plant);
                     
-                    // Generate QR Code invisibly for later download
                     const currentUrl = window.location.href;
                     new QRCode(document.getElementById("qr-container"), {
                         text: currentUrl,
                         width: 500,
                         height: 500,
-                        colorDark : "#1b5e20", // Dark Green QR
+                        colorDark : "#1a3626", 
                         colorLight : "#ffffff",
                         correctLevel : QRCode.CorrectLevel.H
                     });
@@ -456,7 +539,8 @@
             function populateWhiteboard(plant) {
                 document.title = `${plant.name} | Hare Krishna Nature Farm`;
                 
-                const placeholder = "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300' viewBox='0 0 300 300'%3E%3Crect width='300' height='300' fill='%23f1f8e9'/%3E%3Cpath d='M150 75c-20.7 0-37.5 16.8-37.5 37.5s16.8 37.5 37.5 37.5 37.5-16.8 37.5-37.5-16.8-37.5-37.5-37.5zm0 60c-12.4 0-22.5-10.1-22.5-22.5s10.1-22.5 22.5-22.5 22.5 10.1 22.5 22.5-10.1 22.5-22.5 22.5z' fill='%2381c784'/%3E%3Cpath d='M150 93c-10.3 0-18.7 8.4-18.7 18.7s8.4 18.7 18.7 18.7 18.7-8.4 18.7-18.7-8.4-18.7-18.7-18.7z' fill='%234caf50'/%3E%3C/svg%3E";
+                // Premium SVG Placeholder
+                const placeholder = "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400' viewBox='0 0 400 400'%3E%3Crect width='400' height='400' fill='%23e3ede6'/%3E%3Cpath d='M200 120c-33.1 0-60 26.9-60 60s26.9 60 60 60 60-26.9 60-60-26.9-60-60-60zm0 96c-19.8 0-36-16.2-36-36s16.2-36 36-36 36 16.2 36 36-16.2 36-36 36z' fill='%234e8c63'/%3E%3Cpath d='M200 150c-16.5 0-30 13.5-30 30s13.5 30 30 30 30-13.5 30-30-13.5-30-30-30z' fill='%232c5e3f'/%3E%3C/svg%3E";
                 
                 const imgEl = document.getElementById('plant-img');
                 imgEl.src = plant.image || placeholder;
@@ -468,16 +552,15 @@
                 document.getElementById('plant-family').textContent = plant.family || 'N/A';
                 document.getElementById('plant-origin').textContent = plant.origin || 'N/A';
                 
-                document.getElementById('plant-economic').textContent = plant.economicUse || 'Information not available.';
-                document.getElementById('plant-vedic').textContent = plant.vedicSignificance || 'Information not available.';
-                document.getElementById('plant-medical').textContent = plant.medicalSignificance || 'Information not available.';
+                document.getElementById('plant-economic').textContent = plant.economicUse || 'Botanical data currently unavailable.';
+                document.getElementById('plant-vedic').textContent = plant.vedicSignificance || 'Botanical data currently unavailable.';
+                document.getElementById('plant-medical').textContent = plant.medicalSignificance || 'Botanical data currently unavailable.';
             }
 
             function setupDownloads(plant) {
                 const btnBoard = document.getElementById('btn-download-board');
                 const btnQR = document.getElementById('btn-download-qr');
 
-                // 1. Download Whiteboard PNG
                 btnBoard.addEventListener('click', () => {
                     const originalText = btnBoard.innerHTML;
                     btnBoard.innerHTML = 'Generating...';
@@ -486,12 +569,12 @@
                     const captureArea = document.getElementById('capture-area');
                     
                     html2canvas(captureArea, {
-                        scale: 2, // High resolution
+                        scale: 2.5, 
                         useCORS: true,
                         backgroundColor: '#ffffff'
                     }).then(canvas => {
                         const link = document.createElement('a');
-                        link.download = `${plant.id}-whiteboard.png`;
+                        link.download = `HKNF-${plant.id}-InfoCard.png`;
                         link.href = canvas.toDataURL('image/png');
                         link.click();
                         
@@ -499,34 +582,32 @@
                         btnBoard.disabled = false;
                     }).catch(err => {
                         console.error('Error generating image:', err);
-                        alert('Failed to generate image. Please try again.');
+                        alert('Export failed. Please try again.');
                         btnBoard.innerHTML = originalText;
                         btnBoard.disabled = false;
                     });
                 });
 
-                // 2. Download QR Code PNG
                 btnQR.addEventListener('click', () => {
                     setTimeout(() => {
                         const qrCanvas = document.querySelector('#qr-container canvas');
                         if (qrCanvas) {
                             const link = document.createElement('a');
-                            link.download = `${plant.id}-qrcode.png`;
+                            link.download = `HKNF-${plant.id}-QR.png`;
                             link.href = qrCanvas.toDataURL('image/png');
                             link.click();
                         } else {
-                            // Some versions of qrcode.js render as img if canvas is not supported
                             const qrImg = document.querySelector('#qr-container img');
                             if (qrImg) {
                                 const link = document.createElement('a');
-                                link.download = `${plant.id}-qrcode.png`;
+                                link.download = `HKNF-${plant.id}-QR.png`;
                                 link.href = qrImg.src;
                                 link.click();
                             } else {
-                                alert("QR Code generation failed.");
+                                alert("QR Code generation is still processing.");
                             }
                         }
-                    }, 300); // small delay to ensure QR is fully rendered
+                    }, 400); 
                 });
             }
         });
