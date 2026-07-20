@@ -8,20 +8,23 @@
     <!-- Professional Typography -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,500;0,700;1,500;1,700&display=swap" rel="stylesheet">
     
     <style>
-        /* Color Palette & Variables */
+        /* Premium Nature Palette */
         :root {
-            --primary-green: #2e7d32;
-            --light-green: #e8f5e9;
-            --accent-green: #4caf50;
-            --text-dark: #1b5e20;
-            --text-light: #555555;
+            --bg-color: #f2f7f4;
+            --primary-dark: #1a3626;
+            --primary-green: #2c5e3f;
+            --accent-green: #4e8c63;
+            --light-sage: #e3ede6;
+            --text-main: #2d3b32;
+            --text-muted: #647569;
             --white: #ffffff;
-            --glass-bg: rgba(255, 255, 255, 0.6);
-            --glass-border: rgba(255, 255, 255, 0.4);
-            --shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.07);
+            --glass-bg: rgba(255, 255, 255, 0.7);
+            --glass-border: rgba(255, 255, 255, 0.6);
+            --shadow-soft: 0 20px 40px -10px rgba(26, 54, 38, 0.08);
+            --shadow-hover: 0 30px 60px -15px rgba(26, 54, 38, 0.15);
         }
 
         /* Base Reset */
@@ -29,220 +32,316 @@
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Poppins', sans-serif;
         }
 
         body {
-            background-color: var(--light-green);
-            /* Subtle nature-inspired gradient background */
-            background-image: radial-gradient(circle at top left, #ffffff 0%, #e8f5e9 100%);
-            color: var(--text-dark);
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
             min-height: 100vh;
             display: flex;
             flex-direction: column;
+            position: relative;
             overflow-x: hidden;
         }
 
-        /* Glassmorphism Header */
+        /* Ambient Background Elements */
+        body::before, body::after {
+            content: '';
+            position: fixed;
+            border-radius: 50%;
+            filter: blur(100px);
+            z-index: -1;
+            opacity: 0.6;
+        }
+        body::before {
+            width: 500px;
+            height: 500px;
+            background: #d4e8db;
+            top: -100px;
+            left: -150px;
+        }
+        body::after {
+            width: 600px;
+            height: 600px;
+            background: #e9f2eb;
+            bottom: -200px;
+            right: -150px;
+        }
+
+        /* Premium Header */
         header {
-            background: var(--glass-bg);
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
-            border-bottom: 1px solid var(--glass-border);
-            padding: 4rem 2rem 3rem;
+            padding: 5rem 2rem 4rem;
             text-align: center;
-            box-shadow: var(--shadow);
             position: relative;
             z-index: 10;
         }
 
+        .header-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
         h1 {
-            font-size: clamp(2.5rem, 5vw, 4rem);
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(3rem, 6vw, 4.5rem);
             font-weight: 700;
-            color: var(--primary-green);
-            margin-bottom: 0.5rem;
-            letter-spacing: -1px;
+            color: var(--primary-dark);
+            line-height: 1.1;
+            margin-bottom: 1rem;
+            letter-spacing: -1.5px;
         }
 
         .subtitle {
-            font-size: clamp(1rem, 2vw, 1.5rem);
+            font-size: clamp(1rem, 2vw, 1.2rem);
             font-weight: 400;
-            color: var(--text-light);
-            margin-bottom: 2.5rem;
+            color: var(--accent-green);
+            margin-bottom: 3.5rem;
             text-transform: uppercase;
-            letter-spacing: 2px;
+            letter-spacing: 3px;
         }
 
-        /* Search Bar */
-        .search-container {
-            max-width: 600px;
-            margin: 0 auto;
+        /* Search Bar Area */
+        .search-wrapper {
             position: relative;
+            max-width: 650px;
+            margin: 0 auto;
+        }
+
+        .search-icon {
+            position: absolute;
+            left: 1.8rem;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--accent-green);
+            width: 22px;
+            height: 22px;
+            pointer-events: none;
+            transition: color 0.3s ease;
         }
 
         #search-input {
             width: 100%;
-            padding: 1.2rem 2rem;
+            padding: 1.5rem 2rem 1.5rem 4.5rem;
             font-size: 1.1rem;
-            border: 2px solid rgba(76, 175, 80, 0.2);
+            border: 1px solid var(--glass-border);
             border-radius: 50px;
-            background: var(--white);
-            color: var(--text-dark);
-            box-shadow: 0 10px 20px rgba(0,0,0,0.05);
-            transition: all 0.3s ease;
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            color: var(--primary-dark);
+            box-shadow: var(--shadow-soft);
+            transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
             outline: none;
+            font-family: 'Poppins', sans-serif;
         }
 
         #search-input:focus {
             border-color: var(--accent-green);
-            box-shadow: 0 10px 25px rgba(76, 175, 80, 0.2);
+            box-shadow: var(--shadow-hover);
+            background: var(--white);
             transform: translateY(-2px);
         }
 
         #search-input::placeholder {
-            color: #999;
+            color: var(--text-muted);
+            font-weight: 300;
+        }
+
+        #search-input:focus + .search-icon {
+            color: var(--primary-dark);
         }
 
         /* Main Content */
         main {
             flex: 1;
-            padding: 4rem 2rem;
+            padding: 2rem;
             max-width: 1200px;
             margin: 0 auto;
             width: 100%;
-        }
-
-        /* Loading Animation */
-        .loader-container {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            padding: 3rem;
-        }
-
-        .spinner {
-            width: 50px;
-            height: 50px;
-            border: 4px solid rgba(46, 125, 50, 0.1);
-            border-left-color: var(--primary-green);
-            border-radius: 50%;
-            animation: spin 1s linear infinite;
-            margin-bottom: 1rem;
-        }
-
-        @keyframes spin {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
-        }
-
-        /* Cards Grid */
-        .plants-grid {
-            display: grid;
-            gap: 2.5rem;
-            grid-template-columns: 1fr; /* Mobile default */
-            opacity: 0;
-            animation: fadeIn 0.8s forwards;
-        }
-
-        /* Desktop layout: 2 cards per row */
-        @media (min-width: 768px) {
-            .plants-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-        }
-
-        @keyframes fadeIn {
-            to { opacity: 1; }
-        }
-
-        /* Plant Card (Glassmorphism + Rounded) */
-        .card {
-            background: rgba(255, 255, 255, 0.8);
-            backdrop-filter: blur(8px);
-            border: 1px solid var(--glass-border);
-            border-radius: 24px;
-            overflow: hidden;
-            text-decoration: none;
-            color: inherit;
-            box-shadow: 0 15px 35px rgba(0,0,0,0.04);
-            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-            display: flex;
-            flex-direction: column;
+            z-index: 5;
             position: relative;
         }
 
-        .card:hover {
-            transform: translateY(-12px);
-            box-shadow: 0 25px 45px rgba(46, 125, 50, 0.15);
+        /* Loader */
+        .status-state {
+            text-align: center;
+            padding: 5rem 2rem;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .spinner {
+            width: 45px;
+            height: 45px;
+            border: 3px solid var(--light-sage);
+            border-top-color: var(--primary-green);
+            border-radius: 50%;
+            animation: rotate 1s linear infinite;
+            margin: 0 auto 1.5rem;
+        }
+
+        @keyframes rotate {
+            100% { transform: rotate(360deg); }
+        }
+
+        /* Plants Grid */
+        .plants-grid {
+            display: grid;
+            gap: 3rem;
+            grid-template-columns: 1fr; /* Mobile */
+        }
+
+        @media (min-width: 768px) {
+            .plants-grid {
+                grid-template-columns: repeat(2, 1fr); /* Desktop: 2 Cards */
+            }
+        }
+
+        /* Editorial Plant Card */
+        .card {
             background: var(--white);
+            border-radius: 28px;
+            border: 1px solid var(--light-sage);
+            overflow: hidden;
+            text-decoration: none;
+            color: inherit;
+            box-shadow: var(--shadow-soft);
+            transition: all 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
+            display: flex;
+            flex-direction: column;
+            opacity: 0;
+            transform: translateY(30px);
+            animation: fadeInUp 0.8s forwards;
+        }
+
+        @keyframes fadeInUp {
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-hover);
+            border-color: var(--accent-green);
         }
 
         .card-img-wrapper {
             width: 100%;
-            height: 280px;
+            height: 320px;
             overflow: hidden;
             position: relative;
-            background: #f1f8e9; /* Placeholder background */
+            background: var(--light-sage);
         }
 
         .card img {
             width: 100%;
             height: 100%;
             object-fit: cover;
-            transition: transform 0.5s ease;
+            transition: transform 0.8s ease;
         }
 
         .card:hover img {
-            transform: scale(1.05);
+            transform: scale(1.08);
         }
 
         .card-content {
-            padding: 2rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
+            padding: 2.5rem 2rem;
+            position: relative;
+            background: var(--white);
         }
 
-        .plant-info {
-            display: flex;
-            flex-direction: column;
-            gap: 0.3rem;
+        /* Elegant line decorator */
+        .card-content::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 2rem;
+            width: 40px;
+            height: 3px;
+            background: var(--accent-green);
+            border-radius: 0 0 4px 4px;
         }
 
         .plant-name {
-            font-size: 1.5rem;
-            font-weight: 600;
-            color: var(--primary-green);
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            color: var(--primary-dark);
+            margin-bottom: 0.2rem;
+        }
+
+        .plant-botanical {
+            font-family: 'Playfair Display', serif;
+            font-style: italic;
+            color: var(--text-muted);
+            font-size: 1.1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .card-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-top: 1px solid var(--light-sage);
+            padding-top: 1.5rem;
+            margin-top: 1rem;
+        }
+
+        .view-details {
+            font-size: 0.95rem;
+            font-weight: 500;
+            color: var(--accent-green);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .view-details svg {
+            transition: transform 0.3s ease;
+        }
+
+        .card:hover .view-details svg {
+            transform: translateX(5px);
         }
 
         .plant-price {
-            font-size: 1.2rem;
-            font-weight: 500;
-            color: var(--accent-green);
-            background: rgba(76, 175, 80, 0.1);
-            padding: 0.5rem 1.2rem;
-            border-radius: 30px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--primary-dark);
+            background: var(--light-sage);
+            padding: 0.4rem 1.2rem;
+            border-radius: 50px;
         }
 
         /* No Results Message */
         .no-results {
             text-align: center;
             grid-column: 1 / -1;
-            font-size: 1.2rem;
-            color: var(--text-light);
-            padding: 3rem;
+            padding: 4rem;
+        }
+
+        .no-results h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            color: var(--primary-dark);
+            margin-bottom: 1rem;
+        }
+
+        .no-results p {
+            color: var(--text-muted);
         }
 
         /* Footer */
         footer {
-            background: var(--white);
             text-align: center;
-            padding: 2rem;
+            padding: 3rem 2rem;
             margin-top: auto;
-            border-top: 1px solid rgba(0,0,0,0.05);
-            color: var(--text-light);
+            color: var(--text-muted);
             font-size: 0.95rem;
+            border-top: 1px solid rgba(0,0,0,0.05);
+            background: rgba(255, 255, 255, 0.5);
+            backdrop-filter: blur(10px);
         }
 
         footer span {
@@ -255,17 +354,21 @@
 <body>
 
     <header>
-        <h1>Hare Krishna Nature Farm</h1>
-        <div class="subtitle">ISKCON Botanical Encyclopedia</div>
-        <div class="search-container">
-            <input type="text" id="search-input" placeholder="Search by name, botanical or vernacular name...">
+        <div class="header-content">
+            <h1>Hare Krishna Nature Farm</h1>
+            <div class="subtitle">ISKCON Botanical Encyclopedia</div>
+            <div class="search-wrapper">
+                <input type="text" id="search-input" placeholder="Search by name, botanical or vernacular name...">
+                <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+            </div>
         </div>
     </header>
 
     <main>
-        <div id="loader" class="loader-container">
+        <div id="loader" class="status-state">
             <div class="spinner"></div>
-            <p>Loading divine flora...</p>
+            <h2 style="font-family: 'Playfair Display', serif; color: var(--primary-dark); font-size: 2rem;">Curating Flora...</h2>
+            <p style="color: var(--text-muted); margin-top: 0.5rem;">Accessing the botanical archives.</p>
         </div>
         <div id="plants-grid" class="plants-grid">
             <!-- Cards will be injected here via JS -->
@@ -284,53 +387,55 @@
             
             let allPlants = [];
 
-            // Placeholder image if JSON image is missing or broken
-            const placeholderImg = "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='300' viewBox='0 0 400 300'%3E%3Crect width='400' height='300' fill='%23e8f5e9'/%3E%3Cpath d='M200 100c-27.6 0-50 22.4-50 50s22.4 50 50 50 50-22.4 50-50-22.4-50-50-50zm0 80c-16.5 0-30-13.5-30-30s13.5-30 30-30 30 13.5 30 30-13.5 30-30 30z' fill='%2381c784'/%3E%3Cpath d='M200 125c-13.8 0-25 11.2-25 25s11.2 25 25 25 25-11.2 25-25-11.2-25-25-25z' fill='%234caf50'/%3E%3Ctext x='50%25' y='65%25' dominant-baseline='middle' text-anchor='middle' font-family='sans-serif' font-size='16px' fill='%232e7d32'%3ENo Image Available%3C/text%3E%3C/svg%3E";
+            // Premium SVG Placeholder if image is missing
+            const placeholderImg = "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='600' height='400' viewBox='0 0 600 400'%3E%3Crect width='600' height='400' fill='%23e3ede6'/%3E%3Cpath d='M300 120c-44.1 0-80 35.9-80 80s35.9 80 80 80 80-35.9 80-80-35.9-80-80-80zm0 128c-26.5 0-48-21.5-48-48s21.5-48 48-48 48 21.5 48 48-21.5 48-48 48z' fill='%234e8c63'/%3E%3Cpath d='M300 160c-22 0-40 18-40 40s18 40 40 40 40-18 40-40-18-40-40-40z' fill='%232c5e3f'/%3E%3C/svg%3E";
 
             // Fetch JSON Data
             async function fetchPlants() {
-    try {
-        const response = await fetch("plants.json");
-
-        console.log("Status:", response.status);
-
-        const text = await response.text();
-        console.log("JSON Text:", text);
-
-        const data = JSON.parse(text);
-
-        console.log("Parsed JSON:", data);
-
-        allPlants = data.plants;
-
-        loader.style.display = "none";
-        renderCards(allPlants);
-
-    } catch (error) {
-        console.error(error);
-        loader.innerHTML = `
-            <pre style="color:red;white-space:pre-wrap;">
-${error}
-            </pre>
-        `;
-    }
-}
+                try {
+                    // Slight artificial delay to display the beautiful premium loading state
+                    await new Promise(resolve => setTimeout(resolve, 600)); 
+                    
+                    const response = await fetch('plants.json');
+                    if (!response.ok) throw new Error('Network response was not ok');
+                    
+                    const data = await response.json();
+                    allPlants = data.plants;
+                    
+                    // Hide loader and show initial grid
+                    loader.style.display = 'none';
+                    renderCards(allPlants);
+                    
+                } catch (error) {
+                    console.error("Error loading plant data:", error);
+                    loader.innerHTML = `
+                        <svg width="60" height="60" viewBox="0 0 24 24" fill="none" stroke="#d32f2f" stroke-width="1.5" style="margin: 0 auto 1.5rem;"><circle cx="12" cy="12" r="10"></circle><line x1="15" y1="9" x2="9" y2="15"></line><line x1="9" y1="9" x2="15" y2="15"></line></svg>
+                        <h2 style="font-family: 'Playfair Display', serif; color: #d32f2f; font-size: 2rem;">Archive Unavailable</h2>
+                        <p style="color: var(--text-muted); margin-top: 0.5rem;">Failed to load 'plants.json'. Please ensure it exists.</p>`;
+                }
+            }
 
             // Render Cards to the DOM
             function renderCards(plants) {
                 plantsGrid.innerHTML = ''; // Clear grid
 
                 if (plants.length === 0) {
-                    plantsGrid.innerHTML = `<div class="no-results">No plants found matching your search.</div>`;
+                    plantsGrid.innerHTML = `
+                        <div class="no-results">
+                            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="var(--light-sage)" stroke-width="1.5" style="margin-bottom: 1rem;"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+                            <h3>No Flora Found</h3>
+                            <p>We couldn't find any botanical records matching your search query.</p>
+                        </div>`;
                     return;
                 }
 
-                plants.forEach(plant => {
+                plants.forEach((plant, index) => {
                     const card = document.createElement('a');
                     card.href = `plantdetails.html?id=${plant.id}`;
                     card.className = 'card';
+                    // Stagger the animation slightly for a luxurious feel
+                    card.style.animationDelay = `${index * 0.1}s`;
 
-                    // Ensure fallback if image field is empty
                     const imageSrc = plant.image && plant.image.trim() !== '' ? plant.image : placeholderImg;
 
                     card.innerHTML = `
@@ -338,10 +443,16 @@ ${error}
                             <img src="${imageSrc}" alt="${plant.name}" onerror="this.onerror=null;this.src='${placeholderImg}';">
                         </div>
                         <div class="card-content">
-                            <div class="plant-info">
-                                <h2 class="plant-name">${plant.name}</h2>
+                            <h2 class="plant-name">${plant.name}</h2>
+                            <div class="plant-botanical">${plant.botanicalName || 'Botanical name unknown'}</div>
+                            
+                            <div class="card-footer">
+                                <span class="view-details">
+                                    Explore 
+                                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                                </span>
+                                <span class="plant-price">${plant.price || 'N/A'}</span>
                             </div>
-                            <div class="plant-price">${plant.price || 'N/A'}</div>
                         </div>
                     `;
                     
@@ -364,7 +475,7 @@ ${error}
                 renderCards(filteredPlants);
             });
 
-            // Initialize App
+            // Initialize
             fetchPlants();
         });
     </script>
