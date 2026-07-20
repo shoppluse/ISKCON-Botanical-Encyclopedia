@@ -140,15 +140,29 @@
             display: flex;
             gap: 4rem;
             margin-bottom: 4rem;
-            align-items: center;
+            align-items: flex-start;
         }
 
+        /* Premium Image & Gallery UI */
         .plant-image-container {
             flex-shrink: 0;
-            position: relative;
+            width: 340px;
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
         }
 
-        .plant-image-container::before {
+        .main-image-wrapper {
+            position: relative;
+            width: 100%;
+            height: 400px;
+            border-radius: 24px 80px 24px 24px;
+            box-shadow: 0 25px 50px rgba(0,0,0,0.1);
+            background: var(--light-sage);
+            z-index: 2;
+        }
+
+        .main-image-wrapper::before {
             content: '';
             position: absolute;
             inset: -15px;
@@ -156,6 +170,7 @@
             border-radius: 50% 30% 50% 30% / 30% 50% 30% 50%;
             opacity: 0.3;
             animation: rotate 20s linear infinite;
+            z-index: -1;
         }
 
         @keyframes rotate {
@@ -163,17 +178,53 @@
         }
 
         .plant-image {
-            width: 320px;
-            height: 380px;
-            border-radius: 24px 80px 24px 24px;
+            width: 100%;
+            height: 100%;
+            border-radius: inherit;
             object-fit: cover;
-            box-shadow: 0 25px 50px rgba(0,0,0,0.1);
             position: relative;
             z-index: 2;
+            transition: opacity 0.3s ease-in-out;
+        }
+
+        .plant-image.fade-transition {
+            opacity: 0;
+        }
+
+        /* Thumbnails */
+        .gallery-thumbnails {
+            display: flex;
+            gap: 0.8rem;
+            flex-wrap: wrap;
+            justify-content: flex-start;
+        }
+
+        .thumbnail {
+            width: 70px;
+            height: 70px;
+            border-radius: 14px;
+            object-fit: cover;
+            cursor: pointer;
+            border: 2px solid transparent;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+            background: var(--white);
+        }
+
+        .thumbnail:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 10px 20px rgba(26, 54, 38, 0.12);
+        }
+
+        .thumbnail.active {
+            border-color: var(--primary-green);
+            box-shadow: 0 0 0 2px var(--white), 0 0 0 4px var(--accent-green);
+            transform: scale(1.05);
         }
 
         .plant-titles {
             flex: 1;
+            padding-top: 1rem;
         }
 
         .plant-title {
@@ -367,8 +418,14 @@
             }
             .plant-title { font-size: 3rem; }
             .divider { margin: 0 auto 2rem; }
-            .plant-image { width: 100%; max-width: 400px; height: auto; border-radius: 24px; }
-            .plant-image-container::before { display: none; }
+            .plant-image-container {
+                width: 100%;
+                max-width: 400px;
+                margin: 0 auto;
+            }
+            .main-image-wrapper { height: 350px; }
+            .main-image-wrapper::before { display: none; }
+            .gallery-thumbnails { justify-content: center; }
             .action-area { flex-direction: column; padding: 2rem; }
             .btn { width: 100%; justify-content: center; }
             .whiteboard-content { padding: 2.5rem 1.5rem; }
@@ -408,9 +465,17 @@
         <!-- Capture Area for Export -->
         <div class="whiteboard-content" id="capture-area">
             <div class="board-header">
+                
+                <!-- Upgraded Image & Gallery UI -->
                 <div class="plant-image-container">
-                    <img id="plant-img" src="" alt="Plant" class="plant-image">
+                    <div class="main-image-wrapper">
+                        <img id="plant-img" src="" alt="Plant" class="plant-image">
+                    </div>
+                    <div class="gallery-thumbnails" id="gallery-thumbnails">
+                        <!-- Thumbnails injected dynamically -->
+                    </div>
                 </div>
+
                 <div class="plant-titles">
                     <h1 id="plant-name" class="plant-title">Loading...</h1>
                     <div class="divider"></div>
@@ -510,12 +575,13 @@
                     setupDownloads(plant);
                     
                     const currentUrl = window.location.href;
+                    // Updated QR Code - Black on White
                     new QRCode(document.getElementById("qr-container"), {
                         text: currentUrl,
                         width: 500,
                         height: 500,
-                        colorDark : "#1a3626", 
-                        colorLight : "#ffffff",
+                        colorDark : "#000000", // Pure Black
+                        colorLight : "#ffffff", // Pure White
                         correctLevel : QRCode.CorrectLevel.H
                     });
 
@@ -543,9 +609,54 @@
                 const placeholder = "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400' viewBox='0 0 400 400'%3E%3Crect width='400' height='400' fill='%23e3ede6'/%3E%3Cpath d='M200 120c-33.1 0-60 26.9-60 60s26.9 60 60 60 60-26.9 60-60-26.9-60-60-60zm0 96c-19.8 0-36-16.2-36-36s16.2-36 36-36 36 16.2 36 36-16.2 36-36 36z' fill='%234e8c63'/%3E%3Cpath d='M200 150c-16.5 0-30 13.5-30 30s13.5 30 30 30 30-13.5 30-30-13.5-30-30-30z' fill='%232c5e3f'/%3E%3C/svg%3E";
                 
                 const imgEl = document.getElementById('plant-img');
-                imgEl.src = plant.image || placeholder;
+                const galleryContainer = document.getElementById('gallery-thumbnails');
+                
+                // Construct images array safely
+                let imagesArray = [];
+                if (plant.images && Array.isArray(plant.images) && plant.images.length > 0) {
+                    imagesArray = plant.images;
+                } else if (plant.image && plant.image.trim() !== '') {
+                    imagesArray = [plant.image];
+                } else {
+                    imagesArray = [placeholder];
+                }
+
+                // Set Initial Hero Image
+                imgEl.src = imagesArray[0];
                 imgEl.onerror = () => { imgEl.src = placeholder; };
 
+                // Populate Thumbnails
+                galleryContainer.innerHTML = '';
+                if (imagesArray.length > 1) {
+                    imagesArray.forEach((imgSrc, index) => {
+                        const thumb = document.createElement('img');
+                        thumb.src = imgSrc;
+                        thumb.className = 'thumbnail' + (index === 0 ? ' active' : '');
+                        thumb.onerror = () => { thumb.src = placeholder; };
+                        
+                        // Handle thumbnail click & fade animation
+                        thumb.addEventListener('click', () => {
+                            if (thumb.classList.contains('active')) return;
+                            
+                            // Highlight selected thumbnail
+                            document.querySelectorAll('.thumbnail').forEach(t => t.classList.remove('active'));
+                            thumb.classList.add('active');
+                            
+                            // Trigger fade out
+                            imgEl.classList.add('fade-transition');
+                            
+                            // Change image and fade back in
+                            setTimeout(() => {
+                                imgEl.src = imgSrc;
+                                imgEl.onload = () => imgEl.classList.remove('fade-transition');
+                            }, 300);
+                        });
+                        
+                        galleryContainer.appendChild(thumb);
+                    });
+                }
+
+                // Text Content population
                 document.getElementById('plant-name').textContent = plant.name;
                 document.getElementById('plant-vernacular').textContent = plant.vernacularName || 'N/A';
                 document.getElementById('plant-botanical').textContent = plant.botanicalName || 'N/A';
@@ -588,24 +699,43 @@
                     });
                 });
 
+                // Improved QR Generator Logic w/ White Quiet Zone Padding
                 btnQR.addEventListener('click', () => {
                     setTimeout(() => {
                         const qrCanvas = document.querySelector('#qr-container canvas');
-                        if (qrCanvas) {
+                        const qrImg = document.querySelector('#qr-container img');
+                        const sourceElement = qrCanvas || qrImg;
+
+                        if (sourceElement && sourceElement.src !== "") {
+                            const isImage = sourceElement.tagName.toLowerCase() === 'img';
+                            const width = sourceElement.width || 500;
+                            const height = sourceElement.height || 500;
+                            
+                            // Create temporary padded canvas
+                            const padding = 40; // White Quiet Zone
+                            const paddedCanvas = document.createElement('canvas');
+                            paddedCanvas.width = width + (padding * 2);
+                            paddedCanvas.height = height + (padding * 2);
+                            const ctx = paddedCanvas.getContext('2d');
+                            
+                            // Fill with solid white background
+                            ctx.fillStyle = '#ffffff';
+                            ctx.fillRect(0, 0, paddedCanvas.width, paddedCanvas.height);
+                            
+                            // Draw QR code centered
+                            if(isImage) {
+                                ctx.drawImage(sourceElement, padding, padding, width, height);
+                            } else {
+                                ctx.drawImage(sourceElement, padding, padding);
+                            }
+                            
+                            // Download properly padded QR
                             const link = document.createElement('a');
                             link.download = `HKNF-${plant.id}-QR.png`;
-                            link.href = qrCanvas.toDataURL('image/png');
+                            link.href = paddedCanvas.toDataURL('image/png');
                             link.click();
                         } else {
-                            const qrImg = document.querySelector('#qr-container img');
-                            if (qrImg) {
-                                const link = document.createElement('a');
-                                link.download = `HKNF-${plant.id}-QR.png`;
-                                link.href = qrImg.src;
-                                link.click();
-                            } else {
-                                alert("QR Code generation is still processing.");
-                            }
+                            alert("QR Code generation is still processing.");
                         }
                     }, 400); 
                 });
