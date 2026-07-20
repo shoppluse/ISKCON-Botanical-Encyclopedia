@@ -128,7 +128,6 @@
         .whiteboard-content {
             padding: 4.5rem;
             background: var(--white);
-            /* Soft grid to resemble an elegant notebook/board */
             background-image: linear-gradient(var(--light-sage) 1px, transparent 1px), 
                               linear-gradient(90deg, var(--light-sage) 1px, transparent 1px);
             background-size: 40px 40px;
@@ -453,9 +452,9 @@
 
     <!-- Error State -->
     <div id="error-state" class="status-state">
-        <svg width="60" height="60" viewBox="0 0 24 24" fill="none" stroke="#d32f2f" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="margin-bottom: 1.5rem;"><circle cx="12" cy="12" r="10"></circle><line x1="15" y1="9" x2="9" y2="15"></line><line x1="9" y1="9" x2="15" y2="15"></line></svg>
-        <h2 style="font-family: 'Playfair Display', serif; color: #d32f2f; font-size: 2.5rem; margin-bottom: 1rem;">Plant Not Found</h2>
-        <p style="color: var(--text-muted); margin-bottom: 2rem;">The requested botanical record is missing from our current archives.</p>
+        <svg id="error-icon" width="60" height="60" viewBox="0 0 24 24" fill="none" stroke="#d32f2f" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="margin-bottom: 1.5rem;"><circle cx="12" cy="12" r="10"></circle><line x1="15" y1="9" x2="9" y2="15"></line><line x1="9" y1="9" x2="15" y2="15"></line></svg>
+        <h2 id="error-title" style="font-family: 'Playfair Display', serif; color: #d32f2f; font-size: 2.5rem; margin-bottom: 1rem;">Plant Not Found</h2>
+        <p id="error-desc" style="color: var(--text-muted); margin-bottom: 2rem; line-height: 1.6;">The requested botanical record is missing from our current archives.</p>
         <a href="index.html" class="btn btn-secondary" style="display: inline-flex; width: auto; margin: 0 auto;">Return to Directory</a>
     </div>
 
@@ -556,12 +555,11 @@
             loadingState.style.display = 'block';
 
             if (!plantId) {
-                showError();
+                showError("Plant Not Found", "The requested botanical record is missing from our current archives.");
                 return;
             }
 
             try {
-                // Simulating tiny delay for premium feel
                 await new Promise(r => setTimeout(r, 600)); 
 
                 const response = await fetch('plants.json');
@@ -575,43 +573,50 @@
                     setupDownloads(plant);
                     
                     const currentUrl = window.location.href;
-                    // Updated QR Code - Black on White
                     new QRCode(document.getElementById("qr-container"), {
                         text: currentUrl,
                         width: 500,
                         height: 500,
-                        colorDark : "#000000", // Pure Black
-                        colorLight : "#ffffff", // Pure White
+                        colorDark : "#000000",
+                        colorLight : "#ffffff",
                         correctLevel : QRCode.CorrectLevel.H
                     });
 
                     loadingState.style.display = 'none';
                     mainBoard.style.display = 'block';
                 } else {
-                    showError();
+                    showError("Plant Not Found", "The requested botanical record is missing from our current archives.");
                 }
 
             } catch (error) {
                 console.error("Error:", error);
-                showError();
+                
+                // Added explicitly to catch the local file error
+                let errorTitle = "Archive Unavailable";
+                let errorDesc = "Failed to load 'plants.json'. Please ensure it exists.";
+                if (window.location.protocol === 'file:') {
+                    errorDesc = "<b>Browser Security Block:</b> You cannot read JSON files by double-clicking the HTML file. You MUST open this site using a local server (like the Live Server extension in VS Code).";
+                }
+                
+                showError(errorTitle, errorDesc);
             }
 
-            function showError() {
+            function showError(title, desc) {
                 loadingState.style.display = 'none';
                 mainBoard.style.display = 'none';
+                document.getElementById('error-title').innerHTML = title;
+                document.getElementById('error-desc').innerHTML = desc;
                 errorState.style.display = 'block';
             }
 
             function populateWhiteboard(plant) {
                 document.title = `${plant.name} | Hare Krishna Nature Farm`;
                 
-                // Premium SVG Placeholder
                 const placeholder = "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400' viewBox='0 0 400 400'%3E%3Crect width='400' height='400' fill='%23e3ede6'/%3E%3Cpath d='M200 120c-33.1 0-60 26.9-60 60s26.9 60 60 60 60-26.9 60-60-26.9-60-60-60zm0 96c-19.8 0-36-16.2-36-36s16.2-36 36-36 36 16.2 36 36-16.2 36-36 36z' fill='%234e8c63'/%3E%3Cpath d='M200 150c-16.5 0-30 13.5-30 30s13.5 30 30 30 30-13.5 30-30-13.5-30-30-30z' fill='%232c5e3f'/%3E%3C/svg%3E";
                 
                 const imgEl = document.getElementById('plant-img');
                 const galleryContainer = document.getElementById('gallery-thumbnails');
                 
-                // Construct images array safely
                 let imagesArray = [];
                 if (plant.images && Array.isArray(plant.images) && plant.images.length > 0) {
                     imagesArray = plant.images;
@@ -621,11 +626,9 @@
                     imagesArray = [placeholder];
                 }
 
-                // Set Initial Hero Image
                 imgEl.src = imagesArray[0];
                 imgEl.onerror = () => { imgEl.src = placeholder; };
 
-                // Populate Thumbnails
                 galleryContainer.innerHTML = '';
                 if (imagesArray.length > 1) {
                     imagesArray.forEach((imgSrc, index) => {
@@ -634,18 +637,14 @@
                         thumb.className = 'thumbnail' + (index === 0 ? ' active' : '');
                         thumb.onerror = () => { thumb.src = placeholder; };
                         
-                        // Handle thumbnail click & fade animation
                         thumb.addEventListener('click', () => {
                             if (thumb.classList.contains('active')) return;
                             
-                            // Highlight selected thumbnail
                             document.querySelectorAll('.thumbnail').forEach(t => t.classList.remove('active'));
                             thumb.classList.add('active');
                             
-                            // Trigger fade out
                             imgEl.classList.add('fade-transition');
                             
-                            // Change image and fade back in
                             setTimeout(() => {
                                 imgEl.src = imgSrc;
                                 imgEl.onload = () => imgEl.classList.remove('fade-transition');
@@ -656,7 +655,6 @@
                     });
                 }
 
-                // Text Content population
                 document.getElementById('plant-name').textContent = plant.name;
                 document.getElementById('plant-vernacular').textContent = plant.vernacularName || 'N/A';
                 document.getElementById('plant-botanical').textContent = plant.botanicalName || 'N/A';
@@ -699,7 +697,6 @@
                     });
                 });
 
-                // Improved QR Generator Logic w/ White Quiet Zone Padding
                 btnQR.addEventListener('click', () => {
                     setTimeout(() => {
                         const qrCanvas = document.querySelector('#qr-container canvas');
@@ -711,25 +708,21 @@
                             const width = sourceElement.width || 500;
                             const height = sourceElement.height || 500;
                             
-                            // Create temporary padded canvas
-                            const padding = 40; // White Quiet Zone
+                            const padding = 40;
                             const paddedCanvas = document.createElement('canvas');
                             paddedCanvas.width = width + (padding * 2);
                             paddedCanvas.height = height + (padding * 2);
                             const ctx = paddedCanvas.getContext('2d');
                             
-                            // Fill with solid white background
                             ctx.fillStyle = '#ffffff';
                             ctx.fillRect(0, 0, paddedCanvas.width, paddedCanvas.height);
                             
-                            // Draw QR code centered
                             if(isImage) {
                                 ctx.drawImage(sourceElement, padding, padding, width, height);
                             } else {
                                 ctx.drawImage(sourceElement, padding, padding);
                             }
                             
-                            // Download properly padded QR
                             const link = document.createElement('a');
                             link.download = `HKNF-${plant.id}-QR.png`;
                             link.href = paddedCanvas.toDataURL('image/png');
