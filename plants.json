@@ -1,22 +1,22 @@
 {
     "plants": [
         {
-            "id": "Achacha",
+            "id": "achacha",
             "name": "Achacha",
-            "vernacularName": "Achachairú / Achacha ",
+            "vernacularName": "Achachairú / Achacha",
             "botanicalName": "Garcinia humilis",
-            "family": "Clusiaceae/ Guttiferae",
+            "family": "Clusiaceae / Guttiferae",
             "origin": "Amazon Basin, Bolivia (South America)",
             "price": "₹150",
             "image": "images/garcinia-macrophylla.jpg",
             "images": [
-    "large (2).jpg",
-    "large (5).jpg",
-    "large.jpg"
-  ],
-            "economicUse": "Fresh fruits are economical/commercial, orange cloured, egg-shaped with sweet-tart flavour. Used in making fresh juice, jams, jellies & desserts. Recently commercialized in Australia.",
-            "vedicSignificance": ".",
-            "medicalSignificance": "Traditionally known in Bolivian folk medicine for digestive issues, anti-infalmatory effects, appetite supression. It contains hydroxycitric acid (HCA), similar to Garcinia cambogia, though at lower concentrations. Marketed in some supplements for weight management."
+                "images/large (2).jpg",
+                "images/large (5).jpg",
+                "images/large.jpg"
+            ],
+            "economicUse": "Fresh fruits are economical/commercial, orange-coloured, egg-shaped with sweet-tart flavour. Used in making fresh juice, jams, jellies & desserts. Recently commercialized in Australia.",
+            "vedicSignificance": "Information currently unavailable.",
+            "medicalSignificance": "Traditionally known in Bolivian folk medicine for digestive issues, anti-inflammatory effects, and appetite suppression. It contains hydroxycitric acid (HCA), similar to Garcinia cambogia, though at lower concentrations. Marketed in some supplements for weight management."
         }
     ]
 }
