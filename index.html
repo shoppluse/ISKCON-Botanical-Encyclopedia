@@ -393,7 +393,6 @@
             // Fetch JSON Data
             async function fetchPlants() {
                 try {
-                    // Slight artificial delay to display the beautiful premium loading state
                     await new Promise(resolve => setTimeout(resolve, 600)); 
                     
                     const response = await fetch('plants.json');
@@ -402,16 +401,22 @@
                     const data = await response.json();
                     allPlants = data.plants;
                     
-                    // Hide loader and show initial grid
                     loader.style.display = 'none';
                     renderCards(allPlants);
                     
                 } catch (error) {
                     console.error("Error loading plant data:", error);
+                    
+                    // Added explicitly to catch the local file error
+                    let errorMessage = "Failed to load 'plants.json'. Please ensure it exists.";
+                    if (window.location.protocol === 'file:') {
+                        errorMessage = "<b>Browser Security Block:</b> You cannot read JSON files by double-clicking the HTML file. You MUST open this site using a local server (like the Live Server extension in VS Code).";
+                    }
+
                     loader.innerHTML = `
                         <svg width="60" height="60" viewBox="0 0 24 24" fill="none" stroke="#d32f2f" stroke-width="1.5" style="margin: 0 auto 1.5rem;"><circle cx="12" cy="12" r="10"></circle><line x1="15" y1="9" x2="9" y2="15"></line><line x1="9" y1="9" x2="15" y2="15"></line></svg>
                         <h2 style="font-family: 'Playfair Display', serif; color: #d32f2f; font-size: 2rem;">Archive Unavailable</h2>
-                        <p style="color: var(--text-muted); margin-top: 0.5rem;">Failed to load 'plants.json'. Please ensure it exists.</p>`;
+                        <p style="color: var(--text-muted); margin-top: 0.5rem; line-height: 1.6;">${errorMessage}</p>`;
                 }
             }
 
@@ -433,7 +438,6 @@
                     const card = document.createElement('a');
                     card.href = `plantdetails.html?id=${plant.id}`;
                     card.className = 'card';
-                    // Stagger the animation slightly for a luxurious feel
                     card.style.animationDelay = `${index * 0.1}s`;
 
                     const imageSrc = plant.image && plant.image.trim() !== '' ? plant.image : placeholderImg;
