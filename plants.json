@@ -46,11 +46,12 @@
     "family": "Myrtaceae",
     "origin": "Tropical Savanna, Brazilian Cerrado Biome",
     "price": "₹150",
-    "image": "images/",
+    "image": "images/p3p2.jpg",
     "images": [
-        "images/",
-        "images/",
-        "images/"
+        "images/p3p2.jpg",
+        "images/p3p1.jpg",
+        "images/p3p3.jpg",
+        "images/p3p4.jpg"
     ],
     "economicUse": "Small red fruits are sweet–sour, juicy, high in vitamin C & antioxidants. Eaten fresh and used in jams, jellies, and juices. It is a flavoring, coloring agent, and natural antioxidant for beverages and desserts.",
     "vedicSignificance": "NA",
