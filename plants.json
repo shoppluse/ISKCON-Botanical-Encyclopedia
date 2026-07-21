@@ -27,7 +27,7 @@
     "family": "Myrtaceae",
     "origin": "Atlantic Rainforests (Brazil)",
     "price": "₹150",
-    "image": "images/p2p2jpg",
+    "image": "images/p2p2.jpg",
     "images": [
         "images/p2p2.jpg",
         "images/p2p1.jpg",
@@ -37,6 +37,24 @@
     "economicUse": "Fresh fruits are eaten fresh and used in making jams, jellies, wine, and beverages. Attractive flowers and plants are used in subtropical landscaping.",
     "vedicSignificance": "NA",
     "medicalSignificance": "Potential application in nutraceuticals and functional medicine/foods. Rich in vitamin C, anthocyanins (purple pigments), polyphenols, and antioxidants. Has antimicrobial properties. Used in treating diarrhea and gastrointestinal discomfort."
+},
+        {
+    "id": "savannah-cherry",
+    "name": "Savannah Cherry",
+    "vernacularName": "Savannah Cherry / Cerrado Cherry",
+    "botanicalName": "Eugenia calycina",
+    "family": "Myrtaceae",
+    "origin": "Tropical Savanna, Brazilian Cerrado Biome",
+    "price": "₹150",
+    "image": "images/",
+    "images": [
+        "images/",
+        "images/",
+        "images/"
+    ],
+    "economicUse": "Small red fruits are sweet–sour, juicy, high in vitamin C & antioxidants. Eaten fresh and used in jams, jellies, and juices. It is a flavoring, coloring agent, and natural antioxidant for beverages and desserts.",
+    "vedicSignificance": "NA",
+    "medicalSignificance": "Used in Brazilian folk medicine. Potential superfruit due to high phenolic, flavonoid, and vitamin content. Rich in antioxidants, antibacterial, antifungal, anti-inflammatory, hypoglycemic and anti-diabetic."
 }
     ]
 }
