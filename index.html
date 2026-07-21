@@ -387,8 +387,8 @@
             
             let allPlants = [];
 
-            // Premium SVG Placeholder if image is missing
-            const placeholderImg = "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='600' height='400' viewBox='0 0 600 400'%3E%3Crect width='600' height='400' fill='%23e3ede6'/%3E%3Cpath d='M300 120c-44.1 0-80 35.9-80 80s35.9 80 80 80 80-35.9 80-80-35.9-80-80-80zm0 128c-26.5 0-48-21.5-48-48s21.5-48 48-48 48 21.5 48 48-21.5 48-48 48z' fill='%234e8c63'/%3E%3Cpath d='M300 160c-22 0-40 18-40 40s18 40 40 40 40-18 40-40-18-40-40-40z' fill='%232c5e3f'/%3E%3C/svg%3E";
+            // FIXED: Fully URL-encoded SVG placeholder to prevent HTML syntax breaks in the onerror attribute
+            const placeholderImg = "data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22600%22 height=%22400%22 viewBox=%220 0 600 400%22%3E%3Crect width=%22600%22 height=%22400%22 fill=%22%23e3ede6%22/%3E%3Cpath d=%22M300 120c-44.1 0-80 35.9-80 80s35.9 80 80 80 80-35.9 80-80-35.9-80-80-80zm0 128c-26.5 0-48-21.5-48-48s21.5-48 48-48 48 21.5 48 48-21.5 48-48 48z%22 fill=%22%234e8c63%22/%3E%3Cpath d=%22M300 160c-22 0-40 18-40 40s18 40 40 40 40-18 40-40-18-40-40-40z%22 fill=%22%232c5e3f%22/%3E%3C/svg%3E";
 
             // Fetch JSON Data
             async function fetchPlants() {
@@ -407,7 +407,6 @@
                 } catch (error) {
                     console.error("Error loading plant data:", error);
                     
-                    // Added explicitly to catch the local file error
                     let errorMessage = "Failed to load 'plants.json'. Please ensure it exists.";
                     if (window.location.protocol === 'file:') {
                         errorMessage = "<b>Browser Security Block:</b> You cannot read JSON files by double-clicking the HTML file. You MUST open this site using a local server (like the Live Server extension in VS Code).";
