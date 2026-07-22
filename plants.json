@@ -275,7 +275,8 @@
         "images/p14p1.jpg",
         "images/p14p2.jpg",
         "images/p14p3.jpg",
-        "images/p14p4.jpg"
+        "images/p14p4.jpg",
+        "images/p14p5.jpg"
     ],
     "economicUse": "It is grown for edible fruits rich in natural sugars, fiber, and minerals. Used for fresh consumption, dry fruits, and sweets. Used as agroforestry and horticulture development. It is popular in export and local markets—especially valuable in arid and semi-arid zones.",
     "vedicSignificance": "Mentioned in Ayurveda",
@@ -320,6 +321,286 @@
     "economicUse": "It is grown for sweet edible, juicy fruit. Used for juices, jams, canned products, desserts, confectionery and food processing industries. It is an important horticultural crop in tropical and subtropical regions.",
     "vedicSignificance": "Mentioned in Ayurveda",
     "medicalSignificance": "Mentioned in Ayurveda for aiding digestion (rich in bromelain, a digestive enzyme), treating inflammation, indigestion and intestinal worms. Other properties are anti-oxidants, anti-inflammatory and immune boosting. Juice is often used to treat sore throat and digestive sluggishness."
+},
+        {
+    "id": "barbados-acerola-cherry",
+    "category": "Tropical",
+    "name": "Barbados Acerola Cherry",
+    "vernacularName": "Barbados Acerola Cherry / West Indian Cherry",
+    "botanicalName": "Malpighia emarginata",
+    "family": "Malpighiaceae",
+    "origin": "Tropical Americas – especially the Caribbean, Central America, and northern South America",
+    "price": "₹150",
+    "image": "images/p17p1.jpg",
+    "images": [
+        "images/p17p1.jpg",
+        "images/p17p2.jpg",
+        "images/p17p3.jpg",
+        "images/p17p4.jpg"
+    ],
+    "economicUse": "Barbados cherry is grown primarily for its extremely high Vit-C content. Used in making jams, jellies, supplements, powders and health drinks. It is used in cosmetic products. Medically, used in nutraceuticals and fortified foods.",
+    "vedicSignificance": "NA",
+    "medicalSignificance": "Rich in antioxidants, polyphenols, carotenoids. It is used for boosting immunity, skin health/skin rejuvenation, anti-aging and wound healing. It is helpful in combating scurvy, fatigue and common colds."
+},
+{
+    "id": "burmese-grape",
+    "category": "Tropical",
+    "name": "Burmese Grape",
+    "vernacularName": "Burmese Grape",
+    "botanicalName": "Baccaurea ramiflora",
+    "family": "Phyllanthaceae",
+    "origin": "Indo-Myanmar region, Southeast Asia & Northeastern India; especially Myanmar, NE India, Thailand, Bangladesh, Malaysia",
+    "price": "₹150",
+    "image": "images/p18p1.jpg",
+    "images": [
+        "images/p18p1.jpg",
+        "images/p18p2.jpg",
+        "images/p18p3.jpg",
+        "images/p18p4.jpg"
+    ],
+    "economicUse": "Burmese grape is grown for its edible fruits, sweet to slightly sour in taste. It is consumed fresh, or used in juices, jams, and pickles. Also cultivated as a shade and ornamental tree for cultivating gardens/orchards.",
+    "vedicSignificance": "NA",
+    "medicalSignificance": "Traditionally used in folk and tribal medicine (especially in India and Southeast Asia). Fruits aid in digestion, act as a coolant. Bark and leaves are used for treating skin ailments, diarrhea, and infections. Rich in Vitamin C, iron, and antioxidants."
+},
+{
+    "id": "chamaliang",
+    "category": "Tropical",
+    "name": "Chamaliang",
+    "vernacularName": "Chamaliang / Marian Plum / Gandaria / Maprang",
+    "botanicalName": "Bouea macrophylla",
+    "family": "Anacardiaceae",
+    "origin": "Native to Southeast Asia, particularly Malaysia, Thailand, Indonesia, and northeastern India",
+    "price": "₹150",
+    "image": "images/p19p1.jpg",
+    "images": [
+        "images/p19p1.jpg",
+        "images/p19p2.jpg",
+        "images/p19p3.jpg",
+        "images/p19p4.jpg"
+    ],
+    "economicUse": "Chamaliang is grown for its small, mango-like fruits. Fruits are eaten fresh, used in pickles, preserves, and desserts. Occasionally cultivated as an ornamental and fruit-bearing tree.",
+    "vedicSignificance": "NA",
+    "medicalSignificance": "Traditional uses in Southeast Asian folk medicine. Fruits are used for digestive aid. Leaves and bark are used to treat fever, skin infections, and cough. Rich in Vitamin C, carotenoids, and polyphenols."
+},
+{
+    "id": "tropical-rainforest-plum",
+    "category": "Tropical",
+    "name": "Tropical Rainforest Plum",
+    "vernacularName": "Tropical Rainforest Plum var. Merry Poza",
+    "botanicalName": "Flacourtia rukam",
+    "family": "Salicaceae",
+    "origin": "Tropical regions of Southeast Asia, India, and Africa",
+    "price": "₹150",
+    "image": "images/p20p1.jpg",
+    "images": [
+        "images/p20p1.jpg",
+        "images/p20p2.jpg",
+        "images/p20p3.jpg",
+        "images/p20p4.jpg"
+    ],
+    "economicUse": "Rainforest Plum is grown for edible fruits (small, tangy, plum-like). Used in jams, pickles, chutneys, and local beverages. Also planted as ornamental shrub/tree. It is used to make live fences or hedges (due to thorns).",
+    "vedicSignificance": "Mentioned in Ayurveda",
+    "medicalSignificance": "Traditionally used in folk and traditional medicine. Fruit treats digestive issues, diarrhea, and respiratory ailments. Leaves/Bark are antibacterial, antioxidant, and anti-inflammatory. Used for treating skin diseases, fever and wound healing."
+},
+{
+    "id": "water-apple-bali-big-variety",
+    "category": "Tropical",
+    "name": "Water Apple",
+    "vernacularName": "Water Apple (Bali Big Variety)",
+    "botanicalName": "Syzygium aqueum",
+    "family": "Myrtaceae",
+    "origin": "Southeast Asia – likely Malaysia, Indonesia, and the Andaman-Nicobar region",
+    "price": "₹150",
+    "image": "images/p21p1.jpg",
+    "images": [
+        "images/p21p1.jpg",
+        "images/p21p2.jpg",
+        "images/p21p3.jpg",
+        "images/p21p4.jpg"
+    ],
+    "economicUse": "Fresh consumption: consumed raw for its crisp, watery texture. Used in making pickles, jams, jellies, preserves, juice and beverages. Also grown as an ornamental plant due to glossy leaves and attractive fruit. Used in agroforestry and landscaping.",
+    "vedicSignificance": "NA",
+    "medicalSignificance": "Believed to be cooling in nature and used for balancing Pitta and Kapha doshas in traditional Indian medicine. It is diuretic, aids hydration due to high water content, mildly laxative, anti-diabetic, anti-inflammatory, and leaves/bark are used for skin irritations."
+},
+        {
+    "id": "mexican-sapote-black",
+    "category": "Tropical",
+    "name": "Mexican Sapote Black",
+    "vernacularName": "Mexican Sapote Black / Chocolate Pudding Fruit",
+    "botanicalName": "Diospyros nigra",
+    "family": "Ebenaceae",
+    "origin": "Mexico, Central America, native to Southern Mexico, Guatemala & Colombia",
+    "price": "₹150",
+    "image": "images/p22p1.jpg",
+    "images": [
+        "images/p22p1.jpg",
+        "images/p22p2.jpg",
+        "images/p22p3.jpg",
+        "images/p22p4.jpg"
+    ],
+    "economicUse": "Fruit is edible, ripe pulp resembles chocolate pudding in color and texture. Fruit is eaten fresh or used in smoothies, desserts, and baking. It is a natural sweetener, used in low-calorie dessert recipes.",
+    "vedicSignificance": "NA",
+    "medicalSignificance": "Fruit is rich in Vitamin-C and Vitamin-A. It strengthens immunity, supports skin health, and aids digestion due to its high fiber content. Low in fat, often recommended in weight loss diets. It is anti-inflammatory and mildly laxative. Antioxidants, carotenoids and flavonoids help regulate blood sugar and support diabetic diets in moderation."
+},
+{
+    "id": "jackfruit-vietnamese-rose",
+    "category": "Tropical",
+    "name": "Jackfruit",
+    "vernacularName": "Jackfruit (Variety: Vietnamese; Rose Jack)",
+    "botanicalName": "Artocarpus heterophyllus",
+    "family": "Moraceae",
+    "origin": "Indo-Malaysia region, particularly Western Ghats, Southeast Asia including Vietnam",
+    "price": "₹150",
+    "image": "images/p23p1.jpg",
+    "images": [
+        "images/p23p1.jpg",
+        "images/p23p2.jpg",
+        "images/p23p3.jpg",
+        "images/p23p4.jpg"
+    ],
+    "economicUse": "Ripe fruits are eaten fresh or used in desserts, ice cream and beverages. Unripe fruits are cooked as vegetables or meat substitutes. Seeds are roasted or boiled. Used in processed foods such as chips, canned jackfruit, jams and syrups. Wood is used for furniture and musical instruments. Latex is traditionally used as an adhesive.",
+    "vedicSignificance": "Jackfruit (Panasa) is well documented in Ayurveda. Classical texts describe it as nourishing, strengthening and cooling. Fruits, seeds, leaves and bark are used for balancing Vata and Pitta. Mentioned in Charaka Samhita and Sushruta Samhita.",
+    "medicalSignificance": "Rich in fiber, antioxidants and Vitamin-C. Supports digestion, boosts immunity and helps reduce inflammation. Rich in potassium for blood pressure regulation. Seeds have aphrodisiac properties in Ayurveda. Latex and bark are traditionally used for wound healing and skin diseases. Possesses anti-ulcer and antibacterial properties."
+},
+{
+    "id": "white-sapota",
+    "category": "Tropical",
+    "name": "White Sapota",
+    "vernacularName": "White Sapota / Casimiroa / Mexican Apple / Zapote Blanco",
+    "botanicalName": "Casimiroa edulis",
+    "family": "Rutaceae",
+    "origin": "Central America and Mexico",
+    "price": "₹150",
+    "image": "images/p24p1.jpg",
+    "images": [
+        "images/p24p1.jpg",
+        "images/p24p2.jpg",
+        "images/p24p3.jpg",
+        "images/p24p4.jpg"
+    ],
+    "economicUse": "Fruits are creamy with sweet custard-like pulp. Consumed fresh or used in smoothies, ice creams and desserts. Grown in orchards and backyard gardens. Popular in tropical and subtropical regions and increasingly cultivated for gourmet fruit markets.",
+    "vedicSignificance": "NA",
+    "medicalSignificance": "White Sapota is traditionally used as a mild sedative to calm nerves and aid sleep. Rich in Vitamin-C and Vitamin-A, supports immunity and eye health. Helps digestion and gut health. Traditionally used for blood sugar regulation. Anti-inflammatory and antioxidant. Rich potassium content supports healthy blood pressure."
+},
+{
+    "id": "avocado",
+    "category": "Tropical",
+    "name": "Avocado",
+    "vernacularName": "Avocado",
+    "botanicalName": "Persea americana",
+    "family": "Lauraceae",
+    "origin": "Central America and Southern Mexico",
+    "price": "₹150",
+    "image": "images/p25p1.jpg",
+    "images": [
+        "images/p25p1.jpg",
+        "images/p25p2.jpg",
+        "images/p25p3.jpg",
+        "images/p25p4.jpg"
+    ],
+    "economicUse": "Fresh fruit is rich and creamy. Used in salads, toast, smoothies and guacamole. Avocado oil is widely used in culinary, cosmetic and pharmaceutical products. Used in nutraceuticals. Seeds and peels are researched for antioxidant properties. It is an important export crop in tropical and subtropical countries.",
+    "vedicSignificance": "NA",
+    "medicalSignificance": "Avocado supports heart health through healthy monounsaturated fats and potassium. Helps lower bad cholesterol and regulate blood pressure. Rich in Vitamin-E, polyphenols, fiber, folate and Vitamin-K. Supports skin, hair, digestion, brain and bone health. Possesses antioxidant, anti-inflammatory, antibacterial and potential anti-diabetic properties."
+},
+        {
+    "id": "lubika-sunny-sweet",
+    "category": "Tropical",
+    "name": "Lubika Sunny Sweet",
+    "vernacularName": "Lubika Sunny Sweet / Indian Coffee Plum",
+    "botanicalName": "Flacourtia jangomas",
+    "family": "Salicaceae",
+    "origin": "Tropical Asia, most likely India/Southeast Asia",
+    "price": "₹150",
+    "image": "images/p26p1.jpg",
+    "images": [
+        "images/p26p1.jpg",
+        "images/p26p2.jpg",
+        "images/p26p3.jpg",
+        "images/p26p4.jpg"
+    ],
+    "economicUse": "Fresh fruits are eaten raw, made into pickles, chutneys, jams, marmalade, and curries. It is grown as hedge plants and sold as saplings for home orchards. Its wood is occasionally harvested for lumber.",
+    "vedicSignificance": "NA",
+    "medicalSignificance": "Rich in antioxidants and antimicrobial compounds, useful in managing oxidative stress and infections. Anti-diabetic, helps lower blood glucose levels. Supports digestion, relieves constipation, promotes cardiovascular health, and has traditional uses for arthritis and memory enhancement."
+},
+{
+    "id": "madrono",
+    "category": "Tropical",
+    "name": "Madroño",
+    "vernacularName": "Madroño / Mudrono",
+    "botanicalName": "Garcinia madruno",
+    "family": "Clusiaceae / Guttiferae",
+    "origin": "Tropical Americas — particularly Trinidad, Central and South Tropical America including Colombia",
+    "price": "₹150",
+    "image": "images/p27p1.jpg",
+    "images": [
+        "images/p27p1.jpg",
+        "images/p27p2.jpg",
+        "images/p27p3.jpg",
+        "images/p27p4.jpg"
+    ],
+    "economicUse": "Fruits are consumed fresh, known for their sweet to slightly citrusy pulp with a foamy texture. Occasionally cultivated and also used as animal feed and fuelwood.",
+    "vedicSignificance": "NA",
+    "medicalSignificance": "Possesses antioxidative and anti-inflammatory effects. Extracts show antimicrobial and antiplatelet activity. It is hypoglycemic, antihyperlipidemic, hepatoprotective and cardioprotective. Xanthones present in the fruit exhibit anticancer, neuroprotective and metabolic benefits."
+},
+{
+    "id": "lucs-mexican-garcinia",
+    "category": "Tropical",
+    "name": "Luc's Mexican Garcinia",
+    "vernacularName": "Luc's Mexican Garcinia / Mexican Mangosteen / Limoncillo",
+    "botanicalName": "Garcinia mexicana",
+    "family": "Clusiaceae / Guttiferae",
+    "origin": "Mexico",
+    "price": "₹150",
+    "image": "images/p28p1.jpg",
+    "images": [
+        "images/p28p1.jpg",
+        "images/p28p2.jpg",
+        "images/p28p3.jpg",
+        "images/p28p4.jpg"
+    ],
+    "economicUse": "Fruits are sweet with a lemony-tart flavour. Fruit is used as a weight-loss medicine. It is cultivated in fruit gardens and grown as a slow shade-loving tree.",
+    "vedicSignificance": "NA",
+    "medicalSignificance": "Fruit is used in weight management due to its ability to reduce appetite and inhibit fat synthesis through hydroxycitric acid. Used traditionally as an astringent for dysentery and digestive complaints. May help regulate blood sugar and cholesterol. Bark and resin are used as cathartic and purgative medicines."
+},
+{
+    "id": "kei-apple",
+    "category": "Tropical",
+    "name": "Kei Apple",
+    "vernacularName": "Kei Apple",
+    "botanicalName": "Dovyalis caffra",
+    "family": "Salicaceae",
+    "origin": "Southern Africa, particularly Mozambique and South Africa",
+    "price": "₹150",
+    "image": "images/p29p1.jpg",
+    "images": [
+        "images/p29p1.jpg",
+        "images/p29p2.jpg",
+        "images/p29p3.jpg",
+        "images/p29p4.jpg"
+    ],
+    "economicUse": "Fruits are edible, tart to yellow-orange, used in jams, jellies, preserves and beverages. Plants are commonly grown as protective hedges because of their dense thorny branches and are also used for ornamental landscaping.",
+    "vedicSignificance": "NA",
+    "medicalSignificance": "Rich in Vitamin-C, supports immunity and acts as an antioxidant. Exhibits antibacterial properties and may help in managing infections. Traditionally used for digestive health, mild laxative effects and treatment of skin ailments."
+},
+{
+    "id": "red-pink-water-apple",
+    "category": "Tropical",
+    "name": "Red/Pink Water Apple",
+    "vernacularName": "Red/Pink Water Apple",
+    "botanicalName": "Syzygium samarangense",
+    "family": "Myrtaceae",
+    "origin": "Southeast Asia, particularly Malaysia, Indonesia, and the Andaman & Nicobar Islands",
+    "price": "₹150",
+    "image": "images/p30p1.jpg",
+    "images": [
+        "images/p30p1.jpg",
+        "images/p30p2.jpg",
+        "images/p30p3.jpg",
+        "images/p30p4.jpg"
+    ],
+    "economicUse": "Fruit is eaten fresh and used in fruit salads, pickles, juices and traditional sweets. Crisp and mildly sweet. It is also grown as an ornamental tree due to its glossy leaves and attractive fruits. Commonly used in agroforestry and tropical landscaping.",
+    "vedicSignificance": "NA",
+    "medicalSignificance": "Fruits are rich in water and fiber, aiding hydration and digestion. Low in calories, making them suitable for weight management. Rich in antioxidants and possess mild diuretic properties supporting kidney and urinary health. Traditionally used for fever, liver health and skin care in several cultures."
 }
     ]
 }
