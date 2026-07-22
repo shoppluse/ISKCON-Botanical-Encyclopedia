@@ -220,6 +220,106 @@
             "economicUse": "Cultivated for its unique caviar-like pulp, eaten fresh and used for jams, jellies, beverages, sauces, and desserts.",
             "vedicSignificance": "NA",
             "medicalSignificance": "Finger lime has been traditionally used by Aboriginal Australians. It is used as a bush medicine for treating skin irritations and infection. High in antioxidants and Vit-C. Has antimicrobial properties, can be used in skin care products and nutraceuticals."
-        }
+        },
+        {
+    "id": "climber-mango",
+    "category": "Tropical",
+    "name": "Climber Mango",
+    "vernacularName": "Climber Mango",
+    "botanicalName": "Mangifera sylvatica",
+    "family": "Anacardiaceae",
+    "origin": "Indo-Myanmar region, Southeast Asia & Northeastern India",
+    "price": "₹150",
+    "image": "images/p12p1.jpg",
+    "images": [
+        "images/p12p1.jpg",
+        "images/p12p2.jpg",
+        "images/p12p3.jpg",
+        "images/p12p4.jpg"
+    ],
+    "economicUse": "Economically used as a rootstock for grafting cultivated mango varieties. A great agroforestry specie with food crops.",
+    "vedicSignificance": "NA",
+    "medicalSignificance": "It is believed to be a folk medicine, helps with diarrhea, dysentery, and wound healing. It contains polyphenol and antioxidants."
+},
+{
+    "id": "lemba",
+    "category": "Tropical",
+    "name": "Lemba",
+    "vernacularName": "Lemba / Miracle Ginger",
+    "botanicalName": "Costus speciosus",
+    "family": "Costaceae",
+    "origin": "Southeast Asia and the Indian subcontinent. Commonly in India, Sri Lanka, Indonesia",
+    "price": "₹150",
+    "image": "images/p13p1.jpg",
+    "images": [
+        "images/p13p1.jpg",
+        "images/p13p2.jpg",
+        "images/p13p3.jpg",
+        "images/p13p4.jpg"
+    ],
+    "economicUse": "Economically used as ornamental plant due to its attractive flowers. Rhizomes are used in traditional medicines, cosmetics, shampoo and starch production.",
+    "vedicSignificance": "Mentioned in Ayurveda, Siddha, and Unani systems",
+    "medicalSignificance": "Rhizomes are used for antidiabetic (reduces blood sugar), antipyretic (fever reduction). It has anti-inflammatory, anti-oxidative, and anti-microbial properties. Used for treating skin diseases, bronchitis, intestinal worms, and urinary disorders."
+},
+{
+    "id": "date-palm-hybrid",
+    "category": "Tropical",
+    "name": "Date Palm Hybrid",
+    "vernacularName": "Date Palm Hybrid",
+    "botanicalName": "Phoenix dactylifera",
+    "family": "Arecaceae",
+    "origin": "Middle East and North Africa",
+    "price": "₹150",
+    "image": "images/p14p1.jpg",
+    "images": [
+        "images/p14p1.jpg",
+        "images/p14p2.jpg",
+        "images/p14p3.jpg",
+        "images/p14p4.jpg"
+    ],
+    "economicUse": "It is grown for edible fruits rich in natural sugars, fiber, and minerals. Used for fresh consumption, dry fruits, and sweets. Used as agroforestry and horticulture development. It is popular in export and local markets—especially valuable in arid and semi-arid zones.",
+    "vedicSignificance": "Mentioned in Ayurveda",
+    "medicalSignificance": "Dates are widely used in Ayurveda as body tonics and aphrodisiacs. It is a digestive aid, mild laxative, and blood purifier. It is rich in iron, potassium, and antioxidants. It is helpful in anemia, fatigue, reproductive health, and heart health."
+},
+{
+    "id": "cedar-bay-cherry",
+    "category": "Tropical",
+    "name": "Cedar Bay Cherry",
+    "vernacularName": "Cedar Bay Cherry",
+    "botanicalName": "Eugenia reinwardtiana",
+    "family": "Myrtaceae",
+    "origin": "Northern Australia (especially around Cedar Bay, Queensland), New Guinea, and nearby islands",
+    "price": "₹150",
+    "image": "images/p15p1.jpg",
+    "images": [
+        "images/p15p1.jpg",
+        "images/p15p2.jpg",
+        "images/p15p3.jpg",
+        "images/p15p4.jpg"
+    ],
+    "economicUse": "It is grown for its sweet, cherry-like fruits. It is used in fresh consumption, jams, jellies and dessert.",
+    "vedicSignificance": "NA",
+    "medicalSignificance": "Traditionally used by Aboriginal Australians. Fruit consumed for general nourishment, leaves and bark sometimes used in folk remedies. Fruit is rich in antioxidants, Vit-C, and fiber. Potential anti-inflammatory and antimicrobial properties."
+},
+{
+    "id": "pineapple-medura",
+    "category": "Tropical",
+    "name": "Pineapple Medura",
+    "vernacularName": "Pineapple var. Medura",
+    "botanicalName": "Ananas comosus",
+    "family": "Annonaceae",
+    "origin": "South America (particularly Brazil and Paraguay)",
+    "price": "₹150",
+    "image": "images/p16p1.jpg",
+    "images": [
+        "images/p16p1.jpg",
+        "images/p16p2.jpg",
+        "images/p16p3.jpg",
+        "images/p16p4.jpg"
+    ],
+    "economicUse": "It is grown for sweet edible, juicy fruit. Used for juices, jams, canned products, desserts, confectionery and food processing industries. It is an important horticultural crop in tropical and subtropical regions.",
+    "vedicSignificance": "Mentioned in Ayurveda",
+    "medicalSignificance": "Mentioned in Ayurveda for aiding digestion (rich in bromelain, a digestive enzyme), treating inflammation, indigestion and intestinal worms. Other properties are anti-oxidants, anti-inflammatory and immune boosting. Juice is often used to treat sore throat and digestive sluggishness."
+}
     ]
 }
