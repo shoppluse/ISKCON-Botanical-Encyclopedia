@@ -2,6 +2,7 @@
     "plants": [
         {
             "id": "achacha",
+            "category": "Tropical",
             "name": "Achacha",
             "vernacularName": "Achachairú / Achacha",
             "botanicalName": "Garcinia humilis",
@@ -20,195 +21,205 @@
             "medicalSignificance": "Traditionally known in Bolivian folk medicine for digestive issues, anti-inflammatory effects, and appetite suppression. It contains hydroxycitric acid (HCA), similar to Garcinia cambogia, though at lower concentrations. Marketed in some supplements for weight management."
         },
         {
-    "id": "grumichama",
-    "name": "Grumichama",
-    "vernacularName": "Grumichama Cherry / Brazilian Cherry / Spanish Cherry / Grumixama",
-    "botanicalName": "Eugenia brasiliensis",
-    "family": "Myrtaceae",
-    "origin": "Atlantic Rainforests (Brazil)",
-    "price": "₹150",
-    "image": "images/p2p2.jpg",
-    "images": [
-        "images/p2p2.jpg",
-        "images/p2p1.jpg",
-        "images/p2p3.jpg",
-        "images/p2p4.jpg"
-    ],
-    "economicUse": "Fresh fruits are eaten fresh and used in making jams, jellies, wine, and beverages. Attractive flowers and plants are used in subtropical landscaping.",
-    "vedicSignificance": "NA",
-    "medicalSignificance": "Potential application in nutraceuticals and functional medicine/foods. Rich in vitamin C, anthocyanins (purple pigments), polyphenols, and antioxidants. Has antimicrobial properties. Used in treating diarrhea and gastrointestinal discomfort."
-},
+            "id": "grumichama",
+            "category": "Tropical",
+            "name": "Grumichama",
+            "vernacularName": "Grumichama Cherry / Brazilian Cherry / Spanish Cherry / Grumixama",
+            "botanicalName": "Eugenia brasiliensis",
+            "family": "Myrtaceae",
+            "origin": "Atlantic Rainforests (Brazil)",
+            "price": "₹150",
+            "image": "images/p2p2.jpg",
+            "images": [
+                "images/p2p2.jpg",
+                "images/p2p1.jpg",
+                "images/p2p3.jpg",
+                "images/p2p4.jpg"
+            ],
+            "economicUse": "Fresh fruits are eaten fresh and used in making jams, jellies, wine, and beverages. Attractive flowers and plants are used in subtropical landscaping.",
+            "vedicSignificance": "NA",
+            "medicalSignificance": "Potential application in nutraceuticals and functional medicine/foods. Rich in vitamin C, anthocyanins (purple pigments), polyphenols, and antioxidants. Has antimicrobial properties. Used in treating diarrhea and gastrointestinal discomfort."
+        },
         {
-    "id": "savannah-cherry",
-    "name": "Savannah Cherry",
-    "vernacularName": "Savannah Cherry / Cerrado Cherry",
-    "botanicalName": "Eugenia calycina",
-    "family": "Myrtaceae",
-    "origin": "Tropical Savanna, Brazilian Cerrado Biome",
-    "price": "₹150",
-    "image": "images/p3p2.jpg",
-    "images": [
-        "images/p3p2.jpg",
-        "images/p3p1.jpg",
-        "images/p3p3.jpg",
-        "images/p3p4.jpg"
-    ],
-    "economicUse": "Small red fruits are sweet–sour, juicy, high in vitamin C & antioxidants. Eaten fresh and used in jams, jellies, and juices. It is a flavoring, coloring agent, and natural antioxidant for beverages and desserts.",
-    "vedicSignificance": "NA",
-    "medicalSignificance": "Used in Brazilian folk medicine. Potential superfruit due to high phenolic, flavonoid, and vitamin content. Rich in antioxidants, antibacterial, antifungal, anti-inflammatory, hypoglycemic and anti-diabetic."
-},
+            "id": "savannah-cherry",
+            "category": "Tropical",
+            "name": "Savannah Cherry",
+            "vernacularName": "Savannah Cherry / Cerrado Cherry",
+            "botanicalName": "Eugenia calycina",
+            "family": "Myrtaceae",
+            "origin": "Tropical Savanna, Brazilian Cerrado Biome",
+            "price": "₹150",
+            "image": "images/p3p2.jpg",
+            "images": [
+                "images/p3p2.jpg",
+                "images/p3p1.jpg",
+                "images/p3p3.jpg",
+                "images/p3p4.jpg"
+            ],
+            "economicUse": "Small red fruits are sweet–sour, juicy, high in vitamin C & antioxidants. Eaten fresh and used in jams, jellies, and juices. It is a flavoring, coloring agent, and natural antioxidant for beverages and desserts.",
+            "vedicSignificance": "NA",
+            "medicalSignificance": "Used in Brazilian folk medicine. Potential superfruit due to high phenolic, flavonoid, and vitamin content. Rich in antioxidants, antibacterial, antifungal, anti-inflammatory, hypoglycemic and anti-diabetic."
+        },
         {
-    "id": "jaboticaba",
-    "name": "Jaboticaba",
-    "vernacularName": "Jaboticaba",
-    "botanicalName": "Myrciaria glazioviana or Plinia cauliflora",
-    "family": "Myrtaceae",
-    "origin": "Brazil particularly Sao Paulo, Argentina",
-    "price": "₹150",
-    "image": "images/p4p1.jpg",
-    "images": [
-        "images/p4p1.jpg",
-        "images/p4p2.jpg",
-        "images/p4p3.jpg",
-        "images/p4p4.jpg"
-    ],
-    "economicUse": "Fruits are used in jams, jellies, liquers, preserves and beverages.",
-    "vedicSignificance": "NA",
-    "medicalSignificance": "Rich in Vit C, anthocyanins, anti-oxidants, antimicrobials, anti-inflammatory. Treats diarrhea, asthma, tonsillitis, blood sugar control."
-},
-{
-    "id": "surinam-cherry",
-    "name": "Surinam Cherry",
-    "vernacularName": "Surinam Cherry",
-    "botanicalName": "Eugenia uniflora",
-    "family": "Myrtaceae",
-    "origin": "Brazil particularly Uruguay, Paraguay, Northern Argentina",
-    "price": "₹150",
-    "image": "images/p5p1.jpg",
-    "images": [
-        "images/p5p1.jpg",
-        "images/p5p2.jpg",
-        "images/p5p3.jpg",
-        "images/p5p4.jpg"
-    ],
-    "economicUse": "Fresh fruits are bright red or dark purple ribbed berries used in flavouring sweet/tangy or slightly resinous foods. Used in making jams, jellies, liqueurs, beverages. Used in making ornamental bonsai. Fresh leaves are used in making herbal teas and mosquito repellent.",
-    "vedicSignificance": "NA",
-    "medicalSignificance": "Extracts are anti-malarial, anti-bacterial, anti-fungal, anti-inflammatory, blood sugar regulation, anti-obesity. Has cardiovascular effects."
-},
-{
-    "id": "lilly-pilly-pink",
-    "name": "Lilly Pilly Pink",
-    "vernacularName": "Lilly Pilly Pink / Cherry Satinash",
-    "botanicalName": "Syzygium luehmannii",
-    "family": "Myrtaceae",
-    "origin": "Australia, Eastern coastal rainforests of Queensland",
-    "price": "₹150",
-    "image": "images/p6p1.jpg",
-    "images": [
-        "images/p6p1.jpg",
-        "images/p6p2.jpg",
-        "images/p6p3.jpg",
-        "images/p6p4.jpg"
-    ],
-    "economicUse": "Fruits are sweet to tart. Used in jams, jellies, sauces, syrups, cordial, desserts. In urban landscaping used as hedge plant or agro-forestry.",
-    "vedicSignificance": "NA",
-    "medicalSignificance": "Traditionally used by Aboriginal Australians as medicines for coughs, diarrhea and general digestive health. Is anti-oxidative and anti-inflammatory. Rich in flavonoids, anthocyanin, Vit-C. Treats blood sugar, skin health, immune regulation."
-},
-{
-    "id": "beauty-berry",
-    "name": "Beauty Berry",
-    "vernacularName": "Beauty Berry, Layered",
-    "botanicalName": "Callicarpa americana",
-    "family": "Lamiaceae",
-    "origin": "Southeastern USA especially Texas, Arkansas, Florida, Georgia",
-    "price": "₹150",
-    "image": "images/p7p1.jpg",
-    "images": [
-        "images/p7p1.jpg",
-        "images/p7p2.jpg",
-        "images/p7p3.jpg",
-        "images/p7p4.jpg"
-    ],
-    "economicUse": "Small, metallic purple berries are mildly sweet and have astringent properties. Used in making jams, jellies, wines, herbal teas. Used in landscaping and ornamental gardens.",
-    "vedicSignificance": "NA",
-    "medicalSignificance": "Roots used in treating dysentery, urinary tract issue, malarial repellent, rheumatism. Compounds like callicarpenal and intermedeol have insect-repelling activity. Leaves are anti-oxidative and anti-inflammatory."
-},
-{
-    "id": "mangosteen",
-    "name": "Mangosteen",
-    "vernacularName": "Masta / Japanese Mangosteen",
-    "botanicalName": "Garcinia mangostana",
-    "family": "Clusiaceae",
-    "origin": "Malay Peninsula, including Indonesia, Malaysia, Thailand, and the Philippines",
-    "price": "₹150",
-    "image": "images/p8p1.jpg",
-    "images": [
-        "images/p8p1.jpg",
-        "images/p8p2.jpg",
-        "images/p8p3.jpg",
-        "images/p8p4.jpg"
-    ],
-    "economicUse": "Fruits are called 'Queen of fruits', fruit has white, juicy aromatic pulp. Fruits are used in making juices, jams, jellies, canned products, desserts and functional beverages. Fruit pulp is used in making nutraceuticals.",
-    "vedicSignificance": "Mentioned in Ayurveda & Siddha",
-    "medicalSignificance": "Mangosteen (Vrishatphal) is mentioned in some regional and Siddha texts for treating diarrhea, skin eruptions, and inflammation. Mangosteen is classified as Kasjaya (astringent) and Tikta (bitter) in taste."
-},
-{
-    "id": "yellow-che-fruit",
-    "name": "Yellow Che Fruit",
-    "vernacularName": "Yellow Che Fruit",
-    "botanicalName": "Cudrania tricuspidata",
-    "family": "Moraceae",
-    "origin": "China, Japan & Korea",
-    "price": "₹150",
-    "image": "images/p9p1.jpg",
-    "images": [
-        "images/p9p1.jpg",
-        "images/p9p2.jpg",
-        "images/p9p3.jpg",
-        "images/p9p4.jpg"
-    ],
-    "economicUse": "Mulberry-like fruits are mildly sweet in taste used for making jams, jellies, beverages, wines, juices.",
-    "vedicSignificance": "NA",
-    "medicalSignificance": "The fruits are antioxidant, liver tonic, anti-inflammatory, anticancerous, antidiabetic. Liver protective properties."
-},
-{
-    "id": "mamey-sapote",
-    "name": "Mamey Sapote",
-    "vernacularName": "Mamey Sapote Pantin",
-    "botanicalName": "Calocarpum mammosum / Pouteria sapota",
-    "family": "Sapotaceae",
-    "origin": "Central America & Mexico - Guatemala, Honduras, Northern South America",
-    "price": "₹150",
-    "image": "images/p10p1.jpg",
-    "images": [
-        "images/p10p1.jpg",
-        "images/p10p2.jpg",
-        "images/p10p3.jpg",
-        "images/p10p4.jpg"
-    ],
-    "economicUse": "Fruits are known for excellent flavor, texture. Eaten fresh as smoothies, ice-creams, desserts, milkshakes and baby food. Suitable for home gardens, orchards, and agroforestry systems.",
-    "vedicSignificance": "NA",
-    "medicalSignificance": "Central American and Caribbean folk medicine for stomach pain, digestive disorder or liver tonic. Seeds used topically as a skin treatment."
-},
-{
-    "id": "australian-finger-lime",
-    "name": "Australian Finger Lime",
-    "vernacularName": "Australian Finger Lime",
-    "botanicalName": "Citrus australasica",
-    "family": "Rutaceae",
-    "origin": "Eastern Australia (rainforests of Queensland and New South Wales)",
-    "price": "₹150",
-    "image": "images/p11p1.jpg",
-    "images": [
-        "images/p11p1.jpg",
-        "images/p11p2.jpg",
-        "images/p11p3.jpg",
-        "images/p11p4.jpg",
-        "images/p11p5.jpg"
-    ],
-    "economicUse": "Cultivated for its unique caviar-like pulp, eaten fresh and used for jams, jellies, beverages, sauces, and desserts.",
-    "vedicSignificance": "NA",
-    "medicalSignificance": "Finger lime has been traditionally used by Aboriginal Australians. It is used as a bush medicine for treating skin irritations and infection. High in antioxidants and Vit-C. Has antimicrobial properties, can be used in skin care products and nutraceuticals."
-}
+            "id": "jaboticaba",
+            "category": "Tropical",
+            "name": "Jaboticaba",
+            "vernacularName": "Jaboticaba",
+            "botanicalName": "Myrciaria glazioviana or Plinia cauliflora",
+            "family": "Myrtaceae",
+            "origin": "Brazil particularly Sao Paulo, Argentina",
+            "price": "₹150",
+            "image": "images/p4p1.jpg",
+            "images": [
+                "images/p4p1.jpg",
+                "images/p4p2.jpg",
+                "images/p4p3.jpg",
+                "images/p4p4.jpg"
+            ],
+            "economicUse": "Fruits are used in jams, jellies, liquers, preserves and beverages.",
+            "vedicSignificance": "NA",
+            "medicalSignificance": "Rich in Vit C, anthocyanins, anti-oxidants, antimicrobials, anti-inflammatory. Treats diarrhea, asthma, tonsillitis, blood sugar control."
+        },
+        {
+            "id": "surinam-cherry",
+            "category": "Tropical",
+            "name": "Surinam Cherry",
+            "vernacularName": "Surinam Cherry",
+            "botanicalName": "Eugenia uniflora",
+            "family": "Myrtaceae",
+            "origin": "Brazil particularly Uruguay, Paraguay, Northern Argentina",
+            "price": "₹150",
+            "image": "images/p5p1.jpg",
+            "images": [
+                "images/p5p1.jpg",
+                "images/p5p2.jpg",
+                "images/p5p3.jpg",
+                "images/p5p4.jpg"
+            ],
+            "economicUse": "Fresh fruits are bright red or dark purple ribbed berries used in flavouring sweet/tangy or slightly resinous foods. Used in making jams, jellies, liqueurs, beverages. Used in making ornamental bonsai. Fresh leaves are used in making herbal teas and mosquito repellent.",
+            "vedicSignificance": "NA",
+            "medicalSignificance": "Extracts are anti-malarial, anti-bacterial, anti-fungal, anti-inflammatory, blood sugar regulation, anti-obesity. Has cardiovascular effects."
+        },
+        {
+            "id": "lilly-pilly-pink",
+            "category": "Tropical",
+            "name": "Lilly Pilly Pink",
+            "vernacularName": "Lilly Pilly Pink / Cherry Satinash",
+            "botanicalName": "Syzygium luehmannii",
+            "family": "Myrtaceae",
+            "origin": "Australia, Eastern coastal rainforests of Queensland",
+            "price": "₹150",
+            "image": "images/p6p1.jpg",
+            "images": [
+                "images/p6p1.jpg",
+                "images/p6p2.jpg",
+                "images/p6p3.jpg",
+                "images/p6p4.jpg"
+            ],
+            "economicUse": "Fruits are sweet to tart. Used in jams, jellies, sauces, syrups, cordial, desserts. In urban landscaping used as hedge plant or agro-forestry.",
+            "vedicSignificance": "NA",
+            "medicalSignificance": "Traditionally used by Aboriginal Australians as medicines for coughs, diarrhea and general digestive health. Is anti-oxidative and anti-inflammatory. Rich in flavonoids, anthocyanin, Vit-C. Treats blood sugar, skin health, immune regulation."
+        },
+        {
+            "id": "beauty-berry",
+            "category": "Tropical",
+            "name": "Beauty Berry",
+            "vernacularName": "Beauty Berry, Layered",
+            "botanicalName": "Callicarpa americana",
+            "family": "Lamiaceae",
+            "origin": "Southeastern USA especially Texas, Arkansas, Florida, Georgia",
+            "price": "₹150",
+            "image": "images/p7p1.jpg",
+            "images": [
+                "images/p7p1.jpg",
+                "images/p7p2.jpg",
+                "images/p7p3.jpg",
+                "images/p7p4.jpg"
+            ],
+            "economicUse": "Small, metallic purple berries are mildly sweet and have astringent properties. Used in making jams, jellies, wines, herbal teas. Used in landscaping and ornamental gardens.",
+            "vedicSignificance": "NA",
+            "medicalSignificance": "Roots used in treating dysentery, urinary tract issue, malarial repellent, rheumatism. Compounds like callicarpenal and intermedeol have insect-repelling activity. Leaves are anti-oxidative and anti-inflammatory."
+        },
+        {
+            "id": "mangosteen",
+            "category": "Tropical",
+            "name": "Mangosteen",
+            "vernacularName": "Masta / Japanese Mangosteen",
+            "botanicalName": "Garcinia mangostana",
+            "family": "Clusiaceae",
+            "origin": "Malay Peninsula, including Indonesia, Malaysia, Thailand, and the Philippines",
+            "price": "₹150",
+            "image": "images/p8p1.jpg",
+            "images": [
+                "images/p8p1.jpg",
+                "images/p8p2.jpg",
+                "images/p8p3.jpg",
+                "images/p8p4.jpg"
+            ],
+            "economicUse": "Fruits are called 'Queen of fruits', fruit has white, juicy aromatic pulp. Fruits are used in making juices, jams, jellies, canned products, desserts and functional beverages. Fruit pulp is used in making nutraceuticals.",
+            "vedicSignificance": "Mentioned in Ayurveda & Siddha",
+            "medicalSignificance": "Mangosteen (Vrishatphal) is mentioned in some regional and Siddha texts for treating diarrhea, skin eruptions, and inflammation. Mangosteen is classified as Kasjaya (astringent) and Tikta (bitter) in taste."
+        },
+        {
+            "id": "yellow-che-fruit",
+            "category": "Tropical",
+            "name": "Yellow Che Fruit",
+            "vernacularName": "Yellow Che Fruit",
+            "botanicalName": "Cudrania tricuspidata",
+            "family": "Moraceae",
+            "origin": "China, Japan & Korea",
+            "price": "₹150",
+            "image": "images/p9p1.jpg",
+            "images": [
+                "images/p9p1.jpg",
+                "images/p9p2.jpg",
+                "images/p9p3.jpg",
+                "images/p9p4.jpg"
+            ],
+            "economicUse": "Mulberry-like fruits are mildly sweet in taste used for making jams, jellies, beverages, wines, juices.",
+            "vedicSignificance": "NA",
+            "medicalSignificance": "The fruits are antioxidant, liver tonic, anti-inflammatory, anticancerous, antidiabetic. Liver protective properties."
+        },
+        {
+            "id": "mamey-sapote",
+            "category": "Tropical",
+            "name": "Mamey Sapote",
+            "vernacularName": "Mamey Sapote Pantin",
+            "botanicalName": "Calocarpum mammosum / Pouteria sapota",
+            "family": "Sapotaceae",
+            "origin": "Central America & Mexico - Guatemala, Honduras, Northern South America",
+            "price": "₹150",
+            "image": "images/p10p1.jpg",
+            "images": [
+                "images/p10p1.jpg",
+                "images/p10p2.jpg",
+                "images/p10p3.jpg",
+                "images/p10p4.jpg"
+            ],
+            "economicUse": "Fruits are known for excellent flavor, texture. Eaten fresh as smoothies, ice-creams, desserts, milkshakes and baby food. Suitable for home gardens, orchards, and agroforestry systems.",
+            "vedicSignificance": "NA",
+            "medicalSignificance": "Central American and Caribbean folk medicine for stomach pain, digestive disorder or liver tonic. Seeds used topically as a skin treatment."
+        },
+        {
+            "id": "australian-finger-lime",
+            "category": "Tropical",
+            "name": "Australian Finger Lime",
+            "vernacularName": "Australian Finger Lime",
+            "botanicalName": "Citrus australasica",
+            "family": "Rutaceae",
+            "origin": "Eastern Australia (rainforests of Queensland and New South Wales)",
+            "price": "₹150",
+            "image": "images/p11p1.jpg",
+            "images": [
+                "images/p11p1.jpg",
+                "images/p11p2.jpg",
+                "images/p11p3.jpg",
+                "images/p11p4.jpg",
+                "images/p11p5.jpg"
+            ],
+            "economicUse": "Cultivated for its unique caviar-like pulp, eaten fresh and used for jams, jellies, beverages, sauces, and desserts.",
+            "vedicSignificance": "NA",
+            "medicalSignificance": "Finger lime has been traditionally used by Aboriginal Australians. It is used as a bush medicine for treating skin irritations and infection. High in antioxidants and Vit-C. Has antimicrobial properties, can be used in skin care products and nutraceuticals."
+        }
     ]
 }
