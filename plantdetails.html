@@ -16,18 +16,18 @@
 
     <style>
         :root {
-            /* Premium Nature Palette */
-            --bg-color: #f2f7f4;
-            --primary-dark: #1a3626;
-            --primary-green: #2c5e3f;
-            --accent-green: #4e8c63;
-            --light-sage: #e3ede6;
-            --text-main: #2d3b32;
-            --text-muted: #647569;
+            /* Agricultural / Earthy Nature Palette */
+            --bg-color: #f5f2eb; /* Warm parchment/canvas */
+            --primary-dark: #3b2f2f; /* Deep soil brown */
+            --primary-green: #375236; /* Crop/Forest green */
+            --accent-earth: #8c5a35; /* Terracotta/Wood */
+            --light-earth: #e6dfd3; /* Light straw/oatmeal */
+            --text-main: #332c27; /* Dark earth for text */
+            --text-muted: #665d52; /* Muted brown-grey */
             --white: #ffffff;
-            --glass-border: rgba(255, 255, 255, 0.6);
-            --shadow-soft: 0 20px 40px -10px rgba(26, 54, 38, 0.08);
-            --shadow-hover: 0 30px 60px -15px rgba(26, 54, 38, 0.15);
+            --card-border: #d6cfc1; /* Sturdy rustic border */
+            --shadow-soft: 0 4px 6px -1px rgba(59, 47, 47, 0.08);
+            --shadow-hover: 0 10px 15px -3px rgba(59, 47, 47, 0.12);
         }
 
         * {
@@ -49,29 +49,7 @@
             overflow-x: hidden;
         }
 
-        /* Ambient Background Elements */
-        body::before, body::after {
-            content: '';
-            position: fixed;
-            border-radius: 50%;
-            filter: blur(100px);
-            z-index: -1;
-            opacity: 0.5;
-        }
-        body::before {
-            width: 400px;
-            height: 400px;
-            background: #d4e8db;
-            top: -100px;
-            left: -100px;
-        }
-        body::after {
-            width: 500px;
-            height: 500px;
-            background: #e9f2eb;
-            bottom: -150px;
-            right: -150px;
-        }
+        /* Removed background blurs to keep it rooted and clean */
 
         /* Navigation */
         .nav {
@@ -93,44 +71,44 @@
             gap: 0.6rem;
             padding: 0.6rem 1.2rem;
             background: var(--white);
-            border-radius: 50px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.03);
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            border-radius: 6px;
+            border: 1px solid var(--card-border);
+            box-shadow: 0 2px 5px rgba(0,0,0,0.02);
+            transition: all 0.2s ease;
         }
 
         .back-btn:hover {
-            transform: translateX(-5px) translateY(-2px);
-            box-shadow: 0 8px 20px rgba(44, 94, 63, 0.1);
+            transform: translateX(-3px);
+            background: var(--bg-color);
             color: var(--primary-dark);
+            border-color: var(--accent-earth);
         }
 
-        /* Main Container */
+        /* Main Container - Styled like a field notebook/clipboard */
         .whiteboard-wrapper {
             width: 100%;
             max-width: 1100px;
-            border-radius: 32px;
-            background: rgba(255, 255, 255, 0.85);
-            backdrop-filter: blur(20px);
-            -webkit-backdrop-filter: blur(20px);
-            border: 1px solid var(--glass-border);
-            box-shadow: var(--shadow-soft);
+            border-radius: 8px;
+            background: var(--white);
+            border: 1px solid var(--card-border);
+            box-shadow: 0 8px 24px rgba(59, 47, 47, 0.06);
             overflow: hidden;
             display: none;
-            animation: fadeInScale 0.8s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
+            animation: fadeInScale 0.6s ease forwards;
         }
 
         @keyframes fadeInScale {
-            0% { opacity: 0; transform: translateY(40px) scale(0.98); }
-            100% { opacity: 1; transform: translateY(0) scale(1); }
+            0% { opacity: 0; transform: translateY(20px); }
+            100% { opacity: 1; transform: translateY(0); }
         }
 
-        /* Printable Area */
+        /* Printable Area - Field Journal Grid */
         .whiteboard-content {
             padding: 4.5rem;
             background: var(--white);
-            background-image: linear-gradient(var(--light-sage) 1px, transparent 1px), 
-                              linear-gradient(90deg, var(--light-sage) 1px, transparent 1px);
-            background-size: 40px 40px;
+            background-image: linear-gradient(var(--light-earth) 1px, transparent 1px), 
+                              linear-gradient(90deg, var(--light-earth) 1px, transparent 1px);
+            background-size: 30px 30px;
             background-position: center;
         }
 
@@ -142,7 +120,7 @@
             align-items: flex-start;
         }
 
-        /* Premium Image & Gallery UI */
+        /* Image & Gallery UI - Farmhouse frame style */
         .plant-image-container {
             flex-shrink: 0;
             width: 340px;
@@ -155,31 +133,20 @@
             position: relative;
             width: 100%;
             height: 400px;
-            border-radius: 24px 80px 24px 24px;
-            box-shadow: 0 25px 50px rgba(0,0,0,0.1);
-            background: var(--light-sage);
+            border-radius: 8px;
+            padding: 8px;
+            background: var(--white);
+            border: 1px solid var(--card-border);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
             z-index: 2;
         }
 
-        .main-image-wrapper::before {
-            content: '';
-            position: absolute;
-            inset: -15px;
-            border: 2px dashed var(--accent-green);
-            border-radius: 50% 30% 50% 30% / 30% 50% 30% 50%;
-            opacity: 0.3;
-            animation: rotate 20s linear infinite;
-            z-index: -1;
-        }
-
-        @keyframes rotate {
-            100% { transform: rotate(360deg); }
-        }
+        /* Removed futuristic rotating dashed border */
 
         .plant-image {
             width: 100%;
             height: 100%;
-            border-radius: inherit;
+            border-radius: 4px;
             object-fit: cover;
             position: relative;
             z-index: 2;
@@ -201,29 +168,30 @@
         .thumbnail {
             width: 70px;
             height: 70px;
-            border-radius: 14px;
+            border-radius: 4px;
             object-fit: cover;
             cursor: pointer;
-            border: 2px solid transparent;
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+            border: 2px solid var(--card-border);
+            transition: all 0.2s ease;
             background: var(--white);
         }
 
         .thumbnail:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 10px 20px rgba(26, 54, 38, 0.12);
+            transform: translateY(-2px);
+            border-color: var(--accent-earth);
         }
 
         .thumbnail.active {
             border-color: var(--primary-green);
-            box-shadow: 0 0 0 2px var(--white), 0 0 0 4px var(--accent-green);
-            transform: scale(1.05);
+            box-shadow: 0 0 0 2px var(--white), 0 0 0 3px var(--primary-green);
         }
 
         .plant-titles {
             flex: 1;
             padding-top: 1rem;
+            background: rgba(255, 255, 255, 0.8); /* Readability over grid */
+            padding: 1.5rem;
+            border-radius: 8px;
         }
 
         .plant-title {
@@ -232,13 +200,13 @@
             color: var(--primary-dark);
             line-height: 1.1;
             margin-bottom: 1rem;
-            letter-spacing: -1.5px;
+            letter-spacing: -1px;
         }
 
         .divider {
             height: 4px;
             width: 80px;
-            background: linear-gradient(90deg, var(--accent-green), transparent);
+            background: var(--accent-earth);
             border-radius: 2px;
             margin-bottom: 2.5rem;
         }
@@ -252,22 +220,22 @@
         .fact-card {
             background: var(--white);
             padding: 1.2rem 1.5rem;
-            border-radius: 16px;
-            border: 1px solid var(--light-sage);
-            box-shadow: 0 4px 15px rgba(0,0,0,0.02);
-            transition: transform 0.3s ease;
+            border-radius: 6px;
+            border: 1px solid var(--card-border);
+            box-shadow: 0 2px 5px rgba(0,0,0,0.02);
+            transition: transform 0.2s ease;
         }
 
         .fact-card:hover {
-            transform: translateY(-3px);
-            border-color: var(--accent-green);
+            transform: translateY(-2px);
+            border-color: var(--accent-earth);
         }
 
         .fact-label {
             font-size: 0.85rem;
             text-transform: uppercase;
             letter-spacing: 1.5px;
-            color: var(--accent-green);
+            color: var(--accent-earth);
             font-weight: 600;
             margin-bottom: 0.4rem;
         }
@@ -294,25 +262,27 @@
         .section-panel {
             background: var(--white);
             padding: 2.5rem;
-            border-radius: 24px;
-            border: 1px solid var(--light-sage);
-            box-shadow: 0 10px 30px rgba(0,0,0,0.03);
+            border-radius: 8px;
+            border: 1px solid var(--card-border);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.03);
             position: relative;
             z-index: 1;
             overflow: hidden;
-            transition: all 0.4s ease;
+            transition: all 0.3s ease;
         }
 
         .section-panel:hover {
             box-shadow: var(--shadow-hover);
-            transform: translateY(-5px);
+            transform: translateY(-3px);
+            border-color: var(--primary-green);
         }
 
         .section-icon-wrap {
-            width: 50px;
-            height: 50px;
-            background: var(--light-sage);
-            border-radius: 14px;
+            width: 45px;
+            height: 45px;
+            background: var(--bg-color);
+            border: 1px solid var(--card-border);
+            border-radius: 6px;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -321,8 +291,8 @@
         }
 
         .section-icon-wrap svg {
-            width: 24px;
-            height: 24px;
+            width: 22px;
+            height: 22px;
             stroke-width: 2;
         }
 
@@ -337,56 +307,59 @@
             color: var(--text-muted);
             line-height: 1.7;
             font-size: 1.05rem;
-            font-weight: 300;
+            font-weight: 400;
         }
 
         /* Action Buttons */
         .action-area {
             padding: 2.5rem 4rem;
-            background: rgba(255, 255, 255, 0.6);
+            background: var(--bg-color);
             display: flex;
             justify-content: flex-end;
             gap: 1.5rem;
-            border-top: 1px solid rgba(0,0,0,0.05);
+            border-top: 1px solid var(--card-border);
         }
 
         .btn {
-            padding: 1.2rem 2.5rem;
+            padding: 1rem 2.5rem;
             font-size: 1.05rem;
             font-weight: 500;
-            border-radius: 50px;
+            border-radius: 6px;
             border: none;
             cursor: pointer;
             display: flex;
             align-items: center;
             gap: 0.8rem;
-            transition: all 0.3s ease;
+            transition: all 0.2s ease;
             text-decoration: none;
             letter-spacing: 0.5px;
+            font-family: 'Poppins', sans-serif;
         }
 
         .btn-primary {
-            background: linear-gradient(135deg, var(--primary-green), var(--primary-dark));
+            background: var(--primary-green);
             color: var(--white);
-            box-shadow: 0 10px 25px rgba(44, 94, 63, 0.3);
+            box-shadow: 0 4px 10px rgba(55, 82, 54, 0.2);
         }
 
         .btn-primary:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 15px 35px rgba(44, 94, 63, 0.4);
+            transform: translateY(-2px);
+            background: var(--primary-dark);
+            box-shadow: 0 6px 15px rgba(55, 82, 54, 0.3);
         }
 
         .btn-secondary {
             background: var(--white);
             color: var(--primary-dark);
-            border: 1px solid var(--light-sage);
-            box-shadow: 0 4px 15px rgba(0,0,0,0.02);
+            border: 1px solid var(--card-border);
+            box-shadow: 0 2px 5px rgba(0,0,0,0.02);
         }
 
         .btn-secondary:hover {
-            border-color: var(--accent-green);
-            transform: translateY(-3px);
-            box-shadow: 0 8px 25px rgba(0,0,0,0.05);
+            border-color: var(--accent-earth);
+            color: var(--accent-earth);
+            transform: translateY(-2px);
+            background: #faf8f5;
         }
 
         /* States */
@@ -394,7 +367,8 @@
             text-align: center;
             padding: 6rem 2rem;
             background: var(--white);
-            border-radius: 32px;
+            border-radius: 8px;
+            border: 1px solid var(--card-border);
             box-shadow: var(--shadow-soft);
             max-width: 600px;
             width: 100%;
@@ -423,8 +397,8 @@
                 margin: 0 auto;
             }
             .main-image-wrapper { height: 350px; }
-            .main-image-wrapper::before { display: none; }
             .gallery-thumbnails { justify-content: center; }
+            .plant-titles { background: transparent; padding: 0; }
             .action-area { flex-direction: column; padding: 2rem; }
             .btn { width: 100%; justify-content: center; }
             .whiteboard-content { padding: 2.5rem 1.5rem; }
@@ -445,7 +419,7 @@
 
     <!-- Loading State -->
     <div id="loading-state" class="status-state">
-        <div style="width: 40px; height: 40px; border: 3px solid var(--light-sage); border-top-color: var(--primary-green); border-radius: 50%; animation: rotate 1s linear infinite; margin: 0 auto 1.5rem;"></div>
+        <div style="width: 40px; height: 40px; border: 3px solid var(--light-earth); border-top-color: var(--primary-green); border-radius: 50%; animation: rotate 1s linear infinite; margin: 0 auto 1.5rem;"></div>
         <h2 style="font-family: 'Playfair Display', serif; color: var(--primary-dark); font-size: 2rem;">Curating Details...</h2>
         <p style="color: var(--text-muted); margin-top: 0.5rem;">Unearthing botanical wisdom.</p>
     </div>
@@ -465,7 +439,7 @@
         <div class="whiteboard-content" id="capture-area">
             <div class="board-header">
                 
-                <!-- Upgraded Image & Gallery UI -->
+                <!-- Image & Gallery UI -->
                 <div class="plant-image-container">
                     <div class="main-image-wrapper">
                         <img id="plant-img" src="" alt="Plant" class="plant-image">
@@ -577,7 +551,7 @@
                         text: currentUrl,
                         width: 500,
                         height: 500,
-                        colorDark : "#000000",
+                        colorDark : "#3b2f2f", /* Updated QR code to use primary dark earth tone */
                         colorLight : "#ffffff",
                         correctLevel : QRCode.CorrectLevel.L 
                     });
@@ -611,7 +585,8 @@
             function populateWhiteboard(plant) {
                 document.title = `${plant.name} | Hare Krishna Nature Farm`;
                 
-                const placeholder = "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400' viewBox='0 0 400 400'%3E%3Crect width='400' height='400' fill='%23e3ede6'/%3E%3Cpath d='M200 120c-33.1 0-60 26.9-60 60s26.9 60 60 60 60-26.9 60-60-26.9-60-60-60zm0 96c-19.8 0-36-16.2-36-36s16.2-36 36-36 36 16.2 36 36-16.2 36-36 36z' fill='%234e8c63'/%3E%3Cpath d='M200 150c-16.5 0-30 13.5-30 30s13.5 30 30 30 30-13.5 30-30-13.5-30-30-30z' fill='%232c5e3f'/%3E%3C/svg%3E";
+                // Updated SVG string to match the new agricultural color palette
+                const placeholder = "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400' viewBox='0 0 400 400'%3E%3Crect width='400' height='400' fill='%23e6dfd3'/%3E%3Cpath d='M200 120c-33.1 0-60 26.9-60 60s26.9 60 60 60 60-26.9 60-60-26.9-60-60-60zm0 96c-19.8 0-36-16.2-36-36s16.2-36 36-36 36 16.2 36 36-16.2 36-36 36z' fill='%238c5a35'/%3E%3Cpath d='M200 150c-16.5 0-30 13.5-30 30s13.5 30 30 30 30-13.5 30-30-13.5-30-30-30z' fill='%23375236'/%3E%3C/svg%3E";
                 
                 const imgEl = document.getElementById('plant-img');
                 const galleryContainer = document.getElementById('gallery-thumbnails');
@@ -725,7 +700,7 @@
                                 ctx.drawImage(sourceElement, padding, padding);
                             }
                             
-                            ctx.fillStyle = '#000000'; 
+                            ctx.fillStyle = '#3b2f2f'; /* Match primary dark earth tone */
                             ctx.font = 'bold 36px "Playfair Display", serif';
                             ctx.textAlign = 'center';
                             ctx.textBaseline = 'middle';
