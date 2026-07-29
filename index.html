@@ -5,18 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hare Krishna Nature Farm | ISKCON Botanical Encyclopedia</title>
     
-    <!-- PWA & Mobile Meta Tags -->
-    <link rel="manifest" href="manifest.json">
-    <meta name="theme-color" content="#375236">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <meta name="apple-mobile-web-app-title" content="HKNF Flora">
-    <link rel="apple-touch-icon" href="icon-192.png">
-
     <!-- Professional Typography -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,500;0,700;1,500;1,700&display=swap" rel="stylesheet">
+
     
     <style>
         /* Agricultural / Earthy Nature Palette */
@@ -563,15 +556,6 @@
             // Initialize
             fetchPlants();
         });
-
-        // Register Service Worker for PWA / Installability
-        if ('serviceWorker' in navigator) {
-            window.addEventListener('load', () => {
-                navigator.serviceWorker.register('./sw.js')
-                    .then(reg => console.log('Service Worker registered successfully:', reg.scope))
-                    .catch(err => console.error('Service Worker registration failed:', err));
-            });
-        }
     </script>
 </body>
 </html>
