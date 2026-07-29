@@ -601,6 +601,909 @@
     "economicUse": "Fruit is eaten fresh and used in fruit salads, pickles, juices and traditional sweets. Crisp and mildly sweet. It is also grown as an ornamental tree due to its glossy leaves and attractive fruits. Commonly used in agroforestry and tropical landscaping.",
     "vedicSignificance": "NA",
     "medicalSignificance": "Fruits are rich in water and fiber, aiding hydration and digestion. Low in calories, making them suitable for weight management. Rich in antioxidants and possess mild diuretic properties supporting kidney and urinary health. Traditionally used for fever, liver health and skin care in several cultures."
-}
+},
+        {
+        "id": "custard-apple",
+        "category": "Tropical",
+        "name": "Custard apple",
+        "vernacularName": "Custard apple",
+        "botanicalName": "Rollinia deliciosa or Annona mucosa",
+        "family": "Annonaceae",
+        "origin": "Tropical South America particularly Brazil, Peru, and the Amazon Basin",
+        "price": "₹150",
+        "image": "images/p31p1.jpg",
+        "images": [
+            "images/p31p1.jpg",
+            "images/p31p2.jpg",
+            "images/p31p3.jpg",
+            "images/p31p4.jpg"
+        ],
+        "economicUse": "Fresh fruit is edible, soft, creamy, sweet-sour flesh used in desserts, milkshakes, or ice creams. It is an orchard crop,  grown in tropical fruit orchards; gaining popularity in exotic fruit markets.",
+        "vedicSignificance": "Information currently unavailable.",
+        "medicalSignificance": "Custard apple is rich in Vitamin-C and B-complex – supports immune function and energy metabolism. It is antioxidant and anti-inflammatory – potential for reducing oxidative stress and inflammation. It has mild sedative properties. It has digestive aid – high in fiber, supports gut health. It is traditionally used to treat fever, diarrhea, and as a natural energy booster."
+    },
+    {
+        "id": "nance-fruit",
+        "category": "Tropical",
+        "name": "Nance fruit",
+        "vernacularName": "Nance fruit",
+        "botanicalName": "Byrsonima crassifolia",
+        "family": "Malpighiaceae",
+        "origin": "Tropical America particularly Mexico to northern South America and the Caribbean",
+        "price": "₹150",
+        "image": "images/p32p1.jpg",
+        "images": [
+            "images/p32p1.jpg",
+            "images/p32p2.jpg",
+            "images/p32p3.jpg",
+            "images/p32p4.jpg"
+        ],
+        "economicUse": "Edible fruit is consumed raw, or used in desserts, candies, drinks, fermented beverages (like chicha), jams. It is occasionally used for firewood or small-scale timber. Trees are used in reforestation & landscaping, tolerant to poor soils and drought.",
+        "vedicSignificance": "Information currently unavailable.",
+        "medicalSignificance": "Fruits are rich in water and fiber, aid in hydration and digestion. Fruit is low calorie – suitable for weight management. Rich in antioxidant properties – may help reduce oxidative stress. It has diuretic effects thus used to support kidney and urinary."
+    },
+    {
+        "id": "sundrop-layered",
+        "category": "Tropical",
+        "name": "Sundrop layered",
+        "vernacularName": "Sundrop layered",
+        "botanicalName": "Solanum quitoense",
+        "family": "Solanaceae",
+        "origin": "Northwestern South America (Ecuador, Colombia, Peru)",
+        "price": "₹150",
+        "image": "images/p33p1.jpg",
+        "images": [
+            "images/p33p1.jpg",
+            "images/p33p2.jpg",
+            "images/p33p3.jpg",
+            "images/p33p4.jpg"
+        ],
+        "economicUse": "Fruit is edible bright orange with green pulp; used in juices, jams, sauces, and desserts. It is a commercial fruit crop especially in Ecuador and Colombia for fresh market and juice industry. The export value is high.",
+        "vedicSignificance": "Information currently unavailable.",
+        "medicalSignificance": "Fruit is rich in Vitamin-C and Iron, boosts immunity and blood health. It is rich in antioxidants, helps fight free radicals. It is diuretic & detoxifying, used to cleanse kidneys and liver. It is anti-inflammatory & Digestive Aid – juice is soothing and supports digestion. It has been traditinally used for hypertension, cholesterol, and weight management in folk medicine."
+    },
+    {
+        "id": "cowa-fruit",
+        "category": "Tropical",
+        "name": "Cowa fruit",
+        "vernacularName": "Cowa fruit",
+        "botanicalName": "Garcinia cowa",
+        "family": "Clusiaceae / Guttiferae",
+        "origin": "South and Southeast Asia (India, Thailand, Myanmar, Malaysia, Indonesia)",
+        "price": "₹150",
+        "image": "images/p34p1.jpg",
+        "images": [
+            "images/p34p1.jpg",
+            "images/p34p2.jpg",
+            "images/p34p3.jpg",
+            "images/p34p4.jpg"
+        ],
+        "economicUse": "Fruits are eaten fresh or cooked; used in curries, pickles, and preserves for its sour taste. Acts as a substitute for tamarind in many Southeast Asian dishes. Yellow dye from the bark used in traditional textiles. Used as timber & fuelwood.  Used as an ornamental plant for its glossy leaves and attractive canopy.",
+        "vedicSignificance": "Information currently unavailable.",
+        "medicalSignificance": "It is a digestive stimulant, promotes appetite and digestion. It is antimicrobial & antiparasitic, traditionally used to treat infections, diarrhea, and intestinal worms. It is anti-inflammatory, fruit  and bark used for swelling and pain relief.  Decoctions from the bark used as a hepatoprotective tonic. Used in Thai and Indian folk medicine to aid uterine recovery."
+    },
+    {
+        "id": "kepple-fruit",
+        "category": "Tropical",
+        "name": "Kepple fruit",
+        "vernacularName": "Kepple fruit",
+        "botanicalName": "Stelechocarpus burahol",
+        "family": "Annonaceae",
+        "origin": "Malesia, especially cultivated in Java, Indonesia",
+        "price": "₹150",
+        "image": "images/p35p1.jpg",
+        "images": [
+            "images/p35p1.jpg",
+            "images/p35p2.jpg",
+            "images/p35p3.jpg",
+            "images/p35p4.jpg"
+        ],
+        "economicUse": "Keppal is valued as an ornamental and symbol of identity (e.g. the Yogyakarta region). It is traditionally used as oral deodorant, body scent enhancer, contraceptive; used by palace women in Java for centuries.",
+        "vedicSignificance": "Information currently unavailable.",
+        "medicalSignificance": "Fruit, seeds, roots contain saponins, flavonoids, polyphenols, alkaloids, quercetin, and other antioxidants like terpenes and vitami C/E. Natural deodorant – reduces body odor in sweat and urine by suppressing odor-causing compounds. Kidney support & diuretic – promotes urine flow, helps prevent inflammation and deposits in kidney. Gout relief – alkaloid content helps neutralize pH and reduce joint inflammation. Anti‑cancer/ anti‑tumor activity – acetogenins, styryl lactones, isoflavones may inhibit cancer cell growth and encourage apoptosis. Liver protection (hepatoprotective) – capable of restoring liver enzyme production and supporting cell regeneration. Skin / cell regeneration – antioxidants support skin health, blood purification and promote youthful vitality."
+    },
+    {
+        "id": "olosapo-fruit-hybrid",
+        "category": "Tropical",
+        "name": "Olosapo fruit hybrid",
+        "vernacularName": "Olosapo fruit hybrid",
+        "botanicalName": "Couepia polyandra",
+        "family": "Chrysobalanaceae",
+        "origin": "Mexico through Central America (including Guatemala, Belize, Costa Rica, El Salvador, and Honduras)",
+        "price": "₹150",
+        "image": "images/p36p1.jpg",
+        "images": [
+            "images/p36p1.jpg",
+            "images/p36p2.jpg",
+            "images/p36p3.jpg",
+            "images/p36p4.jpg"
+        ],
+        "economicUse": "Fresh fruit is pureed into smoothies, desserts, ice cream, jams, sauces; pairs well with fruits like banana, coconut, strawberry and flavors like chocolate, vanilla, nutmeg",
+        "vedicSignificance": "Information currently unavailable.",
+        "medicalSignificance": "High in dietary fiber, supporting digestion and detoxification. Contains vitamin C and antioxidants that may support immunity, collagen formation, reduce inflammation. Limited phytochemistry documented: compounds like oleanolic acid, betulinic acid, stigmasterol and a novel triterpene have been isolated, inhibiting DNA polymerase β lyase activity in vitro."
+    },
+    {
+        "id": "nam-nam-fruit",
+        "category": "Tropical",
+        "name": "Nam Nam fruit",
+        "vernacularName": "Nam Nam fruit / Kata Puru, Puki Anjing / Buah Katak Puru",
+        "botanicalName": "Cynometra cauliflora",
+        "family": "Fabaceae",
+        "origin": "Indo-Malaya region. Peninsular Malaysia; also found in Sri Lanka, India, Indonesia",
+        "price": "₹150",
+        "image": "images/p37p1.jpg",
+        "images": [
+            "images/p37p1.jpg",
+            "images/p37p2.jpg",
+            "images/p37p3.jpg",
+            "images/p37p4.jpg"
+        ],
+        "economicUse": "Sour when unripe; mild, sweet‑tangy when ripe—likened to unripe apple or carambola; crunchy-fibrous pulp used in jams, jellies, beverages, juices.",
+        "vedicSignificance": "Information currently unavailable.",
+        "medicalSignificance": "High vitamin C and A, antioxidants, polyphenols, flavonoids; ~87% water; fiber, protein, carbs. Diabetes & Hypertension: Leaf decoctions and young shoots are traditionally used to manage blood sugar and high blood pressure.\nSkin health: Seed oil is applied topically in parts of India to treat skin conditions like rashes and infections. Digestive health / diuretic: Fruit and leaves are used in folk remedies for digestive discomfort, urinary flow, and as mild diuretic agents."
+    },
+    {
+        "id": "wetland-abiurana",
+        "category": "Tropical",
+        "name": "Wetland abiurana",
+        "vernacularName": "Wetland abiurana / Cinnamon Apple",
+        "botanicalName": "Pouteria glomerata",
+        "family": "Sapotaceae",
+        "origin": "Wetlands of the Amazon Basin. Neotropical, especially Brazilian Amazon floodplain forests",
+        "price": "₹150",
+        "image": "images/p38p1.jpg",
+        "images": [
+            "images/p38p1.jpg",
+            "images/p38p2.jpg",
+            "images/p38p3.jpg",
+            "images/p38p4.jpg"
+        ],
+        "economicUse": "Regarded as a forest delicacy; shared during harvest in indigenous Amazon communities. Fruits are eaten fresh, juiced, or in sweet pulp preparations, sometimes blended into smoothies or desserts.",
+        "vedicSignificance": "Information currently unavailable.",
+        "medicalSignificance": "itamin C & B₃ (Niacin): Supports immune function, skin health, energy metabolism, and nervous system function. Antioxidants and dietary fiber: Aid digestion, reduce oxidative stress, support gut health, may protect against chronic diseases . Anti‑Inflammatory and digestive seu. Reported to relieve mild respiratory complaints, reduce fatigue, alleviate arthritis symptoms, and promote general well-being."
+    },
+    {
+        "id": "davidson-plum-davidson-plum",
+        "category": "Tropical",
+        "name": "Davidson plum (Davidson plum)",
+        "vernacularName": "Davidson plum (Davidson plum)",
+        "botanicalName": "Davidsonia jerseyana",
+        "family": "Cunoniaceae",
+        "origin": "Subtropical rainforest of Northern New South Wales & Queensland, Australia",
+        "price": "₹150",
+        "image": "images/p39p1.jpg",
+        "images": [
+            "images/p39p1.jpg",
+            "images/p39p2.jpg",
+            "images/p39p3.jpg",
+            "images/p39p4.jpg"
+        ],
+        "economicUse": "Culinary uses include jams, sauces, chutneys, ice creams, sorbets, cordials, wines, and spice-infused desserts. They’re often used in powdered or freeze‑dried form, adding a vivid color and tart flavor to sweet and savory dishes.",
+        "vedicSignificance": "Information currently unavailable.",
+        "medicalSignificance": "Extremely high levels of anthocynin, greater than blueberries—offering potent antioxidant activity. These pigments support eye, brain, heart, and immune health. Vitamin C, Vitamin E, Zinc, Calcium, Magnesium, Folate, Lutein, plus a favorable potassium-to-sodium ratio. High anthocyanins and polyphenols may reduce oxidative stress, support cardiovascular health, and inhibit inflammation associated with chronic diseases including metabolic disorders and neurodegeneration. Metabolic and Cardiovascular Support: Studies show reductions in visceral fat, plasma triglycerides, blood pressure, inflammatory cell infiltration in heart/liver, and improved tissue integrity in obesity models—especially linked to D. pruriens. \nImmune and Skin Health: Vitamin E, zinc, lutein, and antioxidants contribute to skin repair, UV protection, collagen synthesis, immune support, and eye health.  Digestive Benefits: With fiber content and mild laxative properties, Davidson plum may support digestive regularity and beneficial gut flora."
+    },
+    {
+        "id": "mexican-black-plum",
+        "category": "Tropical",
+        "name": "Mexican Black Plum",
+        "vernacularName": "Mexican Black Plum",
+        "botanicalName": "Spondias purpurea L.",
+        "family": "Anacardiaceae",
+        "origin": "Mexico & Central America, including Belize, Guatemala, Honduras",
+        "price": "₹150",
+        "image": "images/p40p1.jpg",
+        "images": [
+            "images/p40p1.jpg",
+            "images/p40p2.jpg",
+            "images/p40p3.jpg",
+            "images/p40p4.jpg"
+        ],
+        "economicUse": "High pectin content makes it ideal for jelly, jam, and ponche. Sweet sour fruit helps in making sauces, preserves, drinks, marinades, salsas, and desserts.  Used in living fences and agroforestry systems, and sap/bark as glue or traditional resin for treating jaundice among indigenous groups.",
+        "vedicSignificance": "Information currently unavailable.",
+        "medicalSignificance": "Antioxidant & anti-inflammatory action: anthocyanins and polyphenols may reduce oxidative stress and inflammation; support digestive and cardiovascular health.\nDigestive health: Fiber and pectin aid in constipation relief, promote gut health, and help regulate cholesterol and blood sugar. Immunity & skin health: Vitamin C contributes to immune support and skin repair; folklore uses include applying crushed leaves/bark to irritated skin or wounds. Crushed fruit or leaves applied to relieve headache, muscle pain, and ulcers/sores, including canker sores."
+    },
+    {
+        "id": "mulberry-var-long,-short",
+        "category": "Tropical",
+        "name": "Mulberry var long, short",
+        "vernacularName": "Mulberry var long, short",
+        "botanicalName": "Morus macroura",
+        "family": "Moraceae",
+        "origin": "Tibet, the Himalayas, Indochina; found across India, Bhutan, Myanmar, and Southeast Asia",
+        "price": "₹150",
+        "image": "images/p41p1.jpg",
+        "images": [
+            "images/p41p1.jpg",
+            "images/p41p2.jpg",
+            "images/p41p3.jpg",
+            "images/p41p4.jpg"
+        ],
+        "economicUse": "Eaten raw, used in jams, juices; cultivated for large fruit yield (hundreds of pounds per tree); leaves used for sericulture (silkworm feed); wood quality suited for furniture and small construction uses.",
+        "vedicSignificance": "Information currently unavailable.",
+        "medicalSignificance": "Rich in phenolic compounds and flavonoids. Anti‑ulcer & anti‑inflammatory potential. It has neuroprotective & anticancer activity."
+    },
+    {
+        "id": "golden-custard-apple",
+        "category": "Tropical",
+        "name": "Golden Custard Apple",
+        "vernacularName": "Golden Custard Apple",
+        "botanicalName": "Annona squamossa",
+        "family": "Annonaceae",
+        "origin": "Tropical and subtropical regions; this golden variant is cultivated in India, particularly Maharashtra",
+        "price": "₹150",
+        "image": "images/p42p1.jpg",
+        "images": [
+            "images/p42p1.jpg",
+            "images/p42p2.jpg",
+            "images/p42p3.jpg",
+            "images/p42p4.jpg"
+        ],
+        "economicUse": "Consumed fresh, blended into smoothies, desserts, ice-creams, jams, and milkshakes.",
+        "vedicSignificance": "Information currently unavailable.",
+        "medicalSignificance": "Immunity & Skin: Rich in vitamin C and antioxidants; helps in free-radical scavenging, skin elasticity, wound healing, and enhancing collagen synthesis. Digestive Support: Dietary fiber promotes regularity, nourishes gut microbiota, may help control blood sugar by slowing sugar absorption. Anti-diabetic & Anti-inflammatory: The high fiber and phytonutrient content supports glycemic regulation and reduces inflammation, beneficial in managing arthritis symptoms.\nHair & Eye Health: Vitamin C supports hair strength, combats dandruff and includes limited beta-carotene for eye protection and age-related macular degeneration prevention."
+    },
+    {
+        "id": "sweet-plum",
+        "category": "Tropical",
+        "name": "Sweet Plum",
+        "vernacularName": "Sweet Plum / European Plum",
+        "botanicalName": "Prunus domestica",
+        "family": "Rosaceae",
+        "origin": "Europe and Central Asia; widely cultivated worldwide",
+        "price": "₹150",
+        "image": "images/p43p1.jpg",
+        "images": [
+            "images/p43p1.jpg",
+            "images/p43p2.jpg",
+            "images/p43p3.jpg",
+            "images/p43p4.jpg"
+        ],
+        "economicUse": "Eaten fresh, dried into prunes, made into jams, juices, sauces, baked goods, preserves, and fermented beverages.",
+        "vedicSignificance": "Plums are historically noted for their cooling, sweet-sour and astringent nature when ripe. They are used to balance Pitta and Kapha dosha in traditional descriptions. Seed powder and fruit extracts used in Ayurveda to manage diabetes due to jambosine compound. Used to treat diarrhea, dysentery, cough, asthma, gum disorders, nausea, throat pain, and seasonal Pitta-related ailments.",
+        "medicalSignificance": "Digestive health: High soluble fiber and sorbitol content help relieve constipation, support gut motility, and improve stool consistency. Heart & metabolic support: Potassium and antioxidants help regulate blood pressure and lipid profiles; fiber moderates post-meal blood sugar spikes.\nAntioxidant & Anti-inflammatory: Phenolic compounds and anthocyanins help reduce oxidative stress and inflammation; may lower risk of chronic conditions like diabetes and neurodegeneration. Bone health: Dried plums (prunes) provide vitamin K and phenolics that may help prevent bone loss, especially in postmenopausal women. Skin & Eye health: Vitamins A and C, lutein/zeaxanthin support skin repair, collagen production, and vision health. Immune support & anemia prevention: Vitamin C with iron aids absorption and supports healthy hemoglobin levels."
+    },
+    {
+        "id": "blue-sabara",
+        "category": "Tropical",
+        "name": "Blue Sabara",
+        "vernacularName": "Blue Sabara / Blue Grape / False Jaboticaba",
+        "botanicalName": "Myrciaria vexator",
+        "family": "Myrtaceae",
+        "origin": "South America—Costa Rica, Panama to Venezuela; Sabará hybrid traced to Brazil",
+        "price": "₹150",
+        "image": "images/p44p1.jpg",
+        "images": [
+            "images/p44p1.jpg",
+            "images/p44p2.jpg",
+            "images/p44p3.jpg",
+            "images/p44p4.jpg"
+        ],
+        "economicUse": "Consumed fresh, juiced, fermented into wines or jams; also valued in ornamental horticulture and container gardening due to manageable size and attractive bark/leaves.",
+        "vedicSignificance": "Information currently unavailable.",
+        "medicalSignificance": "Oxidative & inflammatory protection: Anthocyanins and polyphenols may reduce inflammation, benefit cardiovascular and metabolic health. Vision & skin support: Vitamins A/C/E, zinc, selenium support eye health, collagen synthesis, UV protection, and immune function. Bone health: Minerals like calcium, phosphorus, magnesium contribute to bone formation and density."
+    },
+    {
+        "id": "camu-camu",
+        "category": "Tropical",
+        "name": "Camu Camu",
+        "vernacularName": "Camu Camu / Camocamo",
+        "botanicalName": "Myrciaria dubia",
+        "family": "Myrtaceae",
+        "origin": "Amazonian floodplain regions—Peru, Brazil, Colombia, Bolivia, Venezuela",
+        "price": "₹150",
+        "image": "images/p45p1.jpg",
+        "images": [
+            "images/p45p1.jpg",
+            "images/p45p2.jpg",
+            "images/p45p3.jpg",
+            "images/p45p4.jpg"
+        ],
+        "economicUse": "Primarily processed into powders, juices, purees, or capsules. Also used commercially in foods, supplements, desserts, and cosmetic products globally (especially Japan).",
+        "vedicSignificance": "Information currently unavailable.",
+        "medicalSignificance": "Rich in fiber, potassium, manganese, calcium, magnesium, iron, flavonoids, anthocyanins, carotenoids like lutein, ellagic and gallic acids. mmune support & antioxidant power: Combination of vitamin C and polyphenols more effective against oxidative stress than vitamin C alone; shown to reduce C-reactive protein and IL‑6 in smokers. Anti-inflammatory: Phenolic compounds deliver potent activity; animal and human studies suggest inflammation reduction beyond vitamin C alone. Metabolic & weight support: Preliminary animal studies indicate improved weight control and metabolic syndrome markers; human data limited but promising. Blood sugar & antidiabetic action: Extracts shown to inhibit α-amylase and α-glucosidase, reducing post-meal glucose spikes; human trials indicate lowered glucose levels."
+    },
+    {
+        "id": "rose-sapote",
+        "category": "Tropical",
+        "name": "Rose Sapote",
+        "vernacularName": "Rose Sapote",
+        "botanicalName": "Pouteria sapota",
+        "family": "Sapotaceae",
+        "origin": "Central America; introduced and cultivated in Florida and tropical/subtropical gardens",
+        "price": "₹150",
+        "image": "images/p46p1.jpg",
+        "images": [
+            "images/p46p1.jpg",
+            "images/p46p2.jpg",
+            "images/p46p3.jpg",
+            "images/p46p4.jpg"
+        ],
+        "economicUse": "Used fresh, blended into smoothies, desserts, ice creams, pies, jams, juices, preserves. Also valued as ornamental fruit tree.",
+        "vedicSignificance": "Information currently unavailable.",
+        "medicalSignificance": "Rich in vitamin A and vitamin C, dietary fiber, potassium; may contain carotenoids like beta-carotene and other antioxidants. Digestive aid: Smooth, easily digestible pulp; cooling and gentle on stomach; high beta-carotene and mucilage help soothe gastritis, heartburn, diarrhea. Antioxidant & Anti-inflammatory: Vitamin C, tannins, polyphenols protect against oxidative stress, support skin and immune health. Skin & hair health: Oil from seeds (called sapayul or sapote oil) used in cosmetics and as hair tonic; folk use includes applying seed kernel oil or powder to stop hair fall and treat dandruff; also used as sedative and skin healing agent. Antimicrobial & wound care: Extracts from flower and leaves show in vitro antibacterial activity; roasted seed powder used as poultice for wounds, cough, asthma."
+    },
+    {
+        "id": "sweet-purple-surinam-cherry",
+        "category": "Tropical",
+        "name": "Sweet Purple Surinam Cherry",
+        "vernacularName": "Sweet Purple Surinam Cherry / Pitanga, Brazilian Cherry, Cayenne Cherry",
+        "botanicalName": "Eugenia uniflora",
+        "family": "Myrtaceae",
+        "origin": "Eastern Tropical South America—Suriname, French Guiana, Brazil, Paraguay, Uruguay, Argentina.",
+        "price": "₹150",
+        "image": "images/p47p1.jpg",
+        "images": [
+            "images/p47p1.jpg",
+            "images/p47p2.jpg",
+            "images/p47p3.jpg",
+            "images/p47p4.jpg"
+        ],
+        "economicUse": "Eaten fresh only when fully ripe; also processed into jams, jellies, sauces, juices, wines, syrups, pickles; ornamental hedge widely grown in tropical gardens.",
+        "vedicSignificance": "Information currently unavailable.",
+        "medicalSignificance": "Immunomodulatory & Skin Health: Vitami C and antioxidants support immunity, collagen synthesis, and skin protection from UV damage. Anti-inflammatory / Antioxidant: Polyphenols and anthocyanins reduce inflammation and oxidative stress, possibly lowering risks of cardiovascular and chronic diseases. Digestive & Metabolic Support: Dietary fiber aids digestion, prevents constipation, may help regulate cholesterol and blood sugar; preliminary research suggests hypoglycemic effects.\nAntimicrobial / Antifungal: Leaf and fruit extracts (and essential oils) show activity against bacteria and fungi; also tested in vitro against parasites like Leishmania, Trypanosoma and trichomonads."
+    },
+    {
+        "id": "sweet-mundu-fruit",
+        "category": "Tropical",
+        "name": "Sweet Mundu Fruit",
+        "vernacularName": "Sweet Mundu Fruit / Egg Tree / Mundu / Baniti / Rata Fruit",
+        "botanicalName": "Garcinia dulci",
+        "family": "Clusiaceae",
+        "origin": "Native to Southeast Asia—Indonesia (Java, Borneo), Philippines, Thailand, Malaysia.",
+        "price": "₹150",
+        "image": "images/p48p1.jpg",
+        "images": [
+            "images/p48p1.jpg",
+            "images/p48p2.jpg",
+            "images/p48p3.jpg",
+            "images/p48p4.jpg"
+        ],
+        "economicUse": "Edible raw when ripe, but most commonly used in juices, jams, chutneys, or preserves owing to its sweet–acidic balance and aromatic pulp.",
+        "vedicSignificance": "Information currently unavailable.",
+        "medicalSignificance": "Wound healing & anti-inflammatory: Pulp or juice is applied topically to minor cuts, sprains, and inflammation, accelerating healing and easing pain. Digestive support: Used traditionally for abdominal discomfort, gastritis, bile issues, and to promote bowel movement (relieves constipation). Goiter & bile disorders: Some folk remedies recommend sprinkling dried pulp on the affected area for goiter; fresh pulp taken to assist bile-related symptoms ."
+    },
+    {
+        "id": "tataruba-fruit",
+        "category": "Tropical",
+        "name": "Tataruba Fruit",
+        "vernacularName": "Tataruba Fruit / Pitangatuba Fruit /",
+        "botanicalName": "Eugenia neonitida",
+        "family": "Myrtaceae",
+        "origin": "Brazil",
+        "price": "₹150",
+        "image": "images/p49p1.jpg",
+        "images": [
+            "images/p49p1.jpg",
+            "images/p49p2.jpg",
+            "images/p49p3.jpg",
+            "images/p49p4.jpg"
+        ],
+        "economicUse": "Consumed fresh, also processed into jams, jellies, syrups, juices, and wines. Popular in ornamental and edible landscaping for its fruit and showy branching.",
+        "vedicSignificance": "Information currently unavailable.",
+        "medicalSignificance": "Contains vitami C, anthocyanins, polyphenols, flavonoids, and dietary fiber, offering strong antioxidant potential. Antioxidant & anti-inflammatory: May support cardiovascular and metabolic health through reduction of free radicals. Digestive support: Fiber content aids digestion; juice or pulp may refresh and cleanse. Immune support & skin care: Vitamin C and phenolics support immunity, skin regeneration, and collagen formation."
+    },
+    {
+        "id": "acai-berry",
+        "category": "Tropical",
+        "name": "Acai Berry",
+        "vernacularName": "Acai Berry",
+        "botanicalName": "Euterpe oleracea",
+        "family": "Arecaceae",
+        "origin": "Amazon region",
+        "price": "₹150",
+        "image": "images/p50p1.jpg",
+        "images": [
+            "images/p50p1.jpg",
+            "images/p50p2.jpg",
+            "images/p50p3.jpg",
+            "images/p50p4.jpg"
+        ],
+        "economicUse": "it’s processed into frozen pulp, juices, smoothie bowls (açaí na tigela), supplements, and cosmetic ingreditents.",
+        "vedicSignificance": "Information currently unavailable.",
+        "medicalSignificance": "Contains vitamin A (especially in extract form), minimal vitamin C, fiber, protein, and heart-healthy fats. Rich in anthocyanins (cyanidin-3-glucoside, cyanidin-3-rutinoside), flavonoids (quercetin, catechins), phenolic acids such as vanillic, ferulic, protocatechuic, and syringic acid. Antioxidant & anti-inflammatory effects. Acai extracts reduce oxidative stress, inflammation markers, and neuronal damage in studies simulating Alzheimer’s and Parkinson’s disease. Cardiometabolic health. Neuroprotective & cognitive support."
+    },
+        
+    {
+        "id": "uvalha",
+        "category": "Tropical",
+        "name": "Uvalha",
+        "vernacularName": "Uvalha",
+        "botanicalName": "Eugenia Uvalha",
+        "family": "Myrtaceae",
+        "origin": "Brazil – especially the Atlantic Forest biome",
+        "price": "₹150",
+        "image": "images/p51p1.jpg",
+        "images": [
+            "images/p51p1.jpg",
+            "images/p51p2.jpg",
+            "images/p51p3.jpg",
+            "images/p51p4.jpg"
+        ],
+        "economicUse": "Food Industry: Eaten raw (by those who enjoy its strong taste. Used in juices, jellies, ice creams, and liqueurs in Brazil. Rich in vitamin C and antioxidants. Agroforestry and Reforestation: Planted in reforestation projects in Brazil due to its ecological value. Attracts pollinators and wildlife. Timber: Wood used locally for small construction and firewood.",
+        "vedicSignificance": "Information currently unavailable.",
+        "medicalSignificance": "Antioxidant properties (high in polyphenols and vitamin C). Anti-inflammatory activity. Digestive benefits: due to its acidity and fiber content. Antimicrobial properties: from essential oils found in the leaves and fruit peel."
+    },
+    {
+        "id": "surinam-cherry-var.-black-star",
+        "category": "Tropical",
+        "name": "Surinam Cherry var. Black Star",
+        "vernacularName": "Surinam Cherry var. Black Star",
+        "botanicalName": "Eugenia-uniflora Var Black Star",
+        "family": "Myrtaceae",
+        "origin": "South America – mainly Brazil, Suriname, and Uruguay",
+        "price": "₹150",
+        "image": "images/p52p1.jpg",
+        "images": [
+            "images/p52p1.jpg",
+            "images/p52p2.jpg",
+            "images/p52p3.jpg",
+            "images/p52p4.jpg"
+        ],
+        "economicUse": "Eaten fresh, made into jellies, jams, juices, sauces, and wines. Grown as hedge, bonsai, or ornamental tree due to its glossy foliage. Used in tropical and subtropical gardens; drought-tolerant species.",
+        "vedicSignificance": "Information currently unavailable.",
+        "medicalSignificance": "Antioxidant & Anti-inflammatory - Due to high polyphenol and vitamin C content. Antimicrobial- Leaf extracts show activity against bacteria and fungi. Digestive aid - Fruit used to relieve stomach issues and aid bowel movement. Astringent properties - Leaves used in teas or poultices for skin or digestive issues. Anti-diabetic - Folk use for blood sugar control; some studies suggest mild activity."
+    },
+    {
+        "id": "yellow-jaboticaba",
+        "category": "Tropical",
+        "name": "Yellow Jaboticaba",
+        "vernacularName": "Yellow Jaboticaba / Cabeluda / Lemon Jaboticaba",
+        "botanicalName": "Myrciaria glazioviana",
+        "family": "Myrtaceae",
+        "origin": "Brazil, especially the Atlantic Forest biome",
+        "price": "₹150",
+        "image": "images/p53p1.jpg",
+        "images": [
+            "images/p53p1.jpg",
+            "images/p53p2.jpg",
+            "images/p53p3.jpg",
+            "images/p53p4.jpg"
+        ],
+        "economicUse": "Eaten fresh; also used in jellies, juices, wines, and liqueurs. Grown as an exotic fruit tree in gardens and collections. Used in biodiversity gardens and reforestation projects.",
+        "vedicSignificance": "Information currently unavailable.",
+        "medicalSignificance": "Antioxidant\tRich in vitamin C, polyphenols, and flavonoids. Anti-inflammatory - Leaf and fruit extracts reported to have anti-inflammatory effects. Digestive aid - Traditionally consumed to improve digestion. Antimicrobial - Early studies suggest inhibition of bacterial growth."
+    },
+    {
+        "id": "matoa",
+        "category": "Tropical",
+        "name": "Matoa",
+        "vernacularName": "Matoa /  Fijian Longan / Island Lychee",
+        "botanicalName": "Pometia pinnata",
+        "family": "Sapindaceae",
+        "origin": "Southeast Asia and Pacific Islands — native to Papua New Guinea, Indonesia, and parts of Melanesia",
+        "price": "₹150",
+        "image": "images/p54p1.jpg",
+        "images": [
+            "images/p54p1.jpg",
+            "images/p54p2.jpg",
+            "images/p54p3.jpg",
+            "images/p54p4.jpg"
+        ],
+        "economicUse": "Fruits are consumed fresh, used in juices or traditional snacks. Timberwood is highly valued for furniture and construction. Agroforestry -- grown in multi-use tropical orchards, home gardens",
+        "vedicSignificance": "Information currently unavailable.",
+        "medicalSignificance": "Antioxidant\tFruit rich in vitamins (especially vitamin C) and polyphenols. Anti-inflammatory-Traditionally used to reduce swelling or pain. Antibacterial- some studies show leaf and bark extracts inhibit microbial growth. Cooling effect - In traditional Indonesian/Malay herbal practice, the fruit is thought to cool the body. Digestive benefits\t- Light, fiber-rich pulp aids digestion."
+    },
+    {
+        "id": "icecream-beans",
+        "category": "Tropical",
+        "name": "Icecream Beans",
+        "vernacularName": "Icecream Beans",
+        "botanicalName": "Inga eduli",
+        "family": "Fabaceae",
+        "origin": "Amazon rainforest, native to Central and South America",
+        "price": "₹150",
+        "image": "images/p55p1.jpg",
+        "images": [
+            "images/p55p1.jpg",
+            "images/p55p2.jpg",
+            "images/p55p3.jpg",
+            "images/p55p4.jpg"
+        ],
+        "economicUse": "Eaten fresh, sweet pulp used in juices or desserts. Nitrogen-fixing tree used in permaculture and reforestation/agroforestry projects. Commonly used to provide shade in coffee/cacao plantations. Timberwood used for light construction and firewood",
+        "vedicSignificance": "Information currently unavailable.",
+        "medicalSignificance": "Anti-inflammatory- Traditional use of bark for inflammation and pain. Antioxidant- Pulp is rich in vitamin C and polyphenols. Antimicrobial- Extracts from leaves and bark studied for antibacterial properties. Blood sugar control- Some traditional systems use it to manage diabetes-like conditions. Digestive aid- Pulp is light, fibrous, and mildly laxative."
+    },
+    {
+        "id": "makhota-dewa",
+        "category": "Tropical",
+        "name": "Makhota Dewa",
+        "vernacularName": "Makhota Dewa / God’s Crown Fruit / Crown of God",
+        "botanicalName": "Phaleria macrocarpa",
+        "family": "Thymelaeaceae",
+        "origin": "Indonesia, specifically the Papua region, and is also found in Malaysia",
+        "price": "₹150",
+        "image": "images/p56p1.jpg",
+        "images": [
+            "images/p56p1.jpg",
+            "images/p56p2.jpg",
+            "images/p56p3.jpg",
+            "images/p56p4.jpg"
+        ],
+        "economicUse": "Eaten fresh, used in folk / traditional medicine for remedies.",
+        "vedicSignificance": "Information currently unavailable.",
+        "medicalSignificance": "Treats diabetes, high blood pressure, gout, kidney inflammation, and allergies. Rich in flavonoids (such as quercetin), alkaloids, tannins, saponins, and phenolics—these contribute to its antioxidant, anti‑gout, anti‑hypertensive, antimicrobial and anticancer potential."
+    },
+    {
+        "id": "pomelo",
+        "category": "Tropical",
+        "name": "Pomelo",
+        "vernacularName": "Pomelo",
+        "botanicalName": "Citrus maxima",
+        "family": "Rutaceae",
+        "origin": "Southeast Asia, particularly Malaysia, Thailand, Indonesia, and southern China",
+        "price": "₹150",
+        "image": "images/p57p1.jpg",
+        "images": [
+            "images/p57p1.jpg",
+            "images/p57p2.jpg",
+            "images/p57p3.jpg",
+            "images/p57p4.jpg"
+        ],
+        "economicUse": "Eaten fresh or used in salads, juices, jams, and desserts. Exported as a fresh fruit from tropical and subtropical countries. Juice and rind are used in flavoring, candied peel production, and beverages. Essential oils from the peel are used in perfumes and cosmetic products.",
+        "vedicSignificance": "Information currently unavailable.",
+        "medicalSignificance": "Rich in Antioxidants: Contains vitamin C, flavonoids, and polyphenols, which help reduce oxidative stress. Boosts Immunity: High vitamin C content supports immune health. Aids Digestion: Dietary fiber improves gut health and relieves constipation.\nHeart Health: Helps lower blood pressure and cholesterol due to potassium and antioxidant content. Weight Management: Low in calories, high in water and fiber — helpful in weight loss diets. Anti-inflammatory & Antimicrobial: Extracts from the peel and seeds show potential antimicrobial and anti-inflammatory effects."
+    },
+    {
+        "id": "alligator-pepper",
+        "category": "Tropical",
+        "name": "Alligator pepper",
+        "vernacularName": "Alligator pepper",
+        "botanicalName": "Aframomum melegueta",
+        "family": "Zingiberaceae",
+        "origin": "West Africa, especially countries like Nigeria, Ghana, Cameroon, and Liberia.",
+        "price": "₹150",
+        "image": "images/p58p1.jpg",
+        "images": [
+            "images/p58p1.jpg",
+            "images/p58p2.jpg",
+            "images/p58p3.jpg",
+            "images/p58p4.jpg"
+        ],
+        "economicUse": "Used as a spice in African cuisine for adding to soups, stews, and local beverages, it is spicy with a peppery, ginger-like flavor. Has very high export value.",
+        "vedicSignificance": "Information currently unavailable.",
+        "medicalSignificance": "Antimicrobial Properties: Contains compounds that inhibit bacterial and fungal growth. Anti-inflammatory & Analgesic: Helps reduce inflammation and relieve pain. Digestive Aid: Stimulates digestion and relieves stomach discomfort and bloating. Aphrodisiac Effects: Traditionally believed to enhance libido and sexual performance. Antioxidant Activity: Rich in flavonoids and tannins which combat oxidative stress. Antidiabetic Potential: Studies suggest it may help lower blood sugar levels. Wound Healing: Applied traditionally to wounds and cuts to promote healing. It is functionally similar to long pepper (Pippali)."
+    },
+    {
+        "id": "israel-orange-kumquat",
+        "category": "Tropical",
+        "name": "Israel Orange Kumquat",
+        "vernacularName": "Israel Orange Kumquat",
+        "botanicalName": "Citrus japonica",
+        "family": "Rutaceae",
+        "origin": "South China",
+        "price": "₹150",
+        "image": "images/p59p1.jpg",
+        "images": [
+            "images/p59p1.jpg",
+            "images/p59p2.jpg",
+            "images/p59p3.jpg",
+            "images/p59p4.jpg"
+        ],
+        "economicUse": "Eaten fresh and whole, popular for its unique flavor – sweet skin and tart flesh. Used in jams, jellies, marmalades, liqueurs, candies, and syrups. Grown commercially in Israel, China, and USA, especially for niche fruit markets. Compact trees with glossy leaves and bright orange fruit thus cultivated in gardens and landscaping.",
+        "vedicSignificance": "Information currently unavailable.",
+        "medicalSignificance": "Rich in Vitamin C: Boosts immunity and improves skin health. Antioxidant-Rich: contains flavonoids, carotenoids, and essential oils with anti-inflammatory and anti-aging properties. Aids Digestion: High fiber content supports gut health and prevents constipation. Controls Blood Sugar: Low glycemic index; polyphenols may help regulate sugar metabolism. upports Heart Health: Potassium and antioxidants reduce blood pressure and oxidative stress. Natural Antimicrobial: Peel extracts have shown antimicrobial activity against certain pathogens."
+    },
+    {
+        "id": "dragon-fruit",
+        "category": "Tropical",
+        "name": "Dragon fruit",
+        "vernacularName": "Dragon fruit / Pitaya / Pitahaya",
+        "botanicalName": "Hylocereus undatus",
+        "family": "Cactaceae",
+        "origin": "Central America and northern South America, particularly Mexico, Guatemala, and Costa Rica",
+        "price": "₹150",
+        "image": "images/p60p1.jpg",
+        "images": [
+            "images/p60p1.jpg",
+            "images/p60p2.jpg",
+            "images/p60p3.jpg",
+            "images/p60p4.jpg"
+        ],
+        "economicUse": "Fresh Market Fruit: Popular for its vibrant color, unique appearance, and mildly sweet taste. Consumed fresh, in smoothies, fruit bowls, or desserts. Major export fruit for Vietnam, Thailand, and Israel. Processed Products: Used in juices, jams, ice cream, and nutraceuticals. Natural Colorant: The red-fleshed variety is used as a natural food dye due to its high betalain content. Ornamental Use: Grown as an ornamental climbing cactus in gardens.",
+        "vedicSignificance": "Information currently unavailable.",
+        "medicalSignificance": "Rich in Antioxidants: Contains vitamin C, betalains, and polyphenols. Boosts Immunity: High vitamin C and minerals like iron and zinc support immune functionDigestive Health: High in dietary fiber and prebiotic compounds (oligosaccharides). Regulates Blood Sugar: Low glycemic index and beneficial for type 2 diabetes. Heart Health: Contains monounsaturated fats (from seeds) and fiber to lower cholesterol."
+    },
+    {
+        "id": "kanta-kachur",
+        "category": "Tropical",
+        "name": "Kanta Kachur",
+        "vernacularName": "Kanta Kachur / Katutemera / Kohila",
+        "botanicalName": "Lasia spinosa",
+        "family": "Araceae",
+        "origin": "Indo-Malaya region. Found widely in India, Bangladesh, Sri Lanka, Myanmar, Thailand, Vietnam, Malaysia, and Indonesia",
+        "price": "₹150",
+        "image": "images/p61p1.jpg",
+        "images": [
+            "images/p61p1.jpg",
+            "images/p61p2.jpg",
+            "images/p61p3.jpg",
+            "images/p61p4.jpg"
+        ],
+        "economicUse": "Eaten as vegetable. Young shoots, leaves, and rhizomes are consumed as a green leafy vegetable. Cooked to reduce acridity (due to calcium oxalate crystals). Popular in Sri Lankan and northeastern Indian cuisine. Used as livestock feed in some rural areas. The mature stems and roots are sometimes used in rural crafts or for tying because of their fibrous nature.",
+        "vedicSignificance": "Information currently unavailable.",
+        "medicalSignificance": "Anti-inflammatory and Antioxidant: Contains phenolic compounds that reduce inflammation and oxidative stress. Antimicrobial Properties: Extracts show antibacterial and antifungal activities. Digestive Aid: Used to treat constipation, indigestion, and worm infestations. Diuretic Effect: Helps in promoting urination and detoxification. It is anti-diabetic."
+    },
+    {
+        "id": "durian",
+        "category": "Tropical",
+        "name": "Durian",
+        "vernacularName": "Durian",
+        "botanicalName": "Durio zibethinus",
+        "family": "Malvaceae",
+        "origin": "Indo-Malaya region particularly Malaysia, Indonesia, and Brunei",
+        "price": "₹150",
+        "image": "images/p62p1.jpg",
+        "images": [
+            "images/p62p1.jpg",
+            "images/p62p2.jpg",
+            "images/p62p3.jpg",
+            "images/p62p4.jpg"
+        ],
+        "economicUse": "Durian is called as King of Fruits. Eaten fresh, or used in ice cream, cakes, candies. Eaten raw, processed into desserts and snacks, major export. Durian paste, powder, and freeze-dried snacks are popular globally. Seeds are cooked and eaten in some regions.",
+        "vedicSignificance": "Information currently unavailable.",
+        "medicalSignificance": "High in carbohydrates, healthy fats, dietary fiber, and vitamins B1, B6, C, and potassium. Calorie-dense; often used for energy and strength. It is antioxidant & anti-inflammatory: Rich in flavonoids, polyphenols, and organosulfur compounds with anti-aging and anti-inflammatory properties. Contains potassium, magnesium, and copper, supporting cardiovascular and skeletal health. Good prebiotic properties due to fiber and oligosaccharides. Aphrodisiac: in southeast Asian folklore, it is considered to increase libido."
+    },
+    {
+        "id": "litchi",
+        "category": "Tropical",
+        "name": "Litchi",
+        "vernacularName": "Litchi / Lychee",
+        "botanicalName": "Litchi chinensis",
+        "family": "Sapindaceae",
+        "origin": "Southern China, Northern Vietnam, and parts of Southeast Asia",
+        "price": "₹150",
+        "image": "images/p63p1.jpg",
+        "images": [
+            "images/p63p1.jpg",
+            "images/p63p2.jpg",
+            "images/p63p3.jpg",
+            "images/p63p4.jpg"
+        ],
+        "economicUse": "Litchi is eaten raw/fresh for its juicy, sweet, aromatic pulp. Used in juices, squashes, jams, canned syrups, ice creams, and jellies.\nExported from India, China, Thailand, Vietnam to Gulf, Europe, and North America. Major fruit in commercial orchards, especially in Bihar (Muzaffarpur), a GI-tagged region for Shahi Litchi.",
+        "vedicSignificance": "Information currently unavailable.",
+        "medicalSignificance": "Rich in Antioxidants: Contains vitamin C, polyphenols, and flavonoids that boost immunity and fight oxidative stress. Supports Digestion: Contains soluble fiber aiding bowel health. Anti-inflammatory and Antiviral: Exhibits protective effects against certain viruses and inflammation. Cardiovascular Health: Potassium helps regulate blood pressure. Weight Management: Low calorie, fat-free, and hydrating—good for summer diets. Seed Extracts: Traditionally used for diabetes management and liver protection"
+    },
+    {
+        "id": "bilva",
+        "category": "Tropical",
+        "name": "Bilva",
+        "vernacularName": "Bilva / Brabha / Bael / Bela",
+        "botanicalName": "Aegle marmelos",
+        "family": "Rutaceae",
+        "origin": "Indian subcontinent (Eastern Ghats) and spread across South and Southeast Asia, including Sri Lanka and Thailand",
+        "price": "₹150",
+        "image": "images/p64p1.jpg",
+        "images": [
+            "images/p64p1.jpg",
+            "images/p64p2.jpg",
+            "images/p64p3.jpg",
+            "images/p64p4.jpg"
+        ],
+        "economicUse": "resh fruit eaten or processed into sharbats, juices, murabba (preserved fruit), toffee, pulp powders, syrups, and desserts. Popular summer drink \"Bela Pana\" uses bael pulp mixed with milk and spices. \nMedicinal Preparations: Used in traditional formulations across Ayurvedic, Siddha, and Unani systems. All parts fruit, leaves, bark, seeds, roots—are used for therapeutic preparations Culturally & Religiously sacred to Lord Shiva; bael leaves are used in temple rituals and religious offerings.",
+        "vedicSignificance": "Recognized in Ayurveda & classical texts as Bilva or Bel, highly sacred and medicinal. Frequently mentioned in Charaka Samhita, Sushruta, and Bhavaprakasha for its dosha-balancing and therapeutic functions. Ayurvedic Properties: Rasa (Taste): Madhura (sweet), Tikta (bitter), Katu (pungent). Guna (Quality): Laghu (light), Ruksha (dry). Virya (Potency): Ushna (hot, Vipaka: Katu (pungent after digestion). It balances Vata and Kapha; reduces Pitta.",
+        "medicalSignificance": "Rich in Phytochemicals: contains fiber, carotenoids, phenolics, terpenoids, coumarins, flavonoids, alkaloids (e.g. aegeline, marmeline), tannins, and sterols.\nDigestive Health: Fruit pulp supports relief from constipation, diarrhea, and indigestion. Anti-inflammatory, Antimicrobial, Antioxidant: Leaf, bark, and fruit extracts exhibit strong activities against inflammation, oxidative stress, bacterial and fungal infections. Metabolic & Liver Support: Used in treatments for diabetes, jaundice, liver disorders, and urinary conditions. Cardiovascular health: Promotes heart health and may help in managing blood pressure. It helps in wound healing & skin disorders."
+    },
+    {
+        "id": "santol",
+        "category": "Tropical",
+        "name": "Santol",
+        "vernacularName": "Santol / Wild Mangosteen / Cotton Fruit / Lolly Fruit",
+        "botanicalName": "Sandoricum koetjape",
+        "family": "Meliaceae",
+        "origin": "Indochina and Malesian region (Malaysia, Indonesia, Philippines)",
+        "price": "₹150",
+        "image": "images/p65p1.jpg",
+        "images": [
+            "images/p65p1.jpg",
+            "images/p65p2.jpg",
+            "images/p65p3.jpg",
+            "images/p65p4.jpg"
+        ],
+        "economicUse": "Santol's fleshy pulp (white or red) around seeds is sweet to sour, often eaten fresh or with salt/spices. Santol is used in making jams, jellies, preserves, pickles, chutneys, and syrup. It is used in Filipino cuisine (e.g., sinantolan). The tree provides durable wood, used for construction, furniture, and tools.\n The bark, leaves, roots, and fruit used in local remedies across Southeast Asia and Sri Lanka.",
+        "vedicSignificance": "Information currently unavailable.",
+        "medicalSignificance": "Antibacterial and Antifungal: Bark and leaves show activity against Staphylococcus and E. coli. Digestive Aid: Traditionally used to treat diarrhea, stomach upset, and intestinal worms. Skin Conditions: Leaf and bark decoctions used for eczema, rashes, and insect bites. Anti-inflammatory and Analgesic: Roots and bark decoction used to relieve pain and inflammation. Liver and Metabolic Benefits: Fruit extract may help with cholesterol control and detoxification."
+    },
+    {
+        "id": "sweet-orange",
+        "category": "Tropical",
+        "name": "Sweet Orange",
+        "vernacularName": "Sweet Orange / Mosambi",
+        "botanicalName": "Citrus aurantium sinensis",
+        "family": "Rutaceae",
+        "origin": "Southern China and Northeastern India",
+        "price": "₹150",
+        "image": "images/p66p1.jpg",
+        "images": [
+            "images/p66p1.jpg",
+            "images/p66p2.jpg",
+            "images/p66p3.jpg",
+            "images/p66p4.jpg"
+        ],
+        "economicUse": "Fruit Consumption: Most popular citrus fruit globally; eaten fresh or juiced. Processed Products: Juice concentrate, candied peel, jams, marmalades, flavored beverages, desserts, and confectionery. Essential Oils: Extracted from peel and flower for use in aromatherapy, cosmetics, cleaners, and perfumery. It is a major export commodity especially from Brazil, USA, and India. Citrus peels used to produce pectin, bioflavonoids, and cattle feed additives.",
+        "vedicSignificance": "Information currently unavailable.",
+        "medicalSignificance": "Rich in Vitamin C: Strengthens immune system, boosts collagen production, and supports iron absorption. Digestive Aid: High in dietary fiber (pectin), improves digestion and relieves constipation. Cardiovascular Health: Contains flavonoids (hesperidin, naringenin) beneficial for heart and blood vessels. Antioxidant & Anti-inflammatory: Reduces oxidative stress and inflammation. Skin & Hair Health: Juice and peel help reduce acne, pigmentation; promotes healthy skin and hair. Weight and Blood Sugar Control: Low glycemic index, rich in fiber, helps in weight management and blood sugar regulation."
+    },
+    {
+        "id": "jagma-cherry",
+        "category": "Tropical",
+        "name": "Jagma Cherry",
+        "vernacularName": "Jagma Cherry / Indian Coffee Plum",
+        "botanicalName": "Flacourtia jangomas",
+        "family": "Salicaceae",
+        "origin": "South Asia, including India, especially southern and eastern regions",
+        "price": "₹150",
+        "image": "images/p67p1.jpg",
+        "images": [
+            "images/p67p1.jpg",
+            "images/p67p2.jpg",
+            "images/p67p3.jpg",
+            "images/p67p4.jpg"
+        ],
+        "economicUse": "Fruits eaten fresh, or processed into jams, marmalades, pickles, sweets, and occasionally vinegars. In Kerala, coffee plum jam is widespread and marketed for domestic and export markets. Fruits and leaves used in traditional dishes, sauces, or as souring agents in small-scale homemade recipes. Wood is occasionally used for lumber.",
+        "vedicSignificance": "Information currently unavailable.",
+        "medicalSignificance": "Digestive Aid & Antidiarrheal: Both fruit and leaves are traditionally used to treat diarrhea and dysentery. Antifungal & Antibacterial: Bark and leaves have shown activity against fungal and bacterial pathogens, used topically or in decoctions. Used as a tonic for bronchitis, toothache, and other minor ailments. It is a anthelmintic, purgative, diuretic, expectorant, antipyretic, hepatoprotective, analgesic."
+    },
+    {
+        "id": "tropical-apricot",
+        "category": "Tropical",
+        "name": "Tropical Apricot",
+        "vernacularName": "Tropical Apricot / Ceylon Gooseberry / Ketembilla",
+        "botanicalName": "Dovyalis hebecarpa",
+        "family": "Salicaceae",
+        "origin": "Tropical Asia, Sri Lanka and Southern India",
+        "price": "₹150",
+        "image": "images/p68p1.jpg",
+        "images": [
+            "images/p68p1.jpg",
+            "images/p68p2.jpg",
+            "images/p68p3.jpg",
+            "images/p68p4.jpg"
+        ],
+        "economicUse": "Fruits are used for: Fresh consumption (though tart, some cultivars are sweeter). Juices, jams, jellies, and preserves. Flavoring agents: Sometimes used as rootstock or hedge plant due to its spiny nature. It is rich in vitamin C, antioxidants, and has nutraceutical value.",
+        "vedicSignificance": "Information currently unavailable.",
+        "medicalSignificance": "Used in digestive tonics and immunity boosters. Possible use for skin issues, scurvy, or as a mild laxative. Antioxidant activity: The fruit is rich in vitamin C, polyphenols, and flavonoids. These compounds help neutralize free radicals, potentially preventing oxidative stress-related condition. It helps in cardiovascular diseases. It helps in premature aging. It is anti-cancerous. It is a good digestive tonic."
+    },
+    {
+        "id": "susang-kalabau",
+        "category": "Tropical",
+        "name": "Susang Kalabau",
+        "vernacularName": "Susang Kalabau",
+        "botanicalName": "Uvaria rufa",
+        "family": "Annonaceae",
+        "origin": "Native to Philippines extending through Malesia, Cambodia, Thailand, New Guinea, and northern Australia",
+        "price": "₹150",
+        "image": "images/p69p1.jpg",
+        "images": [
+            "images/p69p1.jpg",
+            "images/p69p2.jpg",
+            "images/p69p3.jpg",
+            "images/p69p4.jpg"
+        ],
+        "economicUse": "Wood is used as a rattan substitute in furniture and handicraft valued in restoration efforts.",
+        "vedicSignificance": "Information currently unavailable.",
+        "medicalSignificance": "Information currently unavailable."
+    },
+    {
+        "id": "sweet-lime",
+        "category": "Tropical",
+        "name": "Sweet lime",
+        "vernacularName": "Sweet lime",
+        "botanicalName": "Citrus limettioides",
+        "family": "Rutaceae",
+        "origin": "India or Indo‑Burma",
+        "price": "₹150",
+        "image": "images/p70p1.jpg",
+        "images": [
+            "images/p70p1.jpg",
+            "images/p70p2.jpg",
+            "images/p70p3.jpg",
+            "images/p70p4.jpg"
+        ],
+        "economicUse": "Sweet lime is commonly consumed mainly as fresh fruit, juice (most popular use). It is used fro making soft drinks, sherbets, and refreshing drinks, pickles and traditional chutneys (regionally).",
+        "vedicSignificance": "Mentioned in Ayurveda as Madhuphala, Madhurima, sometimes simply under Nimbu variants. Rasa (taste): Madhura (sweet) with a hint of amla (sour). Guna: Laghu (light), Snigdha (unctuous). Virya: Sheeta (cooling). Vipaka: Madhura (sweet post-digestive effect).",
+        "medicalSignificance": "Immunity booster, digestive, detox, anti-Pitta. It has cooling effect, thirst quencher, liver tonic, Pitta-balancing. It is rich in flavonoids (e.g. hesperidin, naringin) helps - Lower blood pressure, Reduce LDL cholesterol, Prevent atherosclerosis. Stimulate bile production, Improve digestion, Reduce nausea, bloating, and constipation. It boosts immunity, aids in collagen synthesis, helps in iron absorption, combats oxidative stress."
+    },
+    {
+        "id": "buddha's-hand-lemon",
+        "category": "Tropical",
+        "name": "Buddha's Hand Lemon",
+        "vernacularName": "Buddha's Hand Lemon / Buddha’s Hand Citron / Fingered Citron",
+        "botanicalName": "Citrus medica var. sarcodactylis",
+        "family": "Rutaceae",
+        "origin": "India-China region. Northeastern India and China",
+        "price": "₹150",
+        "image": "images/p71p1.jpg",
+        "images": [
+            "images/p71p1.jpg",
+            "images/p71p2.jpg",
+            "images/p71p3.jpg",
+            "images/p71p4.jpg"
+        ],
+        "economicUse": "Fruit is highly fragrant; used as a natural air freshener or perfume in homes and temples. The rind is rich in essential oils. It is used for culinary purposes: used for zest and flavoring in desserts, liqueurs (like citron liqueur), and savory dishes. Unlike most lemons, it has no juice or pulp, only rind and pith. Used as an offering in Buddhist temples, especially in China and Japan. It is comsidered as a symbol of happiness, longevity, and good fortune. Essential Oil estraction: Oil is extracted from the rind is used in perfumes, cosmetics, and aromatherapy.",
+        "vedicSignificance": "It's parent specie — Citrus medica (Matulunga in Sanskrit) — is well documented. In Ayurveda, it's\nSanskrit name is Matulunga. Classified under: Deepana (appetizer), Pachana (digestive), Kaphahara (alleviates Kapha), Vatanulomana (carminative, supports proper Vata flow).",
+        "medicalSignificance": "It is an Antioxidant: Contains compounds that reduce oxidative stress. Anti-inflammatory: Used in treating inflammation-related conditions. Antispasmodic: Eases muscle spasms and gastrointestinal discomfort. Carminative: Helps relieve gas and bloating. Antimicrobial: Active against some bacteria and fungi. Analgesic: Mild pain relief properties. Respiratory Aid: Used in traditional medicine for cough, asthma, and congestion."
+    },
+    {
+        "id": "black-mango",
+        "category": "Tropical",
+        "name": "Black mango",
+        "vernacularName": "Black mango",
+        "botanicalName": "Mangifera indica L.",
+        "family": "Anacardiaceae",
+        "origin": "Indo-Mayanmar region. Northeastern India, Bangladesh, and the Myanmar region",
+        "price": "₹150",
+        "image": "images/p72p1.jpg",
+        "images": [
+            "images/p72p1.jpg",
+            "images/p72p2.jpg",
+            "images/p72p3.jpg",
+            "images/p72p4.jpg"
+        ],
+        "economicUse": "Eaten fresh or processed (juice, pickles, chutneys). Exported for specialty fruit markets. Used in desserts and traditional sweets. Dried or powdered for spice blends (amchur).",
+        "vedicSignificance": "Information currently unavailable.",
+        "medicalSignificance": "Rich in Vitamin-A, C, E, and polyphenols. Antioxidant, boosts immunity, improves digestion. Leaves are used in traditional medicine for diabetes, respiratory issues, and wound healing. Bark and Seeds are used as astringent, used for diarrhea and dysentery."
+    },
+    {
+        "id": "peanut",
+        "category": "Tropical",
+        "name": "Peanut",
+        "vernacularName": "Peanut / Groundnut / Monkey Nut / Earthnut",
+        "botanicalName": "Arachis hypogaea",
+        "family": "Fabaceae",
+        "origin": "South America, specifically the region around Southern Bolivia, Northern Argentina, and Paraguay",
+        "price": "₹150",
+        "image": "images/p73p1.jpg",
+        "images": [
+            "images/p73p1.jpg",
+            "images/p73p2.jpg",
+            "images/p73p3.jpg",
+            "images/p73p4.jpg"
+        ],
+        "economicUse": "Used as an oilseed crop for cooking and frying popular in Indian and African cuisine. Consumed raw Consumed raw, roasted, or boiled. Used in making peanut butter, snacks, confectionery, and flour. The press cake after oil extraction is high in protein and used as livestock feed\nUsed in soil enrichment: As a legume, it fixes nitrogen, improving soil fertility.",
+        "vedicSignificance": "Mentioned in Ayurveda and nighantus (glossaries) for:\nBalya (strength-promoting). Brimhana (bulk-promoting, nourishing). Vata-pacifying (due to its oiliness).",
+        "medicalSignificance": "Used to improve heart health, antioxidant, antidiabetic, cognitive support. It is Rich in: Protein, healthy fats (oleic acid), Vitamin E, B vitamins, folate, magnesium. Cardioprotective: Lowers LDL cholesterol; heart-friendly. Antioxidant: Contains resveratrol (same compound in red wine). Antidiabetic: Helps regulate blood sugar levels (low glycemic index). Anti-aging & skin health: Vitamin E and polyphenols promote skin regeneration. Brain health: Niacin and folate support cognitive function."
+    },
+    {
+        "id": "red-water-apple",
+        "category": "Tropical",
+        "name": "Red Water Apple",
+        "vernacularName": "Red Water Apple / Rose Apple / Jambu /Bell Fruit / Java Apple",
+        "botanicalName": "Syzygium samarangense",
+        "family": "Myrtaceae",
+        "origin": "Native to: Malay Peninsula, Andaman and Nicobar Islands, Malaysia, and Indonesia",
+        "price": "₹150",
+        "image": "images/p74p1.jpg",
+        "images": [
+            "images/p74p1.jpg",
+            "images/p74p2.jpg",
+            "images/p74p3.jpg",
+            "images/p74p4.jpg"
+        ],
+        "economicUse": "Used for fresh Consumption: Eaten raw as a juicy, mildly sweet fruit. Pickles & Preserves: Used in chutneys, jams, and traditional pickles. Ornamental Use: Grown as an ornamental tree in gardens due to its attractive foliage and fruit. Agroforestry: Used in home gardens and mixed plantations. Timber: Wood is sometimes used for light construction and firewood.",
+        "vedicSignificance": "Not mentioned in Ayurveda but used in folk medicine in Kerala, Tamil Nadu, and tribal systems (Siddha, Unani, and local traditions).",
+        "medicalSignificance": "It has polyphenols, flavonoids, tannins, and essential oils. Traditionally used in lowering blood sugar, reducing inflammation, managing diarrhea, treating sore throats and wounds."
+    },
+    {
+        "id": "thailand-mango",
+        "category": "Tropical",
+        "name": "Thailand Mango",
+        "vernacularName": "Thailand Mango / Nam Dok Mai / Keo Savoy / Rad / Ok Rong /Chok Anan",
+        "botanicalName": "Mangifera indica L.",
+        "family": "Anacardiaceae",
+        "origin": "Northeastern India, Myanmar, and Bangladesh",
+        "price": "₹150",
+        "image": "images/p75p1.jpg",
+        "images": [
+            "images/p75p1.jpg",
+            "images/p75p2.jpg",
+            "images/p75p3.jpg",
+            "images/p75p4.jpg"
+        ],
+        "economicUse": "Fresh Consumption: High-quality dessert mangoes, often eaten ripe or slightly green. Export Crop: Major export item for Thailand, especially to Japan, Europe, and the Middle East. Desserts: Widely used in Thai dishes like mango sticky rice (Khao Niew Mamuang). Processed Products: Mango puree, juice, dried mango slices, ice creams. Agrotourism: Mango orchards are part of Thailand's rural tourism economy.",
+        "vedicSignificance": "Mentioned in Charaka Samhita and Sushruta Samhita. Mango is described as Vata-pacifying, Pitta-pacifying (when ripe), Brimhana (nourishing), Rasayana (rejuvenating).",
+        "medicalSignificance": "It gived cooling effect, it has digestive properties. It has antioxidant, promotes immunity. It has astringent, appetite stimulant, used in diarrhea. It is anti-diabetic, antioxidant, used in herbal teas. It is an astringent, used in traditional remedies for wounds, diarrhea."
+    },
+        
+
     ]
 }
