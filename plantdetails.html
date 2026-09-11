@@ -8,7 +8,7 @@
     <!-- Professional Typography -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,500;0,700;1,500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;1,400&family=Playfair+Display:ital,wght@0,500;0,700;1,500;1,700&display=swap" rel="stylesheet">
 
     <!-- CDNs for Export Functionality -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
@@ -747,8 +747,8 @@
         }
 
         /**
-         * Generates individual high-resolution PNG cards matching your layout,
-         * packs all cards into a ZIP file, and downloads it cleanly.
+         * Renders high-resolution plant cards directly onto a 300 DPI Canvas 2D context
+         * matching the reference image layout with crisp vector fonts and a high error-tolerance QR code.
          */
         function setupBatchCardZipDownload() {
             const btn = document.getElementById('btn-download-all-cards');
@@ -772,97 +772,127 @@
                         return;
                     }
 
+                    // Ensure custom web fonts are fully rendered prior to drawing canvas text
+                    await document.fonts.ready;
+
                     const zip = new JSZip();
                     const baseUrl = window.location.origin + window.location.pathname;
 
                     for (let i = 0; i < plants.length; i++) {
                         const plant = plants[i];
-                        btn.textContent = `Processing Card (${i + 1}/${plants.length})`;
+                        btn.textContent = `Rendering Card (${i + 1}/${plants.length})`;
 
-                        // Build temporary card DOM element
-                        const tempContainer = document.createElement('div');
-                        tempContainer.style.cssText = `
-                            position: fixed;
-                            top: 0;
-                            left: 0;
-                            width: 600px;
-                            height: 800px;
-                            background: #ffffff;
-                            border: 2px solid #3b2f2f;
-                            padding: 40px;
-                            box-sizing: border-box;
-                            display: flex;
-                            flex-direction: column;
-                            justify-content: space-between;
-                            font-family: 'Playfair Display', serif;
-                            color: #1a1a1a;
-                            z-index: 999999;
-                        `;
+                        // 1. High-resolution canvas canvas canvas (1200x1600 px)
+                        const canvas = document.createElement('canvas');
+                        canvas.width = 1200;
+                        canvas.height = 1600;
+                        const ctx = canvas.getContext('2d');
 
-                        // Compile bullet details
-                        let points = [];
-                        if (plant.benefits && Array.isArray(plant.benefits)) {
-                            points = plant.benefits;
+                        // Background & Crisp Border
+                        ctx.fillStyle = '#ffffff';
+                        ctx.fillRect(0, 0, canvas.width, canvas.height);
+                        
+                        ctx.strokeStyle = '#cccccc';
+                        ctx.lineWidth = 10;
+                        ctx.strokeRect(30, 30, canvas.width - 60, canvas.height - 60);
+
+                        // 2. Main Plant Name (Large, Italic, Serif)
+                        ctx.fillStyle = '#111111';
+                        ctx.font = 'italic bold 92px "Playfair Display", Georgia, serif';
+                        ctx.textAlign = 'center';
+                        
+                        const titleY = wrapCanvasText(ctx, plant.name, canvas.width / 2, 200, 1060, 100);
+
+                        // 3. Botanical Name
+                        ctx.fillStyle = '#333333';
+                        ctx.font = '300 54px "Playfair Display", Georgia, serif';
+                        ctx.fillText(plant.botanicalName || '', canvas.width / 2, titleY + 65);
+
+                        // 4. Concise Bullets
+                        let rawBullets = [];
+                        if (plant.benefits && Array.isArray(plant.benefits) && plant.benefits.length > 0) {
+                            rawBullets = plant.benefits;
                         } else {
-                            if (plant.medicalSignificance) points.push(plant.medicalSignificance);
-                            if (plant.economicUse) points.push(plant.economicUse);
-                            if (plant.vedicSignificance) points.push(plant.vedicSignificance);
-                        }
-                        if (points.length === 0) {
-                            points = ["Botanical record from Hare Krishna Nature Farm."];
+                            if (plant.medicalSignificance) rawBullets.push(plant.medicalSignificance);
+                            if (plant.economicUse) rawBullets.push(plant.economicUse);
                         }
 
-                        const bulletListHTML = points.slice(0, 4).map(pt => `<li style="margin-bottom: 12px;">${pt}</li>`).join('');
+                        // Shorten long strings into concise points
+                        const cleanBullets = rawBullets.slice(0, 3).map(b => {
+                            let shortText = b.split('.')[0].trim();
+                            if (shortText.length > 55) shortText = shortText.substring(0, 52) + '...';
+                            return shortText;
+                        });
 
-                        tempContainer.innerHTML = `
-                            <div style="text-align: center; margin-bottom: 20px;">
-                                <div style="font-size: 40px; font-weight: 700; font-style: italic; color: #1a1a1a; line-height: 1.1; margin-bottom: 8px;">${plant.name}</div>
-                                <div style="font-size: 24px; font-style: italic; color: #333333;">${plant.botanicalName || ''}</div>
-                            </div>
-                            <div style="flex: 1; margin-top: 30px; font-family: 'Poppins', sans-serif;">
-                                <ul style="list-style-type: disc; padding-left: 25px; font-size: 19px; line-height: 1.7; color: #222222;">
-                                    ${bulletListHTML}
-                                </ul>
-                            </div>
-                            <div style="display: flex; justify-content: space-between; align-items: flex-end; margin-top: 20px; padding-top: 20px;">
-                                <div style="font-size: 18px; line-height: 1.4; color: #333333; max-width: 320px; font-family: 'Poppins', sans-serif;">${plant.origin || 'Hare Krishna Nature Farm'}</div>
-                                <div style="text-align: center;">
-                                    <div id="temp-qr-box" style="width: 130px; height: 130px;"></div>
-                                    <div style="margin-top: 8px; font-size: 13px; font-weight: 600; letter-spacing: 1px; color: #222222; text-transform: uppercase; font-family: 'Poppins', sans-serif;">HARE KRISHNA FARM</div>
-                                </div>
-                            </div>
-                        `;
+                        if (cleanBullets.length === 0) {
+                            cleanBullets.push("Botanical collection species");
+                        }
 
-                        document.body.appendChild(tempContainer);
+                        // Draw Bullet Points
+                        ctx.textAlign = 'left';
+                        ctx.fillStyle = '#222222';
+                        ctx.font = '400 42px "Poppins", sans-serif';
+                        let bulletY = titleY + 250;
 
-                        // Generate embedded QR code
-                        const qrBox = tempContainer.querySelector('#temp-qr-box');
+                        cleanBullets.forEach(bulletText => {
+                            ctx.beginPath();
+                            ctx.arc(140, bulletY - 14, 8, 0, Math.PI * 2);
+                            ctx.fillStyle = '#222222';
+                            ctx.fill();
+
+                            ctx.fillStyle = '#222222';
+                            bulletY = wrapCanvasText(ctx, bulletText, 175, bulletY, 900, 58) + 38;
+                        });
+
+                        // 5. Scan-Ready High-Level Error Correction QR Code
+                        const tempQrContainer = document.createElement('div');
+                        tempQrContainer.style.position = 'absolute';
+                        tempQrContainer.style.left = '-9999px';
+                        document.body.appendChild(tempQrContainer);
+
                         const plantUrl = `${baseUrl}?id=${encodeURIComponent(plant.id)}`;
-
-                        new QRCode(qrBox, {
+                        
+                        new QRCode(tempQrContainer, {
                             text: plantUrl,
-                            width: 130,
-                            height: 130,
-                            colorDark: "#1a1a1a",
+                            width: 320,
+                            height: 320,
+                            colorDark: "#000000",
                             colorLight: "#ffffff",
-                            correctLevel: QRCode.CorrectLevel.L
+                            correctLevel: QRCode.CorrectLevel.H // Level H: 30% restoration for high scan reliability
                         });
 
-                        await new Promise(resolve => setTimeout(resolve, 100));
+                        await new Promise(resolve => setTimeout(resolve, 80));
 
-                        // Render card canvas
-                        const canvas = await html2canvas(tempContainer, {
-                            scale: 2,
-                            useCORS: true,
-                            backgroundColor: '#ffffff'
-                        });
+                        const qrElement = tempQrContainer.querySelector('canvas') || tempQrContainer.querySelector('img');
 
-                        const blob = await new Promise(resolve => canvas.toBlob(resolve, 'image/png'));
+                        // Position QR on Bottom Right
+                        const qrSize = 310;
+                        const qrX = canvas.width - qrSize - 90;
+                        const qrY = canvas.height - qrSize - 160;
+
+                        ctx.drawImage(qrElement, qrX, qrY, qrSize, qrSize);
+
+                        // Label underneath QR Code
+                        ctx.textAlign = 'center';
+                        ctx.fillStyle = '#111111';
+                        ctx.font = '600 28px "Poppins", sans-serif';
+                        ctx.fillText('HARE KRISHNA FARM', qrX + (qrSize / 2), qrY + qrSize + 45);
+
+                        // 6. Origin Location on Bottom Left
+                        ctx.textAlign = 'left';
+                        ctx.fillStyle = '#444444';
+                        ctx.font = '400 36px "Playfair Display", Georgia, serif';
+                        
+                        const originText = plant.origin || 'Hare Krishna Nature Farm';
+                        wrapCanvasText(ctx, originText, 90, canvas.height - 190, 480, 48);
+
+                        document.body.removeChild(tempQrContainer);
+
+                        // Store output in ZIP archive
+                        const blob = await new Promise(resolve => canvas.toBlob(resolve, 'image/png', 1.0));
                         if (blob) {
                             zip.file(`HKNF-${plant.id}-Card.png`, blob);
                         }
-
-                        document.body.removeChild(tempContainer);
                     }
 
                     btn.textContent = 'Zipping Cards...';
@@ -882,6 +912,31 @@
                     btn.disabled = false;
                 }
             });
+        }
+
+        /**
+         * Helper utility for text wrapping on Canvas elements
+         */
+        function wrapCanvasText(ctx, text, x, y, maxWidth, lineHeight) {
+            const words = text.split(' ');
+            let line = '';
+            let currentY = y;
+
+            for (let n = 0; n < words.length; n++) {
+                const testLine = line + words[n] + ' ';
+                const metrics = ctx.measureText(testLine);
+                const testWidth = metrics.width;
+
+                if (testWidth > maxWidth && n > 0) {
+                    ctx.fillText(line, x, currentY);
+                    line = words[n] + ' ';
+                    currentY += lineHeight;
+                } else {
+                    line = testLine;
+                }
+            }
+            ctx.fillText(line, x, currentY);
+            return currentY;
         }
     </script>
 </body>
