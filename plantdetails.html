@@ -409,101 +409,6 @@
         /* Hidden QR Container for single view */
         #qr-container { display: none; }
 
-        /* Off-Screen PDF Template Style */
-        #pdf-render-container {
-            position: absolute;
-            left: -9999px;
-            top: -9999px;
-            width: 600px;
-            height: 800px;
-            background: #ffffff;
-            border: 2px solid #3b2f2f;
-            padding: 40px;
-            box-sizing: border-box;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            font-family: 'Playfair Display', serif;
-            color: #1a1a1a;
-        }
-
-        .card-pdf-header {
-            text-align: center;
-            margin-bottom: 20px;
-        }
-
-        .card-pdf-title {
-            font-size: 42px;
-            font-weight: 700;
-            font-style: italic;
-            color: #1a1a1a;
-            line-height: 1.1;
-            margin-bottom: 10px;
-        }
-
-        .card-pdf-botanical {
-            font-size: 26px;
-            font-style: italic;
-            color: #333333;
-        }
-
-        .card-pdf-body {
-            flex: 1;
-            margin-top: 30px;
-            font-family: 'Poppins', sans-serif;
-        }
-
-        .card-pdf-bullets {
-            list-style-type: disc;
-            padding-left: 25px;
-            font-size: 20px;
-            line-height: 1.8;
-            color: #222222;
-        }
-
-        .card-pdf-bullets li {
-            margin-bottom: 12px;
-        }
-
-        .card-pdf-footer {
-            display: flex;
-            justify-content: space-between;
-            align-items: flex-end;
-            margin-top: 20px;
-            padding-top: 20px;
-        }
-
-        .card-pdf-origin {
-            font-size: 18px;
-            line-height: 1.4;
-            color: #333333;
-            max-width: 320px;
-        }
-
-        .card-pdf-qr-wrap {
-            text-align: center;
-        }
-
-        .card-pdf-qr-wrap .qr-box {
-            width: 140px;
-            height: 140px;
-        }
-
-        .card-pdf-qr-wrap .qr-box canvas,
-        .card-pdf-qr-wrap .qr-box img {
-            width: 140px !important;
-            height: 140px !important;
-        }
-
-        .card-pdf-qr-label {
-            margin-top: 8px;
-            font-size: 14px;
-            font-weight: 600;
-            letter-spacing: 1px;
-            color: #222222;
-            text-transform: uppercase;
-        }
-
         @media (max-width: 900px) {
             .board-header { flex-direction: column; text-align: center; gap: 2rem; }
             .plant-title { font-size: 3rem; }
@@ -629,24 +534,6 @@
 
     <!-- Hidden div for QR Generation (single plant) -->
     <div id="qr-container"></div>
-
-    <!-- Off-screen hidden container for rendering PDF plant cards -->
-    <div id="pdf-render-container">
-        <div class="card-pdf-header">
-            <div class="card-pdf-title" id="pdf-title">Plant Name</div>
-            <div class="card-pdf-botanical" id="pdf-botanical">Botanical Name</div>
-        </div>
-        <div class="card-pdf-body">
-            <ul class="card-pdf-bullets" id="pdf-bullets"></ul>
-        </div>
-        <div class="card-pdf-footer">
-            <div class="card-pdf-origin" id="pdf-origin">Origin Location</div>
-            <div class="card-pdf-qr-wrap">
-                <div class="qr-box" id="pdf-qr-box"></div>
-                <div class="card-pdf-qr-label" id="pdf-qr-label">HARE KRISHNA FARM</div>
-            </div>
-        </div>
-    </div>
 
     <script>
         document.addEventListener('DOMContentLoaded', async () => {
@@ -860,9 +747,7 @@
         }
 
         /**
-         * Generates a multi-page PDF where each page corresponds to a plant,
-         * matching the clean card layout style with title, botanical name,
-         * key bullet points, origin, and QR code.
+         * Dynamic, non-hidden DOM PDF card generation
          */
         function setupDownloadAllPDF() {
             const btn = document.getElementById('btn-download-all-pdf');
@@ -871,8 +756,6 @@
             btn.addEventListener('click', async () => {
                 const originalText = btn.innerHTML;
                 btn.disabled = true;
-
-                const pdfContainer = document.getElementById('pdf-render-container');
 
                 try {
                     const response = await fetch('plants.json');
@@ -883,6 +766,8 @@
 
                     if (plants.length === 0) {
                         alert('No plants found in the archive.');
+                        btn.innerHTML = originalText;
+                        btn.disabled = false;
                         return;
                     }
 
@@ -895,19 +780,32 @@
 
                     const baseUrl = window.location.origin + window.location.pathname;
 
+                    // Loop through every plant
                     for (let i = 0; i < plants.length; i++) {
                         const plant = plants[i];
                         btn.textContent = `Generating PDF... (${i + 1}/${plants.length})`;
 
-                        // Populate off-screen PDF template
-                        document.getElementById('pdf-title').textContent = plant.name;
-                        document.getElementById('pdf-botanical').textContent = plant.botanicalName || '';
-                        document.getElementById('pdf-origin').textContent = plant.origin || 'Hare Krishna Nature Farm';
+                        // Build real DOM card directly in document root (visible to html2canvas)
+                        const tempContainer = document.createElement('div');
+                        tempContainer.style.cssText = `
+                            position: fixed;
+                            top: 0;
+                            left: 0;
+                            width: 600px;
+                            height: 800px;
+                            background: #ffffff;
+                            border: 2px solid #3b2f2f;
+                            padding: 40px;
+                            box-sizing: border-box;
+                            display: flex;
+                            flex-direction: column;
+                            justify-content: space-between;
+                            font-family: 'Playfair Display', serif;
+                            color: #1a1a1a;
+                            z-index: 999999;
+                        `;
 
-                        // Populate bullet points from plant data
-                        const bulletsContainer = document.getElementById('pdf-bullets');
-                        bulletsContainer.innerHTML = '';
-
+                        // Gather bullet details
                         let points = [];
                         if (plant.benefits && Array.isArray(plant.benefits)) {
                             points = plant.benefits;
@@ -916,35 +814,51 @@
                             if (plant.economicUse) points.push(plant.economicUse);
                             if (plant.vedicSignificance) points.push(plant.vedicSignificance);
                         }
-
                         if (points.length === 0) {
-                            points = ["A botanical species maintained at Hare Krishna Nature Farm."];
+                            points = ["Botanical record from Hare Krishna Nature Farm."];
                         }
 
-                        points.slice(0, 4).forEach(pt => {
-                            const li = document.createElement('li');
-                            li.textContent = pt;
-                            bulletsContainer.appendChild(li);
-                        });
+                        const bulletListHTML = points.slice(0, 4).map(pt => `<li style="margin-bottom: 12px;">${pt}</li>`).join('');
 
-                        // Render QR Code inside off-screen container
-                        const qrBox = document.getElementById('pdf-qr-box');
-                        qrBox.innerHTML = '';
+                        tempContainer.innerHTML = `
+                            <div style="text-align: center; margin-bottom: 20px;">
+                                <div style="font-size: 40px; font-weight: 700; font-style: italic; color: #1a1a1a; line-height: 1.1; margin-bottom: 8px;">${plant.name}</div>
+                                <div style="font-size: 24px; font-style: italic; color: #333333;">${plant.botanicalName || ''}</div>
+                            </div>
+                            <div style="flex: 1; margin-top: 30px; font-family: 'Poppins', sans-serif;">
+                                <ul style="list-style-type: disc; padding-left: 25px; font-size: 19px; line-height: 1.7; color: #222222;">
+                                    ${bulletListHTML}
+                                </ul>
+                            </div>
+                            <div style="display: flex; justify-content: space-between; align-items: flex-end; margin-top: 20px; padding-top: 20px;">
+                                <div style="font-size: 18px; line-height: 1.4; color: #333333; max-width: 320px; font-family: 'Poppins', sans-serif;">${plant.origin || 'Hare Krishna Nature Farm'}</div>
+                                <div style="text-align: center;">
+                                    <div id="temp-qr-box" style="width: 130px; height: 130px;"></div>
+                                    <div style="margin-top: 8px; font-size: 13px; font-weight: 600; letter-spacing: 1px; color: #222222; text-transform: uppercase; font-family: 'Poppins', sans-serif;">HARE KRISHNA FARM</div>
+                                </div>
+                            </div>
+                        `;
+
+                        document.body.appendChild(tempContainer);
+
+                        // Draw QR code inside temporary card
+                        const qrBox = tempContainer.querySelector('#temp-qr-box');
                         const plantUrl = `${baseUrl}?id=${encodeURIComponent(plant.id)}`;
 
                         new QRCode(qrBox, {
                             text: plantUrl,
-                            width: 140,
-                            height: 140,
+                            width: 130,
+                            height: 130,
                             colorDark: "#1a1a1a",
                             colorLight: "#ffffff",
                             correctLevel: QRCode.CorrectLevel.L
                         });
 
-                        await new Promise(resolve => setTimeout(resolve, 150));
+                        // Small delay for QRCode rendering tick
+                        await new Promise(resolve => setTimeout(resolve, 100));
 
-                        // Render element to canvas
-                        const canvas = await html2canvas(pdfContainer, {
+                        // Capture card
+                        const canvas = await html2canvas(tempContainer, {
                             scale: 2,
                             useCORS: true,
                             backgroundColor: '#ffffff'
@@ -952,15 +866,19 @@
 
                         const imgData = canvas.toDataURL('image/png');
 
+                        // Append page to PDF
                         if (i > 0) pdf.addPage([600, 800], 'portrait');
                         pdf.addImage(imgData, 'PNG', 0, 0, 600, 800);
+
+                        // Remove temp element immediately after capture
+                        document.body.removeChild(tempContainer);
                     }
 
                     pdf.save('Hare-Krishna-Farm-Plant-Cards.pdf');
 
                 } catch (error) {
                     console.error('Error generating PDF:', error);
-                    alert('Failed to generate PDF. Please try again.');
+                    alert('Failed to generate PDF: ' + error.message);
                 } finally {
                     btn.innerHTML = originalText;
                     btn.disabled = false;
