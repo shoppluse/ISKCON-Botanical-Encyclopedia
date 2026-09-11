@@ -13,7 +13,7 @@
     <!-- CDNs for Export Functionality -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
 
     <style>
         :root {
@@ -85,7 +85,7 @@
             border-color: var(--accent-earth);
         }
 
-        /* Top action button (download all QR codes) */
+        /* Top action button */
         .nav-action-btn {
             padding: 0.6rem 1.4rem;
             font-size: 0.95rem;
@@ -116,7 +116,7 @@
             transform: none;
         }
 
-        /* Main Container - Styled like a field notebook/clipboard */
+        /* Main Container */
         .whiteboard-wrapper {
             width: 100%;
             max-width: 1100px;
@@ -134,7 +134,6 @@
             100% { opacity: 1; transform: translateY(0); }
         }
 
-        /* Printable Area - Field Journal Grid */
         .whiteboard-content {
             padding: 4.5rem;
             background: var(--white);
@@ -152,7 +151,6 @@
             align-items: flex-start;
         }
 
-        /* Image & Gallery UI - Farmhouse frame style */
         .plant-image-container {
             flex-shrink: 0;
             width: 340px;
@@ -218,9 +216,8 @@
 
         .plant-titles {
             flex: 1;
-            padding-top: 1rem;
-            background: rgba(255, 255, 255, 0.8); /* Readability over grid */
             padding: 1.5rem;
+            background: rgba(255, 255, 255, 0.8);
             border-radius: 8px;
         }
 
@@ -392,7 +389,7 @@
             background: #faf8f5;
         }
 
-        /* States */
+        /* Statuses */
         .status-state {
             text-align: center;
             padding: 6rem 2rem;
@@ -409,24 +406,109 @@
             display: none;
         }
 
-        /* Hidden QR Container */
+        /* Hidden QR Container for single view */
         #qr-container { display: none; }
-        #qr-batch-container { position: absolute; left: -9999px; top: -9999px; }
 
-        /* Responsive */
+        /* Off-Screen PDF Template Style */
+        #pdf-render-container {
+            position: absolute;
+            left: -9999px;
+            top: -9999px;
+            width: 600px;
+            height: 800px;
+            background: #ffffff;
+            border: 2px solid #3b2f2f;
+            padding: 40px;
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            font-family: 'Playfair Display', serif;
+            color: #1a1a1a;
+        }
+
+        .card-pdf-header {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .card-pdf-title {
+            font-size: 42px;
+            font-weight: 700;
+            font-style: italic;
+            color: #1a1a1a;
+            line-height: 1.1;
+            margin-bottom: 10px;
+        }
+
+        .card-pdf-botanical {
+            font-size: 26px;
+            font-style: italic;
+            color: #333333;
+        }
+
+        .card-pdf-body {
+            flex: 1;
+            margin-top: 30px;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .card-pdf-bullets {
+            list-style-type: disc;
+            padding-left: 25px;
+            font-size: 20px;
+            line-height: 1.8;
+            color: #222222;
+        }
+
+        .card-pdf-bullets li {
+            margin-bottom: 12px;
+        }
+
+        .card-pdf-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            margin-top: 20px;
+            padding-top: 20px;
+        }
+
+        .card-pdf-origin {
+            font-size: 18px;
+            line-height: 1.4;
+            color: #333333;
+            max-width: 320px;
+        }
+
+        .card-pdf-qr-wrap {
+            text-align: center;
+        }
+
+        .card-pdf-qr-wrap .qr-box {
+            width: 140px;
+            height: 140px;
+        }
+
+        .card-pdf-qr-wrap .qr-box canvas,
+        .card-pdf-qr-wrap .qr-box img {
+            width: 140px !important;
+            height: 140px !important;
+        }
+
+        .card-pdf-qr-label {
+            margin-top: 8px;
+            font-size: 14px;
+            font-weight: 600;
+            letter-spacing: 1px;
+            color: #222222;
+            text-transform: uppercase;
+        }
+
         @media (max-width: 900px) {
-            .board-header {
-                flex-direction: column;
-                text-align: center;
-                gap: 2rem;
-            }
+            .board-header { flex-direction: column; text-align: center; gap: 2rem; }
             .plant-title { font-size: 3rem; }
             .divider { margin: 0 auto 2rem; }
-            .plant-image-container {
-                width: 100%;
-                max-width: 400px;
-                margin: 0 auto;
-            }
+            .plant-image-container { width: 100%; max-width: 400px; margin: 0 auto; }
             .main-image-wrapper { height: 350px; }
             .gallery-thumbnails { justify-content: center; }
             .plant-titles { background: transparent; padding: 0; }
@@ -448,9 +530,9 @@
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
             Encyclopedia
         </a>
-        <button id="btn-download-all-qr" class="nav-action-btn">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><line x1="3" y1="9" x2="21" y2="9"></line><line x1="9" y1="21" x2="9" y2="9"></line></svg>
-            Download All QR Codes
+        <button id="btn-download-all-pdf" class="nav-action-btn">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+            Download All Plant Cards (PDF)
         </button>
     </div>
 
@@ -472,18 +554,13 @@
     <!-- Main Content -->
     <div class="whiteboard-wrapper" id="main-board">
         
-        <!-- Capture Area for Export -->
         <div class="whiteboard-content" id="capture-area">
             <div class="board-header">
-                
-                <!-- Image & Gallery UI -->
                 <div class="plant-image-container">
                     <div class="main-image-wrapper">
                         <img id="plant-img" src="" alt="Plant" class="plant-image">
                     </div>
-                    <div class="gallery-thumbnails" id="gallery-thumbnails">
-                        <!-- Thumbnails injected dynamically -->
-                    </div>
+                    <div class="gallery-thumbnails" id="gallery-thumbnails"></div>
                 </div>
 
                 <div class="plant-titles">
@@ -538,7 +615,6 @@
             </div>
         </div>
 
-        <!-- Action Buttons -->
         <div class="action-area">
             <button id="btn-download-qr" class="btn btn-secondary">
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><line x1="3" y1="9" x2="21" y2="9"></line><line x1="9" y1="21" x2="9" y2="9"></line></svg>
@@ -554,8 +630,23 @@
     <!-- Hidden div for QR Generation (single plant) -->
     <div id="qr-container"></div>
 
-    <!-- Hidden div for batch QR Generation (all plants) -->
-    <div id="qr-batch-container"></div>
+    <!-- Off-screen hidden container for rendering PDF plant cards -->
+    <div id="pdf-render-container">
+        <div class="card-pdf-header">
+            <div class="card-pdf-title" id="pdf-title">Plant Name</div>
+            <div class="card-pdf-botanical" id="pdf-botanical">Botanical Name</div>
+        </div>
+        <div class="card-pdf-body">
+            <ul class="card-pdf-bullets" id="pdf-bullets"></ul>
+        </div>
+        <div class="card-pdf-footer">
+            <div class="card-pdf-origin" id="pdf-origin">Origin Location</div>
+            <div class="card-pdf-qr-wrap">
+                <div class="qr-box" id="pdf-qr-box"></div>
+                <div class="card-pdf-qr-label" id="pdf-qr-label">HARE KRISHNA FARM</div>
+            </div>
+        </div>
+    </div>
 
     <script>
         document.addEventListener('DOMContentLoaded', async () => {
@@ -566,9 +657,7 @@
             const errorState = document.getElementById('error-state');
             const mainBoard = document.getElementById('main-board');
 
-            // Wire up the "Download All QR Codes" button independent of whether
-            // this specific plant loads successfully.
-            setupDownloadAllQR();
+            setupDownloadAllPDF();
 
             loadingState.style.display = 'block';
 
@@ -734,11 +823,6 @@
             }
         });
 
-        /**
-         * Draws a QR code source element (canvas or img) onto a padded canvas
-         * with the plant's name printed below it. Shared by both the single-plant
-         * QR download and the "download all" batch export.
-         */
         function buildLabeledQRCanvas(sourceElement, label) {
             const width = sourceElement.width || 500;
             const height = sourceElement.height || 500;
@@ -776,21 +860,19 @@
         }
 
         /**
-         * Wires up the top "Download All QR Codes" button. Fetches every plant
-         * from plants.json, generates a QR code for each plant's detail page URL,
-         * labels it with the plant's name, and bundles all the individual PNGs
-         * into a single zip download (browsers block many simultaneous downloads,
-         * so a zip is the reliable way to deliver "all of them at once").
+         * Generates a multi-page PDF where each page corresponds to a plant,
+         * matching the clean card layout style with title, botanical name,
+         * key bullet points, origin, and QR code.
          */
-        function setupDownloadAllQR() {
-            const btn = document.getElementById('btn-download-all-qr');
+        function setupDownloadAllPDF() {
+            const btn = document.getElementById('btn-download-all-pdf');
             if (!btn) return;
 
             btn.addEventListener('click', async () => {
                 const originalText = btn.innerHTML;
                 btn.disabled = true;
 
-                const batchContainer = document.getElementById('qr-batch-container');
+                const pdfContainer = document.getElementById('pdf-render-container');
 
                 try {
                     const response = await fetch('plants.json');
@@ -804,56 +886,81 @@
                         return;
                     }
 
-                    const zip = new JSZip();
+                    const { jsPDF } = window.jspdf;
+                    const pdf = new jsPDF({
+                        orientation: 'portrait',
+                        unit: 'px',
+                        format: [600, 800]
+                    });
+
                     const baseUrl = window.location.origin + window.location.pathname;
 
                     for (let i = 0; i < plants.length; i++) {
                         const plant = plants[i];
-                        btn.textContent = `Generating... (${i + 1}/${plants.length})`;
+                        btn.textContent = `Generating PDF... (${i + 1}/${plants.length})`;
 
-                        // Fresh container per plant so each QRCode instance starts clean.
-                        batchContainer.innerHTML = '';
+                        // Populate off-screen PDF template
+                        document.getElementById('pdf-title').textContent = plant.name;
+                        document.getElementById('pdf-botanical').textContent = plant.botanicalName || '';
+                        document.getElementById('pdf-origin').textContent = plant.origin || 'Hare Krishna Nature Farm';
+
+                        // Populate bullet points from plant data
+                        const bulletsContainer = document.getElementById('pdf-bullets');
+                        bulletsContainer.innerHTML = '';
+
+                        let points = [];
+                        if (plant.benefits && Array.isArray(plant.benefits)) {
+                            points = plant.benefits;
+                        } else {
+                            if (plant.medicalSignificance) points.push(plant.medicalSignificance);
+                            if (plant.economicUse) points.push(plant.economicUse);
+                            if (plant.vedicSignificance) points.push(plant.vedicSignificance);
+                        }
+
+                        if (points.length === 0) {
+                            points = ["A botanical species maintained at Hare Krishna Nature Farm."];
+                        }
+
+                        points.slice(0, 4).forEach(pt => {
+                            const li = document.createElement('li');
+                            li.textContent = pt;
+                            bulletsContainer.appendChild(li);
+                        });
+
+                        // Render QR Code inside off-screen container
+                        const qrBox = document.getElementById('pdf-qr-box');
+                        qrBox.innerHTML = '';
                         const plantUrl = `${baseUrl}?id=${encodeURIComponent(plant.id)}`;
 
-                        new QRCode(batchContainer, {
+                        new QRCode(qrBox, {
                             text: plantUrl,
-                            width: 500,
-                            height: 500,
-                            colorDark: "#3b2f2f",
+                            width: 140,
+                            height: 140,
+                            colorDark: "#1a1a1a",
                             colorLight: "#ffffff",
                             correctLevel: QRCode.CorrectLevel.L
                         });
 
-                        // Give qrcode.js a tick to finish drawing to canvas/img.
-                        await new Promise(resolve => setTimeout(resolve, 120));
+                        await new Promise(resolve => setTimeout(resolve, 150));
 
-                        const qrCanvas = batchContainer.querySelector('canvas');
-                        const qrImg = batchContainer.querySelector('img');
-                        const sourceElement = qrCanvas || qrImg;
+                        // Render element to canvas
+                        const canvas = await html2canvas(pdfContainer, {
+                            scale: 2,
+                            useCORS: true,
+                            backgroundColor: '#ffffff'
+                        });
 
-                        if (sourceElement) {
-                            const labeledCanvas = buildLabeledQRCanvas(sourceElement, plant.name);
-                            const blob = await new Promise(resolve => labeledCanvas.toBlob(resolve, 'image/png'));
-                            if (blob) {
-                                zip.file(`HKNF-${plant.id}-QR.png`, blob);
-                            }
-                        }
+                        const imgData = canvas.toDataURL('image/png');
+
+                        if (i > 0) pdf.addPage([600, 800], 'portrait');
+                        pdf.addImage(imgData, 'PNG', 0, 0, 600, 800);
                     }
 
-                    batchContainer.innerHTML = '';
-                    btn.textContent = 'Zipping files...';
-
-                    const zipBlob = await zip.generateAsync({ type: 'blob' });
-
-                    const link = document.createElement('a');
-                    link.download = 'HKNF-AllPlants-QR.zip';
-                    link.href = URL.createObjectURL(zipBlob);
-                    link.click();
-                    URL.revokeObjectURL(link.href);
+                    pdf.save('Hare-Krishna-Farm-Plant-Cards.pdf');
 
                 } catch (error) {
-                    console.error('Error generating all QR codes:', error);
-                    alert('Failed to generate all QR codes. Please try again.');
+                    console.error('Error generating PDF:', error);
+                    alert('Failed to generate PDF. Please try again.');
                 } finally {
                     btn.innerHTML = originalText;
                     btn.disabled = false;
